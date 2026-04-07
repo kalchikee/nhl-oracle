@@ -81,13 +81,25 @@ def send_morning_briefing(predictions: list, season_record: dict):
             pick = p["pick_team"]
 
             score_str = f"({proj_score[0]}-{proj_score[1]})" if proj_score else ""
-            b2b = " ⚠️B2B" if (p.get("b2b_home") and pick == home) or (p.get("b2b_away") and pick == away) else ""
-            lines.append(f"**{away} @ {home}** → {pick} {pick_prob_pct} *{score_str}*{b2b}")
+            flags = []
+            if p.get("b2b_home") and pick == home:
+                flags.append("⚠️B2B")
+            if p.get("b2b_away") and pick == away:
+                flags.append("⚠️B2B")
+            inj = p.get("injuries", {})
+            h_inj = inj.get("home", {}).get("n_injured", 0)
+            a_inj = inj.get("away", {}).get("n_injured", 0)
+            if h_inj > 0:
+                flags.append(f"🏥{home}:{h_inj}")
+            if a_inj > 0:
+                flags.append(f"🏥{away}:{a_inj}")
+            flag_str = " " + " ".join(flags) if flags else ""
+            lines.append(f"**{away} @ {home}** → {pick} {pick_prob_pct} *{score_str}*{flag_str}")
 
     lines.append("")
 
     # Recommended bets section
-    lines.append(f"🎯 **Recommended Bets Today**")
+    lines.append("🎯 **Recommended Bets Today**")
     if recommended:
         for p in recommended:
             home = p["home_team"]
@@ -97,9 +109,13 @@ def send_morning_briefing(predictions: list, season_record: dict):
             odds = p.get("odds", {})
             ml_key = "home_ml" if pick == home else "away_ml"
             ml_str = f" ({_american_odds_str(odds[ml_key])})" if odds.get(ml_key) else ""
-            lines.append(f"💰 **{pick}** ML{ml_str} — {p['pick_prob']*100:.1f}%{edge_str} · {p['tier_emoji']} {p['tier']}")
+            # Show goalie if known
+            goalies = p.get("goalies", {})
+            pick_goalie = goalies.get("home") if pick == home else goalies.get("away")
+            goalie_str = f" · G: {pick_goalie}" if pick_goalie else ""
+            lines.append(f"💰 **{pick}** ML{ml_str} — {p['pick_prob']*100:.1f}%{edge_str}{goalie_str} · {p['tier_emoji']} {p['tier']}")
     else:
-        lines.append(f"No games cleared the 63% confidence threshold today")
+        lines.append("No games cleared the 63% confidence threshold today")
 
     lines.append("")
     lines.append(f"NHL Oracle v4.0 | Monte Carlo 10,000 simulations · Today at {now_str}")

@@ -17,6 +17,7 @@ import moneypuck
 import elo_system
 import features as feat_eng
 import monte_carlo as mc
+import injury_tracker
 
 MODELS_DIR = os.path.join(os.path.dirname(__file__), "..", "models")
 DATA_DIR = os.path.join(os.path.dirname(__file__), "..", "data")
@@ -151,17 +152,17 @@ def predict_games(game_date: Optional[str] = None) -> list:
         away_info = g.get("awayTeam", {})
         home_abbr = home_info.get("abbrev", "")
         away_abbr = away_info.get("abbrev", "")
-        home_name = home_info.get("placeName", {}).get("default", home_abbr) + " " + home_info.get("commonName", {}).get("default", "")
-        away_name = away_info.get("placeName", {}).get("default", away_abbr) + " " + away_info.get("commonName", {}).get("default", "")
-        home_name = home_name.strip()
-        away_name = away_name.strip()
+        home_name = (home_info.get("placeName", {}).get("default", home_abbr) + " " +
+                     home_info.get("commonName", {}).get("default", "")).strip()
+        away_name = (away_info.get("placeName", {}).get("default", away_abbr) + " " +
+                     away_info.get("commonName", {}).get("default", "")).strip()
 
         if not home_abbr or not away_abbr:
             continue
 
         game_time = g.get("startTimeUTC", "")
 
-        # Last game dates (for rest/B2B detection)
+        # --- Rest / back-to-back ---
         h_last = get_team_last_game(home_abbr, game_date)
         a_last = get_team_last_game(away_abbr, game_date)
 
@@ -173,32 +174,52 @@ def predict_games(game_date: Optional[str] = None) -> list:
         h_b2b = days_since(h_last) == 1
         a_b2b = days_since(a_last) == 1
 
-        # MoneyPuck xG features
+        # --- MoneyPuck xG features ---
         h_xg = moneypuck.extract_team_xg_features(mp_teams, home_abbr) if mp_teams is not None else {}
         a_xg = moneypuck.extract_team_xg_features(mp_teams, away_abbr) if mp_teams is not None else {}
 
-        # Goalie GSAx (use team's leading goalie)
+        # --- Confirmed starting goalie + GSAx ---
         h_gsax, a_gsax = 0.0, 0.0
+        h_goalie_name, a_goalie_name = None, None
+
+        # Try confirmed starter from game preview first
+        confirmed_h = injury_tracker.get_confirmed_starter(home_abbr, game_date)
+        confirmed_a = injury_tracker.get_confirmed_starter(away_abbr, game_date)
+
         if mp_goalies is not None:
-            # Find the team's most-used goalie
-            h_goalies = nhl_api.get_goalie_stats_list(home_abbr)
-            a_goalies = nhl_api.get_goalie_stats_list(away_abbr)
-
-            for g_list, abbr, store_var in [(h_goalies, home_abbr, "h"), (a_goalies, away_abbr, "a")]:
-                if g_list:
-                    # Pick goalie with most games started
-                    starter = max(g_list, key=lambda x: x.get("gamesStarted", x.get("gamesPlayed", 0)), default=None)
+            for abbr, confirmed, store in [(home_abbr, confirmed_h, "h"), (away_abbr, confirmed_a, "a")]:
+                if confirmed:
+                    gsax = moneypuck.extract_goalie_gsax(mp_goalies, confirmed)
+                    name = confirmed
+                else:
+                    # Fall back to season leader by games started
+                    goalie_list = nhl_api.get_goalie_stats_list(abbr)
+                    starter = max(goalie_list,
+                                  key=lambda x: x.get("gamesStarted", x.get("gamesPlayed", 0)),
+                                  default=None) if goalie_list else None
                     if starter:
-                        name = starter.get("lastName", {})
-                        if isinstance(name, dict):
-                            name = name.get("default", "")
-                        gsax = moneypuck.extract_goalie_gsax(mp_goalies, str(name))
-                        if store_var == "h":
-                            h_gsax = gsax
-                        else:
-                            a_gsax = gsax
+                        last = starter.get("lastName", {})
+                        name = last.get("default", "") if isinstance(last, dict) else str(last)
+                        gsax = moneypuck.extract_goalie_gsax(mp_goalies, name)
+                    else:
+                        name, gsax = None, 0.0
+                if store == "h":
+                    h_gsax, h_goalie_name = gsax, name
+                else:
+                    a_gsax, a_goalie_name = gsax, name
 
-        # Build feature vector
+        # --- Injury impact ---
+        h_injuries = injury_tracker.get_team_injury_impact(home_abbr)
+        a_injuries = injury_tracker.get_team_injury_impact(away_abbr)
+
+        # Convert injury impact to probability shift:
+        # Each 0.10 goals/game of offensive loss ≈ -1.5% win probability
+        h_inj_shift = -(h_injuries["offensive_impact"] * 0.15 + h_injuries["defensive_impact"] * 0.10)
+        a_inj_shift = -(a_injuries["offensive_impact"] * 0.15 + a_injuries["defensive_impact"] * 0.10)
+        # Net: positive = home team relatively healthier
+        injury_prob_adj = (h_inj_shift - a_inj_shift)
+
+        # --- Feature vector ---
         try:
             fv = feat_eng.compute_features(
                 home_abbr, away_abbr, game_date,
@@ -211,76 +232,82 @@ def predict_games(game_date: Optional[str] = None) -> list:
             print(f"[predictor] Feature error for {home_abbr} vs {away_abbr}: {e}")
             continue
 
-        # Logistic regression prediction
+        # --- Logistic regression prediction ---
         if model_available:
             fv_scaled = scaler.transform([fv])
             lr_prob = float(model.predict_proba(fv_scaled)[0][1])
         else:
-            # Fallback: use Elo win probability
             lr_prob = elo_system.elo_win_probability(home_abbr, away_abbr, elo_ratings)
 
-        # Monte Carlo simulation
+        # --- Monte Carlo simulation ---
         LEAGUE_AVG = 3.0
-        h_xgf = h_xg.get("xgf_per60", LEAGUE_AVG)
-        h_xga = h_xg.get("xga_per60", LEAGUE_AVG)
-        a_xgf = a_xg.get("xgf_per60", LEAGUE_AVG)
-        a_xga = a_xg.get("xga_per60", LEAGUE_AVG)
-
         mc_result = mc.simulate(
             home_abbr, away_abbr,
-            home_xgf_per60=h_xgf, home_xga_per60=h_xga,
-            away_xgf_per60=a_xgf, away_xga_per60=a_xga,
+            home_xgf_per60=h_xg.get("xgf_per60", LEAGUE_AVG),
+            home_xga_per60=h_xg.get("xga_per60", LEAGUE_AVG),
+            away_xgf_per60=a_xg.get("xgf_per60", LEAGUE_AVG),
+            away_xga_per60=a_xg.get("xga_per60", LEAGUE_AVG),
             home_goalie_gsax=h_gsax, away_goalie_gsax=a_gsax,
             home_b2b=h_b2b, away_b2b=a_b2b,
         )
 
-        # Blend LR probability with Monte Carlo (weighted average)
-        blended_prob = 0.65 * lr_prob + 0.35 * mc_result["home_win_pct"]
+        # --- Vegas odds lookup ---
+        home_ml, away_ml = None, None
+        vegas_implied_home = None
+        for key, o in odds_map.items():
+            h_name_odds = o.get("home_team", "")
+            if home_abbr.lower() in h_name_odds.lower() or home_name.lower() in h_name_odds.lower():
+                home_ml = o.get("home_ml")
+                away_ml = o.get("away_ml")
+                vegas_implied_home = american_to_implied(home_ml)
+                break
 
-        # Confidence tier
+        # --- Blend: Model + Monte Carlo + Vegas + Injury adjustment ---
+        # Vegas encodes injuries, lineup news, travel — weight it heavily when available
+        if vegas_implied_home is not None:
+            # With Vegas: 50% LR model, 20% Monte Carlo, 30% Vegas implied
+            blended_prob = (0.50 * lr_prob +
+                            0.20 * mc_result["home_win_pct"] +
+                            0.30 * vegas_implied_home)
+        else:
+            # Without Vegas: 65% LR model, 35% Monte Carlo
+            blended_prob = 0.65 * lr_prob + 0.35 * mc_result["home_win_pct"]
+
+        # Apply injury adjustment (capped at ±5%)
+        blended_prob = max(0.05, min(0.95, blended_prob + max(-0.05, min(0.05, injury_prob_adj))))
+
         home_prob = blended_prob
         away_prob = 1.0 - blended_prob
         pick_team = home_abbr if home_prob >= away_prob else away_abbr
         pick_prob = max(home_prob, away_prob)
 
+        # --- Confidence tier ---
         if pick_prob >= 0.68:
-            tier = "EXTREME CONVICTION"
-            tier_emoji = "🔥"
+            tier, tier_emoji = "EXTREME CONVICTION", "🔥"
         elif pick_prob >= 0.63:
-            tier = "HIGH CONVICTION"
-            tier_emoji = "⭐"
+            tier, tier_emoji = "HIGH CONVICTION", "⭐"
         elif pick_prob >= 0.60:
-            tier = "STRONG"
-            tier_emoji = "✅"
+            tier, tier_emoji = "STRONG", "✅"
         elif pick_prob >= 0.55:
-            tier = "LEAN"
-            tier_emoji = "📊"
+            tier, tier_emoji = "LEAN", "📊"
         else:
-            tier = "COIN FLIP"
-            tier_emoji = "🪙"
+            tier, tier_emoji = "COIN FLIP", "🪙"
 
-        # Market edge detection
+        # --- Edge vs Vegas ---
         edge = 0.0
         recommend_bet = False
         odds_info = {}
-
-        # Try to find odds for this game
-        for key, o in odds_map.items():
-            h_name = o.get("home_team", "")
-            a_name = o.get("away_team", "")
-            if home_abbr.lower() in h_name.lower() or home_name.lower() in h_name.lower():
-                home_ml = o.get("home_ml")
-                away_ml = o.get("away_ml")
-                vegas_implied = american_to_implied(home_ml if pick_team == home_abbr else away_ml)
-                edge = pick_prob - vegas_implied
-                recommend_bet = edge >= 0.05 and pick_prob >= 0.58
-                odds_info = {
-                    "home_ml": home_ml,
-                    "away_ml": away_ml,
-                    "vegas_implied_home": round(american_to_implied(home_ml), 4),
-                    "edge": round(edge, 4),
-                }
-                break
+        if vegas_implied_home is not None:
+            vegas_implied_pick = vegas_implied_home if pick_team == home_abbr else (1 - vegas_implied_home)
+            edge = pick_prob - vegas_implied_pick
+            # Recommend when model has a meaningful edge AND high confidence
+            recommend_bet = edge >= 0.05 and pick_prob >= 0.58
+            odds_info = {
+                "home_ml": home_ml,
+                "away_ml": away_ml,
+                "vegas_implied_home": round(vegas_implied_home, 4),
+                "edge": round(edge, 4),
+            }
 
         pred = {
             "game_date": game_date,
@@ -297,9 +324,28 @@ def predict_games(game_date: Optional[str] = None) -> list:
             "tier_emoji": tier_emoji,
             "mc": {k: round(v, 4) if isinstance(v, float) else v for k, v in mc_result.items()},
             "lr_prob": round(lr_prob, 4),
+            "vegas_implied_home": round(vegas_implied_home, 4) if vegas_implied_home else None,
             "recommend_bet": recommend_bet,
             "edge": round(edge, 4),
             "odds": odds_info,
+            "injuries": {
+                "home": {
+                    "n_injured": h_injuries["n_injured"],
+                    "impact": h_injuries["total_impact"],
+                    "players": [p["name"] for p in h_injuries["injured_players"]],
+                },
+                "away": {
+                    "n_injured": a_injuries["n_injured"],
+                    "impact": a_injuries["total_impact"],
+                    "players": [p["name"] for p in a_injuries["injured_players"]],
+                },
+            },
+            "goalies": {
+                "home": h_goalie_name,
+                "away": a_goalie_name,
+                "home_gsax": round(h_gsax, 2),
+                "away_gsax": round(a_gsax, 2),
+            },
             "features": {feat_eng.FEATURE_NAMES[i]: round(fv[i], 4) for i in range(len(fv))},
             "b2b_home": h_b2b,
             "b2b_away": a_b2b,

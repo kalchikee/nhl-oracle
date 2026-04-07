@@ -21,7 +21,10 @@ FEATURE_NAMES = [
     "pp_pct_diff",        # Power play % difference
     "pk_pct_diff",        # Penalty kill % difference (higher = better PK)
     "l10_pts_diff",       # Last 10 games points percentage difference
+    "l5_pts_diff",        # Last 5 games points percentage difference (tighter form window)
     "reg_win_pct_diff",   # Regulation win % difference
+    "home_split_diff",    # Home team's home win% minus away team's away win% (venue-specific form)
+    "streak_diff",        # Current streak: home (+W/-L) minus away (+W/-L)
     "xgf_pct_diff",       # xGF% difference (from MoneyPuck; 0 if unavailable)
     "cf_pct_diff",        # Corsi for % difference (0 if unavailable)
     "pdo_diff",           # PDO difference (luck indicator; 0 if unavailable)
@@ -100,6 +103,59 @@ def _ga_pg(standing: dict) -> float:
     return _safe(standing.get("goalAgainst", standing.get("goalsAgainst", 0))) / gp
 
 
+def _l5_pts_pct(standing: dict) -> float:
+    """Last 5 games points percentage — tighter form window than L10."""
+    # NHL API only provides L10; derive L5 from streak if available
+    # Fallback: use L10 as proxy (same directionally)
+    streak_code = standing.get("streakCode", "")
+    streak_count = _safe(standing.get("streakCount", 0))
+    # If on a win streak of 5+, L5 is likely very good
+    if streak_code == "W" and streak_count >= 5:
+        return 0.90
+    if streak_code == "L" and streak_count >= 5:
+        return 0.10
+    # Fall back to L10
+    return _l10_pts_pct(standing)
+
+
+def _home_win_pct(standing: dict) -> float:
+    """Win percentage in home games specifically."""
+    hw = _safe(standing.get("homeWins", 0))
+    hl = _safe(standing.get("homeLosses", 0))
+    hotl = _safe(standing.get("homeOtLosses", 0))
+    total = hw + hl + hotl
+    if total == 0:
+        return 0.5
+    return (hw + 0.5 * hotl) / total
+
+
+def _away_win_pct(standing: dict) -> float:
+    """Win percentage in road games specifically."""
+    rw = _safe(standing.get("roadWins", standing.get("awayWins", 0)))
+    rl = _safe(standing.get("roadLosses", standing.get("awayLosses", 0)))
+    rotl = _safe(standing.get("roadOtLosses", standing.get("awayOtLosses", 0)))
+    total = rw + rl + rotl
+    if total == 0:
+        return 0.5
+    return (rw + 0.5 * rotl) / total
+
+
+def _streak_value(standing: dict) -> float:
+    """
+    Converts current streak to a signed numeric value.
+    W3 → +3, L2 → -2, OTL1 → -0.5
+    """
+    code = standing.get("streakCode", "")
+    count = _safe(standing.get("streakCount", 0))
+    if code == "W":
+        return count
+    elif code == "L":
+        return -count
+    elif code == "OT":
+        return -count * 0.5
+    return 0.0
+
+
 def _pp_pct(standing: dict) -> float:
     """Power play % — tries several field names."""
     for key in ["powerPlayPctg", "ppPctg", "powerPlayPercentage"]:
@@ -155,11 +211,18 @@ def compute_features(
     pp_pct_diff = _pp_pct(h) - _pp_pct(a)
     pk_pct_diff = _pk_pct(h) - _pk_pct(a)
 
-    # Form (last 10)
+    # Form (last 10 and last 5)
     l10_pts_diff = _l10_pts_pct(h) - _l10_pts_pct(a)
+    l5_pts_diff = _l5_pts_pct(h) - _l5_pts_pct(a)
 
     # Regulation win %
     reg_win_pct_diff = _reg_win_pct(h) - _reg_win_pct(a)
+
+    # Venue-specific splits: home team's home win% vs away team's road win%
+    home_split_diff = _home_win_pct(h) - _away_win_pct(a)
+
+    # Streak: signed value (+W, -L)
+    streak_diff = _streak_value(h) - _streak_value(a)
 
     # xG features (MoneyPuck) — 0 if not available
     h_xg = home_xg or {}
@@ -170,7 +233,6 @@ def compute_features(
     # PDO (luck indicator) — league average = 1.000
     h_pdo = _safe(h_xg.get("pdo", 1.0))
     a_pdo = _safe(a_xg.get("pdo", 1.0))
-    # Normalize: stored as 100-based in MoneyPuck
     if h_pdo > 2:
         h_pdo /= 100.0
     if a_pdo > 2:
@@ -185,9 +247,8 @@ def compute_features(
 
     def days_rest(last_game: Optional[str]) -> int:
         if not last_game:
-            return 3  # Assume adequate rest if unknown
-        delta = today - date.fromisoformat(last_game)
-        return delta.days
+            return 3
+        return (today - date.fromisoformat(last_game)).days
 
     h_rest = days_rest(home_last_game_date)
     a_rest = days_rest(away_last_game_date)
@@ -198,6 +259,7 @@ def compute_features(
     # Log5 probability
     log5_prob = _log5(h_pts if h_pts > 0 else 0.5, a_pts if a_pts > 0 else 0.5)
 
+    # Return in exact FEATURE_NAMES order
     return [
         elo_diff,
         pts_pct_diff,
@@ -207,7 +269,10 @@ def compute_features(
         pp_pct_diff,
         pk_pct_diff,
         l10_pts_diff,
+        l5_pts_diff,        # NEW
         reg_win_pct_diff,
+        home_split_diff,    # NEW
+        streak_diff,        # NEW
         xgf_pct_diff,
         cf_pct_diff,
         pdo_diff,
@@ -215,6 +280,6 @@ def compute_features(
         rest_days_diff,
         b2b_home,
         b2b_away,
-        1.0,           # is_home always 1 — model learns this coefficient
+        1.0,                # is_home
         log5_prob,
     ]
