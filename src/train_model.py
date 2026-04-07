@@ -20,6 +20,7 @@ from sklearn.linear_model import LogisticRegression
 from sklearn.preprocessing import StandardScaler
 from sklearn.calibration import CalibratedClassifierCV
 from sklearn.metrics import brier_score_loss, log_loss, accuracy_score
+from xgboost import XGBClassifier
 
 # Add src to path
 sys.path.insert(0, os.path.dirname(__file__))
@@ -161,7 +162,14 @@ def build_training_dataset(all_games: list, mp_team_stats: dict, mp_goalie_stats
     season_standings = {}  # season_year -> {team -> cumulative stats}
 
     def _init_team_stats(team):
-        return {"gp": 0, "pts": 0, "gf": 0, "ga": 0, "rw": 0, "l10": [], "pp_pct": 0.18, "pk_pct": 0.80}
+        return {
+            "gp": 0, "pts": 0, "gf": 0, "ga": 0, "rw": 0,
+            "l10": [],
+            "home_gp": 0, "home_w": 0, "home_otl": 0,
+            "away_gp": 0, "away_w": 0, "away_otl": 0,
+            "streak_code": "", "streak_count": 0,
+            "pp_pct": 0.18, "pk_pct": 0.80,
+        }
 
     for g in sorted_games:
         season = g["season"]
@@ -196,9 +204,17 @@ def build_training_dataset(all_games: list, mp_team_stats: dict, mp_goalie_stats
                 "regulationWins": stats["rw"],
                 "powerPlayPctg": stats["pp_pct"],
                 "penaltyKillPctg": stats["pk_pct"],
-                "l10Wins": sum(1 for r in stats["l10"][-10:] if r == "W"),
-                "l10Losses": sum(1 for r in stats["l10"][-10:] if r == "L"),
-                "l10OtLosses": sum(1 for r in stats["l10"][-10:] if r == "OTL"),
+                "l10Wins":    sum(1 for r in stats["l10"][-10:] if r == "W"),
+                "l10Losses":  sum(1 for r in stats["l10"][-10:] if r == "L"),
+                "l10OtLosses":sum(1 for r in stats["l10"][-10:] if r == "OTL"),
+                "homeWins":   stats["home_w"],
+                "homeLosses": stats["home_gp"] - stats["home_w"] - stats["home_otl"],
+                "homeOtLosses": stats["home_otl"],
+                "roadWins":   stats["away_w"],
+                "roadLosses": stats["away_gp"] - stats["away_w"] - stats["away_otl"],
+                "roadOtLosses": stats["away_otl"],
+                "streakCode":  stats["streak_code"],
+                "streakCount": stats["streak_count"],
             }
 
         standings_list = [make_standing(h_stats, home), make_standing(a_stats, away)]
@@ -236,23 +252,48 @@ def build_training_dataset(all_games: list, mp_team_stats: dict, mp_goalie_stats
             pass
 
         # Update standings AFTER feature computation (no lookahead)
-        for team, stats, won, scored, allowed in [
-            (home, h_stats, home_won, g["home_score"], g["away_score"]),
-            (away, a_stats, not home_won, g["away_score"], g["home_score"]),
+        for team, stats, won, scored, allowed, is_home_team in [
+            (home, h_stats, home_won,  g["home_score"], g["away_score"], True),
+            (away, a_stats, not home_won, g["away_score"], g["home_score"], False),
         ]:
             stats["gp"] += 1
             stats["gf"] += scored
             stats["ga"] += allowed
+            if is_home_team:
+                stats["home_gp"] += 1
+            else:
+                stats["away_gp"] += 1
+
             if won:
                 stats["pts"] += 2
                 if not went_ot:
                     stats["rw"] += 1
                 stats["l10"].append("W")
+                if is_home_team: stats["home_w"] += 1
+                else:            stats["away_w"] += 1
+                # Streak update
+                if stats["streak_code"] == "W":
+                    stats["streak_count"] += 1
+                else:
+                    stats["streak_code"] = "W"
+                    stats["streak_count"] = 1
             elif went_ot:
                 stats["pts"] += 1
                 stats["l10"].append("OTL")
+                if is_home_team: stats["home_otl"] += 1
+                else:            stats["away_otl"] += 1
+                if stats["streak_code"] == "OT":
+                    stats["streak_count"] += 1
+                else:
+                    stats["streak_code"] = "OT"
+                    stats["streak_count"] = 1
             else:
                 stats["l10"].append("L")
+                if stats["streak_code"] == "L":
+                    stats["streak_count"] += 1
+                else:
+                    stats["streak_code"] = "L"
+                    stats["streak_count"] = 1
 
         # Update Elo after game
         margin = abs(g["home_score"] - g["away_score"])
@@ -343,24 +384,61 @@ def train_and_save():
         cv_results.append({"test_season": test_season, "accuracy": acc, "brier": brier, "log_loss": ll})
         print(f"  Test season {test_season}: Accuracy={acc:.3f}, Brier={brier:.4f}, LogLoss={ll:.4f}")
 
-    # Train final model on ALL data
-    print("\nTraining final model on all data...")
+    # Train final models on ALL data
+    print("\nTraining final models on all data...")
     scaler = StandardScaler()
     X_scaled = scaler.fit_transform(X)
 
+    # --- Logistic Regression (calibrated) ---
     base_lr = LogisticRegression(C=1.0, max_iter=1000, random_state=42)
+    cal_lr = CalibratedClassifierCV(base_lr, method="isotonic", cv=5)
+    cal_lr.fit(X_scaled, y, sample_weight=weights)
+    print("  Logistic regression trained.")
 
-    # CalibratedClassifierCV with isotonic regression (Platt scaling)
-    calibrated_model = CalibratedClassifierCV(base_lr, method="isotonic", cv=5)
-    calibrated_model.fit(X_scaled, y, sample_weight=weights)
-
-    # Feature importance (from base logistic regression coefficients)
+    # Feature importance from raw LR coefficients
     base_lr.fit(X_scaled, y, sample_weight=weights)
     importance = dict(zip(feat_eng.FEATURE_NAMES, base_lr.coef_[0].tolist()))
+    sorted_imp = sorted(importance.items(), key=lambda x: abs(x[1]), reverse=True)
+    print("  Top features:", [(k, round(v, 3)) for k, v in sorted_imp[:5]])
+
+    # --- XGBoost (calibrated) ---
+    print("  Training XGBoost...")
+    xgb = XGBClassifier(
+        n_estimators=500,
+        max_depth=4,
+        learning_rate=0.05,
+        subsample=0.8,
+        colsample_bytree=0.8,
+        min_child_weight=5,
+        gamma=0.1,
+        random_state=42,
+        eval_metric="logloss",
+        verbosity=0,
+    )
+    xgb.fit(X_scaled, y, sample_weight=weights)
+    cal_xgb = CalibratedClassifierCV(xgb, method="isotonic", cv=5)
+    cal_xgb.fit(X_scaled, y, sample_weight=weights)
+    print("  XGBoost trained.")
+
+    # Quick ensemble check on last CV split
+    if cv_results:
+        last_split = cv_splits[-1]
+        test_mask = np.array([int(d[:4]) == last_split[1] for d in game_dates])
+        X_te_s = scaler.transform(X[test_mask])
+        y_te = y[test_mask]
+        lr_probs  = cal_lr.predict_proba(X_te_s)[:, 1]
+        xgb_probs = cal_xgb.predict_proba(X_te_s)[:, 1]
+        ens_probs = 0.5 * lr_probs + 0.5 * xgb_probs
+        ens_acc   = accuracy_score(y_te, (ens_probs >= 0.5).astype(int))
+        ens_brier = brier_score_loss(y_te, ens_probs)
+        print(f"  Ensemble test accuracy: {ens_acc:.3f} | Brier: {ens_brier:.4f}")
+        cv_results[-1]["ensemble_accuracy"] = ens_acc
+        cv_results[-1]["ensemble_brier"] = ens_brier
 
     # Save artifacts
-    joblib.dump(calibrated_model, os.path.join(MODELS_DIR, "model.pkl"))
-    joblib.dump(scaler, os.path.join(MODELS_DIR, "scaler.pkl"))
+    joblib.dump(cal_lr,  os.path.join(MODELS_DIR, "model.pkl"))       # LogReg
+    joblib.dump(cal_xgb, os.path.join(MODELS_DIR, "model_xgb.pkl"))   # XGBoost
+    joblib.dump(scaler,  os.path.join(MODELS_DIR, "scaler.pkl"))
 
     metadata = {
         "feature_names": feat_eng.FEATURE_NAMES,
@@ -370,18 +448,21 @@ def train_and_save():
         "cv_results": cv_results,
         "feature_importance": importance,
         "trained_date": date.today().isoformat(),
+        "models": ["logistic_regression", "xgboost", "ensemble_50_50"],
     }
     with open(os.path.join(MODELS_DIR, "metadata.json"), "w") as f:
         json.dump(metadata, f, indent=2)
 
     print("\n" + "=" * 60)
-    print("Model saved to models/")
-    print(f"Feature names: {feat_eng.FEATURE_NAMES}")
+    print("Models saved to models/")
     if cv_results:
-        avg_acc = sum(r["accuracy"] for r in cv_results) / len(cv_results)
+        avg_acc   = sum(r["accuracy"] for r in cv_results) / len(cv_results)
         avg_brier = sum(r["brier"] for r in cv_results) / len(cv_results)
-        print(f"Average CV accuracy: {avg_acc:.3f}")
-        print(f"Average CV Brier: {avg_brier:.4f}")
+        print(f"Average LR CV accuracy:  {avg_acc:.3f}")
+        print(f"Average LR CV Brier:     {avg_brier:.4f}")
+        last = cv_results[-1]
+        if "ensemble_accuracy" in last:
+            print(f"Ensemble accuracy (last split): {last['ensemble_accuracy']:.3f}")
     print("=" * 60)
 
 

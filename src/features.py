@@ -15,25 +15,26 @@ from elo_system import get_rating, elo_win_probability
 FEATURE_NAMES = [
     "elo_diff",           # Elo rating difference (home - away)
     "pts_pct_diff",       # Points percentage difference
+    "pythagorean_diff",   # Pythagorean win% diff — GF²/(GF²+GA²), more stable than actual win%
     "gf_pg_diff",         # Goals for per game difference
-    "ga_pg_diff",         # Goals against per game difference (negative = home advantage)
+    "ga_pg_diff",         # Goals against per game difference
     "gd_pg_diff",         # Goal differential per game
     "pp_pct_diff",        # Power play % difference
-    "pk_pct_diff",        # Penalty kill % difference (higher = better PK)
+    "pk_pct_diff",        # Penalty kill % difference
     "l10_pts_diff",       # Last 10 games points percentage difference
-    "l5_pts_diff",        # Last 5 games points percentage difference (tighter form window)
+    "l5_pts_diff",        # Last 5 games points percentage difference
     "reg_win_pct_diff",   # Regulation win % difference
-    "home_split_diff",    # Home team's home win% minus away team's away win% (venue-specific form)
+    "home_split_diff",    # Home team's home win% minus away team's road win%
     "streak_diff",        # Current streak: home (+W/-L) minus away (+W/-L)
-    "xgf_pct_diff",       # xGF% difference (from MoneyPuck; 0 if unavailable)
-    "cf_pct_diff",        # Corsi for % difference (0 if unavailable)
-    "pdo_diff",           # PDO difference (luck indicator; 0 if unavailable)
-    "goalie_gsax_diff",   # Starting goalie GSAx difference (0 if unavailable)
+    "xgf_pct_diff",       # xGF% difference (MoneyPuck)
+    "cf_pct_diff",        # Corsi for % difference (MoneyPuck)
+    "pdo_diff",           # PDO difference — luck indicator (MoneyPuck)
+    "goalie_gsax_diff",   # Starting goalie GSAx difference (MoneyPuck)
     "rest_days_diff",     # Days of rest: home minus away
     "b2b_home",           # Home team on back-to-back (0 or 1)
     "b2b_away",           # Away team on back-to-back (0 or 1)
     "is_home",            # Always 1.0 — model learns home ice coefficient
-    "log5_prob",          # Log5 head-to-head win probability (from pts_pct)
+    "log5_prob",          # Log5 head-to-head win probability
 ]
 
 
@@ -156,6 +157,14 @@ def _streak_value(standing: dict) -> float:
     return 0.0
 
 
+def _pythagorean_win_pct(standing: dict) -> float:
+    """GF² / (GF² + GA²) — more predictive of true quality than actual win%."""
+    gf = _gf_pg(standing)
+    ga = _ga_pg(standing)
+    denom = gf ** 2 + ga ** 2
+    return gf ** 2 / denom if denom > 0 else 0.5
+
+
 def _pp_pct(standing: dict) -> float:
     """Power play % — tries several field names."""
     for key in ["powerPlayPctg", "ppPctg", "powerPlayPercentage"]:
@@ -185,69 +194,63 @@ def compute_features(
     away_xg: Optional[dict] = None,
     home_goalie_gsax: float = 0.0,
     away_goalie_gsax: float = 0.0,
+    home_pp_pct: Optional[float] = None,
+    away_pp_pct: Optional[float] = None,
+    home_pk_pct: Optional[float] = None,
+    away_pk_pct: Optional[float] = None,
 ) -> list:
     """
     Builds and returns the ordered feature vector for a game.
-    home_xg / away_xg: dicts from moneypuck.extract_team_xg_features (optional).
+    Pass home/away pp_pct/pk_pct from live NHL API to override standings fallback.
     Returns a list of floats in FEATURE_NAMES order.
     """
     h = _get_standing(standings, home_team)
     a = _get_standing(standings, away_team)
 
-    # Elo
     elo_diff = _safe(get_rating(elo_ratings, home_team) - get_rating(elo_ratings, away_team))
 
-    # Points percentage
     h_pts = _pts_pct(h)
     a_pts = _pts_pct(a)
     pts_pct_diff = h_pts - a_pts
 
-    # Goals per game
+    # Pythagorean win% — more stable predictor of true team quality
+    pythagorean_diff = _pythagorean_win_pct(h) - _pythagorean_win_pct(a)
+
     gf_pg_diff = _gf_pg(h) - _gf_pg(a)
-    ga_pg_diff = _ga_pg(h) - _ga_pg(a)  # Negative = home allows fewer goals
+    ga_pg_diff = _ga_pg(h) - _ga_pg(a)
     gd_pg_diff = (_gf_pg(h) - _ga_pg(h)) - (_gf_pg(a) - _ga_pg(a))
 
-    # Special teams
-    pp_pct_diff = _pp_pct(h) - _pp_pct(a)
-    pk_pct_diff = _pk_pct(h) - _pk_pct(a)
+    # Special teams — use live NHL API values if provided, else standings fallback
+    h_pp = home_pp_pct if home_pp_pct is not None else _pp_pct(h)
+    a_pp = away_pp_pct if away_pp_pct is not None else _pp_pct(a)
+    h_pk = home_pk_pct if home_pk_pct is not None else _pk_pct(h)
+    a_pk = away_pk_pct if away_pk_pct is not None else _pk_pct(a)
+    pp_pct_diff = h_pp - a_pp
+    pk_pct_diff = h_pk - a_pk
 
-    # Form (last 10 and last 5)
     l10_pts_diff = _l10_pts_pct(h) - _l10_pts_pct(a)
-    l5_pts_diff = _l5_pts_pct(h) - _l5_pts_pct(a)
-
-    # Regulation win %
+    l5_pts_diff  = _l5_pts_pct(h)  - _l5_pts_pct(a)
     reg_win_pct_diff = _reg_win_pct(h) - _reg_win_pct(a)
+    home_split_diff  = _home_win_pct(h) - _away_win_pct(a)
+    streak_diff      = _streak_value(h)  - _streak_value(a)
 
-    # Venue-specific splits: home team's home win% vs away team's road win%
-    home_split_diff = _home_win_pct(h) - _away_win_pct(a)
-
-    # Streak: signed value (+W, -L)
-    streak_diff = _streak_value(h) - _streak_value(a)
-
-    # xG features (MoneyPuck) — 0 if not available
+    # MoneyPuck xG features — use 0-diff default only when truly missing
     h_xg = home_xg or {}
     a_xg = away_xg or {}
     xgf_pct_diff = _safe(h_xg.get("xgf_pct", 0.5)) - _safe(a_xg.get("xgf_pct", 0.5))
-    cf_pct_diff = _safe(h_xg.get("cf_pct", 0.5)) - _safe(a_xg.get("cf_pct", 0.5))
+    cf_pct_diff  = _safe(h_xg.get("cf_pct",  0.5)) - _safe(a_xg.get("cf_pct",  0.5))
 
-    # PDO (luck indicator) — league average = 1.000
     h_pdo = _safe(h_xg.get("pdo", 1.0))
     a_pdo = _safe(a_xg.get("pdo", 1.0))
-    if h_pdo > 2:
-        h_pdo /= 100.0
-    if a_pdo > 2:
-        a_pdo /= 100.0
+    if h_pdo > 2: h_pdo /= 100.0
+    if a_pdo > 2: a_pdo /= 100.0
     pdo_diff = h_pdo - a_pdo
 
-    # Goalie GSAx difference
     goalie_gsax_diff = _safe(home_goalie_gsax - away_goalie_gsax)
 
-    # Rest / fatigue
     today = date.fromisoformat(game_date)
-
-    def days_rest(last_game: Optional[str]) -> int:
-        if not last_game:
-            return 3
+    def days_rest(last_game):
+        if not last_game: return 3
         return (today - date.fromisoformat(last_game)).days
 
     h_rest = days_rest(home_last_game_date)
@@ -256,23 +259,23 @@ def compute_features(
     b2b_home = 1.0 if h_rest == 1 else 0.0
     b2b_away = 1.0 if a_rest == 1 else 0.0
 
-    # Log5 probability
     log5_prob = _log5(h_pts if h_pts > 0 else 0.5, a_pts if a_pts > 0 else 0.5)
 
-    # Return in exact FEATURE_NAMES order
+    # Must match FEATURE_NAMES order exactly
     return [
         elo_diff,
         pts_pct_diff,
+        pythagorean_diff,
         gf_pg_diff,
         ga_pg_diff,
         gd_pg_diff,
         pp_pct_diff,
         pk_pct_diff,
         l10_pts_diff,
-        l5_pts_diff,        # NEW
+        l5_pts_diff,
         reg_win_pct_diff,
-        home_split_diff,    # NEW
-        streak_diff,        # NEW
+        home_split_diff,
+        streak_diff,
         xgf_pct_diff,
         cf_pct_diff,
         pdo_diff,
@@ -280,6 +283,6 @@ def compute_features(
         rest_days_diff,
         b2b_home,
         b2b_away,
-        1.0,                # is_home
+        1.0,
         log5_prob,
     ]

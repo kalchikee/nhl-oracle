@@ -29,17 +29,23 @@ ODDS_API_KEY = os.environ.get("ODDS_API_KEY", "")
 ODDS_API_URL = "https://api.the-odds-api.com/v4/sports/icehockey_nhl/odds/"
 
 
-def load_model():
-    """Loads calibrated model + scaler from disk. Returns (model, scaler) or (None, None)."""
-    model_path = os.path.join(MODELS_DIR, "model.pkl")
-    scaler_path = os.path.join(MODELS_DIR, "scaler.pkl")
-    if not os.path.exists(model_path) or not os.path.exists(scaler_path):
-        return None, None
-    try:
-        return joblib.load(model_path), joblib.load(scaler_path)
-    except Exception as e:
-        print(f"[predictor] Failed to load model: {e}")
-        return None, None
+def load_models():
+    """
+    Loads logistic regression + XGBoost + scaler.
+    Returns (lr_model, xgb_model, scaler). Any can be None if not found.
+    """
+    def _load(path):
+        try:
+            return joblib.load(path) if os.path.exists(path) else None
+        except Exception as e:
+            print(f"[predictor] Failed to load {path}: {e}")
+            return None
+
+    return (
+        _load(os.path.join(MODELS_DIR, "model.pkl")),
+        _load(os.path.join(MODELS_DIR, "model_xgb.pkl")),
+        _load(os.path.join(MODELS_DIR, "scaler.pkl")),
+    )
 
 
 def get_odds() -> dict:
@@ -118,12 +124,12 @@ def predict_games(game_date: Optional[str] = None) -> list:
 
     print(f"[predictor] Predicting games for {game_date}")
 
-    # Load model
-    model, scaler = load_model()
-    model_available = model is not None
+    # Load models
+    lr_model, xgb_model, scaler = load_models()
+    model_available = scaler is not None and (lr_model is not None or xgb_model is not None)
 
     if not model_available:
-        print("[predictor] WARNING: No trained model found. Using Monte Carlo only.")
+        print("[predictor] WARNING: No trained model found. Using Elo fallback.")
 
     # Load Elo ratings
     elo_ratings = elo_system.load_ratings()
@@ -139,9 +145,16 @@ def predict_games(game_date: Optional[str] = None) -> list:
     # Fetch standings
     standings = nhl_api.get_standings()
 
-    # Fetch MoneyPuck current season stats (cached)
+    # Fetch MoneyPuck current season stats
     mp_teams = moneypuck.get_team_stats(CURRENT_SEASON_MP_YEAR)
     mp_goalies = moneypuck.get_goalie_stats(CURRENT_SEASON_MP_YEAR)
+
+    # Pre-fetch live PP%/PK% for all teams playing today (fixes the 0.0 bug)
+    all_teams = list({g.get("homeTeam", {}).get("abbrev", "") for g in games} |
+                     {g.get("awayTeam", {}).get("abbrev", "") for g in games})
+    all_teams = [t for t in all_teams if t]
+    print(f"[predictor] Fetching PP/PK for {len(all_teams)} teams...")
+    special_teams = nhl_api.get_all_teams_special_teams(all_teams)
 
     # Fetch odds
     odds_map = get_odds()
@@ -220,6 +233,8 @@ def predict_games(game_date: Optional[str] = None) -> list:
         injury_prob_adj = (h_inj_shift - a_inj_shift)
 
         # --- Feature vector ---
+        h_st = special_teams.get(home_abbr, {})
+        a_st = special_teams.get(away_abbr, {})
         try:
             fv = feat_eng.compute_features(
                 home_abbr, away_abbr, game_date,
@@ -227,6 +242,10 @@ def predict_games(game_date: Optional[str] = None) -> list:
                 h_last, a_last,
                 h_xg, a_xg,
                 h_gsax, a_gsax,
+                home_pp_pct=h_st.get("pp_pct"),
+                away_pp_pct=a_st.get("pp_pct"),
+                home_pk_pct=h_st.get("pk_pct"),
+                away_pk_pct=a_st.get("pk_pct"),
             )
         except Exception as e:
             print(f"[predictor] Feature error for {home_abbr} vs {away_abbr}: {e}")
@@ -235,7 +254,13 @@ def predict_games(game_date: Optional[str] = None) -> list:
         # --- Logistic regression prediction ---
         if model_available:
             fv_scaled = scaler.transform([fv])
-            lr_prob = float(model.predict_proba(fv_scaled)[0][1])
+            probs = []
+            if lr_model is not None:
+                probs.append(float(lr_model.predict_proba(fv_scaled)[0][1]))
+            if xgb_model is not None:
+                probs.append(float(xgb_model.predict_proba(fv_scaled)[0][1]))
+            # Equal-weight ensemble of whichever models are available
+            lr_prob = sum(probs) / len(probs)
         else:
             lr_prob = elo_system.elo_win_probability(home_abbr, away_abbr, elo_ratings)
 
@@ -349,7 +374,9 @@ def predict_games(game_date: Optional[str] = None) -> list:
             "features": {feat_eng.FEATURE_NAMES[i]: round(fv[i], 4) for i in range(len(fv))},
             "b2b_home": h_b2b,
             "b2b_away": a_b2b,
-            "model_used": "logistic_regression" if model_available else "elo_fallback",
+            "model_used": ("ensemble_lr+xgb" if lr_model and xgb_model else
+                           "logistic_regression" if lr_model else
+                           "xgboost" if xgb_model else "elo_fallback"),
         }
         predictions.append(pred)
 

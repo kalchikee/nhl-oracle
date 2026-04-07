@@ -104,3 +104,55 @@ def get_goalie_stats_list(team_abbrev: str) -> list:
     """Returns list of goalie stat dicts for the team."""
     data = get_club_stats(team_abbrev)
     return data.get("goalies", [])
+
+
+def get_team_special_teams(team_abbrev: str) -> dict:
+    """
+    Returns PP% and PK% for a team from the club-stats endpoint.
+    Falls back to league averages if unavailable.
+    """
+    data = get_club_stats(team_abbrev)
+
+    # Try to find PP/PK in team-level aggregates
+    pp_pct = None
+    pk_pct = None
+
+    # Some API versions embed this at top level
+    for key in ["powerPlayPctg", "ppPctg", "powerPlayPercentage", "powerPlayPct"]:
+        if key in data:
+            try:
+                pp_pct = float(data[key])
+                break
+            except (ValueError, TypeError):
+                pass
+
+    for key in ["penaltyKillPctg", "pkPctg", "penaltyKillPercentage", "penaltyKillPct"]:
+        if key in data:
+            try:
+                pk_pct = float(data[key])
+                break
+            except (ValueError, TypeError):
+                pass
+
+    # Normalize if stored as percentage (0-100)
+    if pp_pct is not None and pp_pct > 1.5:
+        pp_pct /= 100.0
+    if pk_pct is not None and pk_pct > 1.5:
+        pk_pct /= 100.0
+
+    return {
+        "pp_pct": pp_pct if pp_pct is not None else 0.183,   # league avg
+        "pk_pct": pk_pct if pk_pct is not None else 0.799,   # league avg
+    }
+
+
+def get_all_teams_special_teams(team_abbrevs: list) -> dict:
+    """
+    Batch-fetches PP%/PK% for a list of teams.
+    Returns dict: {abbrev: {pp_pct, pk_pct}}
+    """
+    result = {}
+    for abbrev in team_abbrevs:
+        result[abbrev] = get_team_special_teams(abbrev)
+        time.sleep(0.15)  # polite rate limiting
+    return result
