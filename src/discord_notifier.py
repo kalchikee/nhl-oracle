@@ -41,22 +41,6 @@ def _send(content: str):
             print(f"[discord] Failed to send message: {e}")
 
 
-def _format_game_time(utc_str: str) -> str:
-    """Converts UTC ISO timestamp to ET time string."""
-    if not utc_str:
-        return "TBD"
-    try:
-        dt = datetime.fromisoformat(utc_str.replace("Z", "+00:00"))
-        # Convert UTC to ET (UTC-5 in winter, UTC-4 in summer)
-        from datetime import timedelta
-        # Simple offset — April is EDT (UTC-4)
-        month = dt.month
-        et_offset = -4 if 3 <= month <= 10 else -5
-        et = dt + timedelta(hours=et_offset)
-        return et.strftime("%I:%M %p ET").lstrip("0")
-    except Exception:
-        return utc_str[:16] + " UTC"
-
 
 def _american_odds_str(ml: Optional[int]) -> str:
     if ml is None:
@@ -71,83 +55,54 @@ def _prob_bar(prob: float, width: int = 10) -> str:
 
 def send_morning_briefing(predictions: list, season_record: dict):
     """Sends the 6am morning picks briefing to Discord."""
-    today = datetime.now().strftime("%A, %B %-d, %Y")
+    date_str = datetime.now().strftime("%Y-%m-%d")
+    now_str = datetime.now().strftime("%-I:%M %p")
     n_games = len(predictions)
     recommended = [p for p in predictions if p.get("recommend_bet")]
     high_conv = [p for p in predictions if p["pick_prob"] >= 0.63]
 
     lines = [
-        f"🏒 **NHL Oracle | Morning Picks** — {today}",
-        f"**{n_games} game{'s' if n_games != 1 else ''} today** | {len(recommended)} recommended bet{'s' if len(recommended) != 1 else ''} | {len(high_conv)} high conviction",
+        f"🏒 **NHL Oracle** — {date_str}",
+        f"**{n_games} game{'s' if n_games != 1 else ''}** · **{len(high_conv)}** high-conviction (63%+) · "
+        + (f"Season {season_record.get('correct',0)}-{season_record.get('total',0)-season_record.get('correct',0)}" if season_record.get('total', 0) > 0 else "Season starting"),
         "",
+        f"📋 **All Games ({n_games} total)**",
     ]
 
     if not predictions:
         lines.append("_No games scheduled today._")
     else:
         for p in predictions:
-            home = p["home_name"] or p["home_team"]
-            away = p["away_name"] or p["away_team"]
-            game_time = _format_game_time(p.get("game_time_utc", ""))
-            pick_team_name = home if p["pick_team"] == p["home_team"] else away
-            pick_prob_pct = f"{p['pick_prob']*100:.1f}%"
+            home = p["home_team"]
+            away = p["away_team"]
             mc = p.get("mc", {})
-            h_win_pct = mc.get("home_win_pct", p["home_prob"])
-            a_win_pct = mc.get("away_win_pct", p["away_prob"])
-            proj_score = mc.get("most_likely_score", None)
-            avg_total = mc.get("avg_total_goals", None)
+            proj_score = mc.get("most_likely_score")
+            pick_prob_pct = f"{p['pick_prob']*100:.1f}%"
+            pick = p["pick_team"]
 
-            lines.append("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━")
-            lines.append(f"**{home}** vs **{away}**")
-            lines.append(f"⏰ {game_time}")
-            if p.get("b2b_home"):
-                lines.append("⚠️ Home team on BACK-TO-BACK")
-            if p.get("b2b_away"):
-                lines.append("⚠️ Away team on BACK-TO-BACK")
-            lines.append("")
-            lines.append(f"**Pick: {pick_team_name}** | {p['tier_emoji']} {p['tier']} ({pick_prob_pct})")
-            lines.append(
-                f"Monte Carlo: {home.split()[-1]} {h_win_pct*100:.1f}% — {away.split()[-1]} {a_win_pct*100:.1f}%"
-            )
-            if proj_score:
-                lines.append(f"Projected: {home.split()[-1]} {proj_score[0]}–{proj_score[1]} {away.split()[-1]}")
-            if avg_total:
-                lines.append(f"Avg total goals: {avg_total}")
+            score_str = f"({proj_score[0]}-{proj_score[1]})" if proj_score else ""
+            b2b = " ⚠️B2B" if (p.get("b2b_home") and pick == home) or (p.get("b2b_away") and pick == away) else ""
+            lines.append(f"**{away} @ {home}** → {pick} {pick_prob_pct} *{score_str}*{b2b}")
 
-            # Odds / edge info
+    lines.append("")
+
+    # Recommended bets section
+    lines.append(f"🎯 **Recommended Bets Today**")
+    if recommended:
+        for p in recommended:
+            home = p["home_team"]
+            away = p["away_team"]
+            pick = p["pick_team"]
+            edge_str = f" · edge +{p['edge']*100:.1f}%" if p.get("edge", 0) > 0 else ""
             odds = p.get("odds", {})
-            if odds:
-                home_ml_str = _american_odds_str(odds.get("home_ml"))
-                away_ml_str = _american_odds_str(odds.get("away_ml"))
-                vegas_implied = odds.get("vegas_implied_home", 0)
-                edge = p.get("edge", 0)
-                lines.append(f"Vegas: {home.split()[-1]} {home_ml_str} / {away.split()[-1]} {away_ml_str} (implied {vegas_implied*100:.1f}%)")
-                if abs(edge) >= 0.03:
-                    lines.append(f"Model edge: **{edge*100:+.1f}%**")
+            ml_key = "home_ml" if pick == home else "away_ml"
+            ml_str = f" ({_american_odds_str(odds[ml_key])})" if odds.get(ml_key) else ""
+            lines.append(f"💰 **{pick}** ML{ml_str} — {p['pick_prob']*100:.1f}%{edge_str} · {p['tier_emoji']} {p['tier']}")
+    else:
+        lines.append(f"No games cleared the 63% confidence threshold today")
 
-            if p.get("recommend_bet"):
-                pick_name = home if p["pick_team"] == p["home_team"] else away
-                lines.append(f"💰 **RECOMMENDED BET: {pick_name} ML**")
-            lines.append("")
-
-    # Season stats
-    lines.append("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━")
-    total = season_record.get("total", 0)
-    correct = season_record.get("correct", 0)
-    hc_total = season_record.get("high_conv_total", 0)
-    hc_correct = season_record.get("high_conv_correct", 0)
-    rec_total = season_record.get("rec_total", 0)
-    rec_correct = season_record.get("rec_correct", 0)
-
-    if total > 0:
-        acc = correct / total
-        lines.append(f"📈 **Season:** {correct}/{total} ({acc*100:.1f}%) overall")
-    if hc_total > 0:
-        hc_acc = hc_correct / hc_total
-        lines.append(f"⭐ **High Conviction:** {hc_correct}/{hc_total} ({hc_acc*100:.1f}%)")
-    if rec_total > 0:
-        rec_acc = rec_correct / rec_total
-        lines.append(f"💰 **Recommended Bets:** {rec_correct}/{rec_total} ({rec_acc*100:.1f}%)")
+    lines.append("")
+    lines.append(f"NHL Oracle v4.0 | Monte Carlo 10,000 simulations · Today at {now_str}")
 
     _send("\n".join(lines))
 
