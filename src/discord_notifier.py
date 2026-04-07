@@ -109,7 +109,8 @@ def send_morning_briefing(predictions: list, season_record: dict):
 
 def send_evening_recap(predictions: list, results: list, season_record: dict):
     """Sends the end-of-day recap to Discord after games are complete."""
-    today = datetime.now().strftime("%A, %B %-d, %Y")
+    date_str = datetime.now().strftime("%Y-%m-%d")
+    now_str = datetime.now().strftime("%-I:%M %p")
 
     # Match predictions to results
     result_by_teams = {}
@@ -129,13 +130,7 @@ def send_evening_recap(predictions: list, results: list, season_record: dict):
     daily_total = 0
     daily_rec_correct = 0
     daily_rec_total = 0
-
-    lines = [
-        f"🏒 **NHL Oracle | Evening Recap** — {today}",
-        "",
-        "**Today's Results**",
-        "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━",
-    ]
+    game_lines = []
 
     for p in predictions:
         key = f"{p['home_team']}|{p['away_team']}"
@@ -143,19 +138,16 @@ def send_evening_recap(predictions: list, results: list, season_record: dict):
         if not res:
             continue
 
-        home_name = p["home_name"] or p["home_team"]
-        away_name = p["away_name"] or p["away_team"]
+        home = p["home_team"]
+        away = p["away_team"]
         h_score = res["home_score"]
         a_score = res["away_score"]
         actual_winner = res["actual_winner"]
-        predicted_winner = p["pick_team"]
-        correct = actual_winner == predicted_winner
-
+        correct = actual_winner == p["pick_team"]
         emoji = "✅" if correct else "❌"
-        pick_name = home_name if predicted_winner == p["home_team"] else away_name
-        lines.append(
-            f"{emoji} **{home_name} {h_score}–{a_score} {away_name}** "
-            f"(Predicted: {pick_name.split()[-1]} {p['pick_prob']*100:.0f}%)"
+
+        game_lines.append(
+            f"{emoji} **{away} @ {home}** → {h_score}-{a_score} · picked {p['pick_team']} ({p['pick_prob']*100:.0f}%)"
         )
 
         daily_total += 1
@@ -166,19 +158,8 @@ def send_evening_recap(predictions: list, results: list, season_record: dict):
             if correct:
                 daily_rec_correct += 1
 
-    if daily_total == 0:
-        lines.append("_No completed games with predictions today._")
+    day_acc_str = f"{daily_correct}/{daily_total} ({daily_correct/daily_total*100:.0f}%)" if daily_total else "0/0"
 
-    lines.append("")
-    lines.append("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━")
-    if daily_total > 0:
-        day_acc = daily_correct / daily_total
-        lines.append(f"📊 **Today:** {daily_correct}/{daily_total} correct ({day_acc*100:.1f}%)")
-    if daily_rec_total > 0:
-        rec_acc = daily_rec_correct / daily_rec_total
-        lines.append(f"💰 **Recommended Bets Today:** {daily_rec_correct}/{daily_rec_total} ({rec_acc*100:.1f}%)")
-
-    lines.append("")
     total = season_record.get("total", 0)
     correct_s = season_record.get("correct", 0)
     hc_total = season_record.get("high_conv_total", 0)
@@ -186,13 +167,30 @@ def send_evening_recap(predictions: list, results: list, season_record: dict):
     rec_total = season_record.get("rec_total", 0)
     rec_correct = season_record.get("rec_correct", 0)
 
-    lines.append("**Season Statistics**")
+    lines = [
+        f"🏒 **NHL Oracle** — {date_str} Recap",
+        f"**Today: {day_acc_str} correct**"
+        + (f" · Bets: {daily_rec_correct}/{daily_rec_total}" if daily_rec_total else ""),
+        "",
+        f"📋 **Results ({daily_total} games)**",
+    ]
+
+    if game_lines:
+        lines.extend(game_lines)
+    else:
+        lines.append("_No completed games found._")
+
+    lines.append("")
+    lines.append("📈 **Season Record**")
     if total > 0:
-        lines.append(f"Overall: **{correct_s}/{total}** ({correct_s/total*100:.1f}%)")
+        lines.append(f"Overall: **{correct_s}-{total-correct_s}** ({correct_s/total*100:.1f}%) · {total} games")
     if hc_total > 0:
         lines.append(f"High Conviction: **{hc_correct}/{hc_total}** ({hc_correct/hc_total*100:.1f}%)")
     if rec_total > 0:
         lines.append(f"Recommended Bets: **{rec_correct}/{rec_total}** ({rec_correct/rec_total*100:.1f}%)")
+
+    lines.append("")
+    lines.append(f"NHL Oracle v4.0 | Monte Carlo 10,000 simulations · Today at {now_str}")
 
     _send("\n".join(lines))
 
