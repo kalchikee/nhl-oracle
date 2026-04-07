@@ -1,0 +1,48 @@
+name: Evening Recap (after games end)
+
+on:
+  schedule:
+    # 05:30 UTC = 11:30 PM CST (UTC-6) / 12:30 AM CDT (UTC-5)
+    # Most NHL games end by midnight ET (5am UTC), this runs after all games complete
+    - cron: '30 5 * * *'
+  workflow_dispatch:  # Allow manual trigger from GitHub UI
+
+permissions:
+  contents: write
+
+jobs:
+  evening-recap:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Cache pip dependencies
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/pip
+          key: ${{ runner.os }}-pip-${{ hashFiles('requirements.txt') }}
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run evening recap
+        run: cd src && python evening_run.py
+        env:
+          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+
+      - name: Commit updated data
+        run: |
+          git config --global user.email "nhl-oracle-bot@github.com"
+          git config --global user.name "NHL Oracle Bot"
+          git add data/prediction_history.json data/elo_ratings.json || true
+          git diff --staged --quiet || git commit -m "Update results & Elo $(date -u +%Y-%m-%d) [skip ci]"
+          git push || echo "Nothing to push"

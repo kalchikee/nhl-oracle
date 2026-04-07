@@ -1,0 +1,12 @@
+__pycache__/
+*.pyc
+*.pyo
+.env
+.DS_Store
+*.egg-info/
+dist/
+build/
+.venv/
+venv/
+# Don't ignore model files — they should be committed so Actions can use them
+# !models/*.pkl

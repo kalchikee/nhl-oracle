@@ -1,0 +1,11 @@
+{
+  "predictions": [],
+  "season_record": {
+    "total": 0,
+    "correct": 0,
+    "high_conv_total": 0,
+    "high_conv_correct": 0,
+    "rec_total": 0,
+    "rec_correct": 0
+  }
+}

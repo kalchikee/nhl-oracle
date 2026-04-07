@@ -1,0 +1,59 @@
+name: Morning Picks (6am CST)
+
+on:
+  schedule:
+    # 12:00 UTC = 6:00 AM CST (UTC-6) / 7:00 AM CDT (UTC-5)
+    - cron: '0 12 * * *'
+  workflow_dispatch:  # Allow manual trigger from GitHub UI
+
+permissions:
+  contents: write   # Needed to commit updated prediction_history.json
+
+jobs:
+  morning-picks:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Cache pip dependencies
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/pip
+          key: ${{ runner.os }}-pip-${{ hashFiles('requirements.txt') }}
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Check if model exists, train if not
+        run: |
+          if [ ! -f "models/model.pkl" ]; then
+            echo "No trained model found — running initial training..."
+            cd src && python train_model.py
+          else
+            echo "Model found, skipping training."
+          fi
+        env:
+          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+
+      - name: Run morning picks
+        run: cd src && python morning_run.py
+        env:
+          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+          ODDS_API_KEY: ${{ secrets.ODDS_API_KEY }}
+
+      - name: Commit updated data
+        run: |
+          git config --global user.email "nhl-oracle-bot@github.com"
+          git config --global user.name "NHL Oracle Bot"
+          git add data/prediction_history.json data/season_state.json data/elo_ratings.json models/ || true
+          git diff --staged --quiet || git commit -m "Update predictions $(date -u +%Y-%m-%d) [skip ci]"
+          git push || echo "Nothing to push"
