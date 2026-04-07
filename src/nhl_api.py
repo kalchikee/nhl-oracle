@@ -6,7 +6,8 @@ from datetime import date, timedelta
 from typing import Optional
 
 BASE_URL = "https://api-web.nhle.com/v1"
-HEADERS = {"User-Agent": "NHL-Oracle/4.0"}
+STATS_URL = "https://api.nhle.com/stats/rest/en"
+HEADERS = {"User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"}
 
 # Maps full team names to abbreviations (used for various lookups)
 TEAM_ABBREVS = [
@@ -106,53 +107,61 @@ def get_goalie_stats_list(team_abbrev: str) -> list:
     return data.get("goalies", [])
 
 
-def get_team_special_teams(team_abbrev: str) -> dict:
-    """
-    Returns PP% and PK% for a team from the club-stats endpoint.
-    Falls back to league averages if unavailable.
-    """
-    data = get_club_stats(team_abbrev)
-
-    # Try to find PP/PK in team-level aggregates
-    pp_pct = None
-    pk_pct = None
-
-    # Some API versions embed this at top level
-    for key in ["powerPlayPctg", "ppPctg", "powerPlayPercentage", "powerPlayPct"]:
-        if key in data:
-            try:
-                pp_pct = float(data[key])
-                break
-            except (ValueError, TypeError):
-                pass
-
-    for key in ["penaltyKillPctg", "pkPctg", "penaltyKillPercentage", "penaltyKillPct"]:
-        if key in data:
-            try:
-                pk_pct = float(data[key])
-                break
-            except (ValueError, TypeError):
-                pass
-
-    # Normalize if stored as percentage (0-100)
-    if pp_pct is not None and pp_pct > 1.5:
-        pp_pct /= 100.0
-    if pk_pct is not None and pk_pct > 1.5:
-        pk_pct /= 100.0
-
-    return {
-        "pp_pct": pp_pct if pp_pct is not None else 0.183,   # league avg
-        "pk_pct": pk_pct if pk_pct is not None else 0.799,   # league avg
-    }
-
-
 def get_all_teams_special_teams(team_abbrevs: list) -> dict:
     """
-    Batch-fetches PP%/PK% for a list of teams.
+    Fetches PP%/PK% for all teams in one request from the NHL Stats REST API.
     Returns dict: {abbrev: {pp_pct, pk_pct}}
     """
+    # Hardcoded fallbacks for teams that may not match by name
+    _FULLNAME_OVERRIDES = {
+        "New York Rangers": "NYR",
+        "New York Islanders": "NYI",
+        "Montréal Canadiens": "MTL",
+        "Montreal Canadiens": "MTL",
+        "Utah Hockey Club": "UTA",
+        "Utah Mammoth": "UTA",
+    }
+
     result = {}
+    try:
+        # Determine current season ID (e.g. 20252026 for 2025-26 season)
+        today = date.today()
+        start_year = today.year if today.month >= 9 else today.year - 1
+        season_id = f"{start_year}{start_year + 1}"
+        url = (f"{STATS_URL}/team/summary"
+               f"?cayenneExp=seasonId={season_id}%20and%20gameTypeId=2&limit=40")
+        r = requests.get(url, headers=HEADERS, timeout=15)
+        r.raise_for_status()
+        data = r.json()
+
+        # Build name → abbrev from standings
+        standings_r = requests.get(f"{BASE_URL}/standings/now", headers=HEADERS, timeout=15)
+        name_to_abbrev = {}
+        if standings_r.ok:
+            for s in standings_r.json().get("standings", []):
+                abbrev = s.get("teamAbbrev", {})
+                abbrev = abbrev.get("default", "") if isinstance(abbrev, dict) else str(abbrev)
+                place = s.get("placeName", {})
+                place = place.get("default", "") if isinstance(place, dict) else str(place)
+                common = s.get("teamCommonName", {})
+                common = common.get("default", "") if isinstance(common, dict) else str(common)
+                name_to_abbrev[f"{place} {common}"] = abbrev
+
+        name_to_abbrev.update(_FULLNAME_OVERRIDES)
+
+        for t in data.get("data", []):
+            full = t.get("teamFullName", "")
+            abbrev = name_to_abbrev.get(full)
+            if abbrev:
+                result[abbrev] = {
+                    "pp_pct": float(t.get("powerPlayPct", 0.183)),
+                    "pk_pct": float(t.get("penaltyKillPct", 0.799)),
+                }
+    except Exception as e:
+        print(f"[NHL API] Special teams fetch error: {e}")
+
+    # Fill missing teams with league averages
     for abbrev in team_abbrevs:
-        result[abbrev] = get_team_special_teams(abbrev)
-        time.sleep(0.15)  # polite rate limiting
+        if abbrev not in result:
+            result[abbrev] = {"pp_pct": 0.183, "pk_pct": 0.799}
     return result

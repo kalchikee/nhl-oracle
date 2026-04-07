@@ -5,7 +5,7 @@ import requests
 import pandas as pd
 from typing import Optional
 
-HEADERS = {"User-Agent": "NHL-Oracle/4.0"}
+HEADERS = {"User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"}
 
 MP_TEAMS_URL = "https://moneypuck.com/moneypuck/playerData/seasonSummary/{year}/regular/teams.csv"
 MP_GOALIES_URL = "https://moneypuck.com/moneypuck/playerData/seasonSummary/{year}/regular/goalies.csv"
@@ -140,13 +140,23 @@ def extract_team_xg_features(mp_df: pd.DataFrame, team_abbrev: str) -> dict:
     if v is not None:
         features["xgf_pct"] = v
 
-    # xGF/60 and xGA/60
+    # xGF/60 and xGA/60 — convert from season totals using iceTime (seconds)
+    ice_time = _get("iceTime")
+    ice_hours = (ice_time / 3600.0) if (ice_time and ice_time > 0) else None
+
     v = _get("xGoalsFor", "xGF/60", "xGoalsForPer60")
     if v is not None:
-        features["xgf_per60"] = v
+        # If value looks like a per-60 rate (< 10), use directly; else divide by ice hours
+        if v < 10:
+            features["xgf_per60"] = v
+        elif ice_hours:
+            features["xgf_per60"] = v / ice_hours
     v = _get("xGoalsAgainst", "xGA/60", "xGoalsAgainstPer60")
     if v is not None:
-        features["xga_per60"] = v
+        if v < 10:
+            features["xga_per60"] = v
+        elif ice_hours:
+            features["xga_per60"] = v / ice_hours
 
     # Corsi%
     v = _get("corsiPercentage", "CF%", "corsiForPercentage", normalize_pct=True)
@@ -198,6 +208,7 @@ def extract_goalie_gsax(mp_goalie_df: pd.DataFrame, goalie_name: str) -> float:
     def _gsax(matches):
         if matches.empty:
             return None
+        # Try direct GSAx column first
         for col in ["gsax", "GSAx", "goalsAboveExpected", "goalsAllowedAboveExpected",
                     "goalsAllowedAboveExpectedPer60"]:
             if col in matches.columns:
@@ -205,6 +216,12 @@ def extract_goalie_gsax(mp_goalie_df: pd.DataFrame, goalie_name: str) -> float:
                     return float(matches.iloc[0][col])
                 except (ValueError, TypeError):
                     pass
+        # Calculate GSAx = xGoals - goals (positive = better than expected)
+        if "xGoals" in matches.columns and "goals" in matches.columns:
+            try:
+                return float(matches.iloc[0]["xGoals"]) - float(matches.iloc[0]["goals"])
+            except (ValueError, TypeError):
+                pass
         return None
 
     name_lower = goalie_name.lower().strip()
