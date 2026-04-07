@@ -2,6 +2,7 @@
   "feature_names": [
     "elo_diff",
     "pts_pct_diff",
+    "pythagorean_diff",
     "gf_pg_diff",
     "ga_pg_diff",
     "gd_pg_diff",
@@ -30,43 +31,51 @@
     2024
   ],
   "n_games": 6113,
-  "n_features": 21,
+  "n_features": 22,
   "cv_results": [
     {
       "test_season": 2023,
-      "accuracy": 0.6053846153846154,
-      "brier": 0.23111479463322473,
-      "log_loss": 0.6537915124994549
+      "accuracy": 0.6330769230769231,
+      "brier": 0.22649941295517184,
+      "log_loss": 0.644308176037056
     },
     {
       "test_season": 2024,
-      "accuracy": 0.609118086696562,
-      "brier": 0.2282087922956257,
-      "log_loss": 0.6474177586853649
+      "accuracy": 0.6360239162929746,
+      "brier": 0.22203241637407667,
+      "log_loss": 0.6346477953187563,
+      "ensemble_accuracy": 0.7234678624813154,
+      "ensemble_brier": 0.19381373713820274
     }
   ],
   "feature_importance": {
-    "elo_diff": 0.18843682175575135,
-    "pts_pct_diff": -0.13866004234679072,
-    "gf_pg_diff": 0.05428309626775459,
-    "ga_pg_diff": -0.06892914353473142,
-    "gd_pg_diff": 0.07805499969805078,
+    "elo_diff": 0.009389410855371696,
+    "pts_pct_diff": 0.05797276730376622,
+    "pythagorean_diff": -0.6201234096599738,
+    "gf_pg_diff": 0.13405518552396808,
+    "ga_pg_diff": -0.20346943959127314,
+    "gd_pg_diff": 0.21382622605968812,
     "pp_pct_diff": 0.0,
     "pk_pct_diff": 0.0,
-    "l10_pts_diff": -0.02897822140413671,
-    "l5_pts_diff": -0.02897822140413671,
-    "reg_win_pct_diff": -0.0335227082711168,
-    "home_split_diff": 0.0,
-    "streak_diff": 0.0,
-    "xgf_pct_diff": 0.5505743284732247,
-    "cf_pct_diff": -0.18933063559033514,
-    "pdo_diff": 0.0,
+    "l10_pts_diff": -0.014034942232190319,
+    "l5_pts_diff": -0.02419485377755706,
+    "reg_win_pct_diff": -0.04537550052216507,
+    "home_split_diff": -0.01812107188513584,
+    "streak_diff": -0.021459857879172962,
+    "xgf_pct_diff": 0.2504720922384086,
+    "cf_pct_diff": 0.2540186401320033,
+    "pdo_diff": 0.5436002369284942,
     "goalie_gsax_diff": 0.0,
-    "rest_days_diff": -0.009733763121870919,
-    "b2b_home": -0.12558077272100107,
-    "b2b_away": 0.14359460313235375,
+    "rest_days_diff": 0.0009886705594699978,
+    "b2b_home": -0.12197967040721272,
+    "b2b_away": 0.14055622257812178,
     "is_home": 0.0,
-    "log5_prob": 0.04958057813379157
+    "log5_prob": -0.06093298877690722
   },
-  "trained_date": "2026-04-07"
+  "trained_date": "2026-04-07",
+  "models": [
+    "logistic_regression",
+    "xgboost",
+    "ensemble_50_50"
+  ]
 }
