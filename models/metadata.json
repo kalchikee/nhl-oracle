@@ -1,0 +1,66 @@
+{
+  "feature_names": [
+    "elo_diff",
+    "pts_pct_diff",
+    "gf_pg_diff",
+    "ga_pg_diff",
+    "gd_pg_diff",
+    "pp_pct_diff",
+    "pk_pct_diff",
+    "l10_pts_diff",
+    "reg_win_pct_diff",
+    "xgf_pct_diff",
+    "cf_pct_diff",
+    "pdo_diff",
+    "goalie_gsax_diff",
+    "rest_days_diff",
+    "b2b_home",
+    "b2b_away",
+    "is_home",
+    "log5_prob"
+  ],
+  "training_seasons": [
+    2020,
+    2021,
+    2022,
+    2023,
+    2024
+  ],
+  "n_games": 6113,
+  "n_features": 18,
+  "cv_results": [
+    {
+      "test_season": 2023,
+      "accuracy": 0.6046153846153847,
+      "brier": 0.23111466092440192,
+      "log_loss": 0.6537915734758536
+    },
+    {
+      "test_season": 2024,
+      "accuracy": 0.6083707025411061,
+      "brier": 0.22820830552767285,
+      "log_loss": 0.6474171921406743
+    }
+  ],
+  "feature_importance": {
+    "elo_diff": 0.1883575067648433,
+    "pts_pct_diff": -0.1384550972274112,
+    "gf_pg_diff": 0.05442952499700895,
+    "ga_pg_diff": -0.06891931175385382,
+    "gd_pg_diff": 0.07814150888511708,
+    "pp_pct_diff": 0.0,
+    "pk_pct_diff": 0.0,
+    "l10_pts_diff": -0.05817986359864463,
+    "reg_win_pct_diff": -0.03380564941021119,
+    "xgf_pct_diff": 0.5508221745074495,
+    "cf_pct_diff": -0.18940466697073308,
+    "pdo_diff": 0.0,
+    "goalie_gsax_diff": 0.0,
+    "rest_days_diff": -0.009690715178228927,
+    "b2b_home": -0.12543440482467927,
+    "b2b_away": 0.14365458983277443,
+    "is_home": 0.0,
+    "log5_prob": 0.049706628970937985
+  },
+  "trained_date": "2026-04-07"
+}
