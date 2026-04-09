@@ -57,7 +57,11 @@
           },
           "b2b_home": false,
           "b2b_away": false,
-          "model_used": "logistic_regression"
+          "model_used": "logistic_regression",
+          "actual_home_score": 4,
+          "actual_away_score": 3,
+          "actual_winner": "DAL",
+          "correct": true
         },
         {
           "game_date": "2026-04-07",
@@ -113,7 +117,11 @@
           },
           "b2b_home": false,
           "b2b_away": true,
-          "model_used": "logistic_regression"
+          "model_used": "logistic_regression",
+          "actual_home_score": 5,
+          "actual_away_score": 2,
+          "actual_winner": "MIN",
+          "correct": true
         },
         {
           "game_date": "2026-04-07",
@@ -169,7 +177,11 @@
           },
           "b2b_home": false,
           "b2b_away": false,
-          "model_used": "logistic_regression"
+          "model_used": "logistic_regression",
+          "actual_home_score": 1,
+          "actual_away_score": 2,
+          "actual_winner": "VGK",
+          "correct": true
         },
         {
           "game_date": "2026-04-07",
@@ -225,7 +237,11 @@
           },
           "b2b_home": false,
           "b2b_away": false,
-          "model_used": "logistic_regression"
+          "model_used": "logistic_regression",
+          "actual_home_score": 6,
+          "actual_away_score": 5,
+          "actual_winner": "CAR",
+          "correct": true
         },
         {
           "game_date": "2026-04-07",
@@ -281,7 +297,11 @@
           },
           "b2b_home": false,
           "b2b_away": false,
-          "model_used": "logistic_regression"
+          "model_used": "logistic_regression",
+          "actual_home_score": 1,
+          "actual_away_score": 3,
+          "actual_winner": "COL",
+          "correct": true
         },
         {
           "game_date": "2026-04-07",
@@ -337,7 +357,11 @@
           },
           "b2b_home": false,
           "b2b_away": true,
-          "model_used": "logistic_regression"
+          "model_used": "logistic_regression",
+          "actual_home_score": 0,
+          "actual_away_score": 5,
+          "actual_winner": "NSH",
+          "correct": false
         },
         {
           "game_date": "2026-04-07",
@@ -393,7 +417,11 @@
           },
           "b2b_home": false,
           "b2b_away": true,
-          "model_used": "logistic_regression"
+          "model_used": "logistic_regression",
+          "actual_home_score": 6,
+          "actual_away_score": 2,
+          "actual_winner": "OTT",
+          "correct": true
         },
         {
           "game_date": "2026-04-07",
@@ -449,7 +477,11 @@
           },
           "b2b_home": false,
           "b2b_away": false,
-          "model_used": "logistic_regression"
+          "model_used": "logistic_regression",
+          "actual_home_score": 3,
+          "actual_away_score": 4,
+          "actual_winner": "CBJ",
+          "correct": false
         },
         {
           "game_date": "2026-04-07",
@@ -505,7 +537,11 @@
           },
           "b2b_home": false,
           "b2b_away": false,
-          "model_used": "logistic_regression"
+          "model_used": "logistic_regression",
+          "actual_home_score": 6,
+          "actual_away_score": 5,
+          "actual_winner": "UTA",
+          "correct": true
         },
         {
           "game_date": "2026-04-07",
@@ -561,7 +597,11 @@
           },
           "b2b_home": false,
           "b2b_away": false,
-          "model_used": "logistic_regression"
+          "model_used": "logistic_regression",
+          "actual_home_score": 4,
+          "actual_away_score": 3,
+          "actual_winner": "MTL",
+          "correct": true
         },
         {
           "game_date": "2026-04-07",
@@ -617,10 +657,14 @@
           },
           "b2b_home": false,
           "b2b_away": false,
-          "model_used": "logistic_regression"
+          "model_used": "logistic_regression",
+          "actual_home_score": 1,
+          "actual_away_score": 5,
+          "actual_winner": "PHI",
+          "correct": false
         }
       ],
-      "results_recorded": false
+      "results_recorded": true
     },
     {
       "date": "2026-04-08",
@@ -867,10 +911,10 @@
     }
   ],
   "season_record": {
-    "total": 0,
-    "correct": 0,
-    "high_conv_total": 0,
-    "high_conv_correct": 0,
+    "total": 11,
+    "correct": 8,
+    "high_conv_total": 1,
+    "high_conv_correct": 1,
     "rec_total": 0,
     "rec_correct": 0
   }

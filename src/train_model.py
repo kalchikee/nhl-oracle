@@ -36,8 +36,29 @@ CACHE_DIR = os.path.join(DATA_DIR, "cache")
 os.makedirs(MODELS_DIR, exist_ok=True)
 os.makedirs(CACHE_DIR, exist_ok=True)
 
-# 5-year training window: seasons starting 2020 through 2024
-TRAINING_SEASONS = [2020, 2021, 2022, 2023, 2024]
+def _current_nhl_season_year() -> int:
+    today = date.today()
+    return today.year if today.month >= 9 else today.year - 1
+
+
+def _training_seasons(n: int = 5) -> list:
+    """
+    Returns the last n seasons to train on, rolling dynamically each year.
+    At season start (Sep-Nov), the new season has too little data so we
+    train on the previous n completed seasons.
+    Examples:
+      Oct 2028 → [2023, 2024, 2025, 2026, 2027]
+      Jan 2029 → [2024, 2025, 2026, 2027, 2028]
+      Oct 2029 → [2024, 2025, 2026, 2027, 2028]
+    """
+    today = date.today()
+    current = _current_nhl_season_year()
+    last_complete = current - 1 if today.month >= 9 else current
+    return list(range(last_complete - n + 1, last_complete + 1))
+
+
+# 5-year rolling training window — updates automatically each season
+TRAINING_SEASONS = _training_seasons()
 # Bubble/shortened seasons get down-weighted
 DOWNWEIGHT_SEASONS = {2020: 0.5, 2021: 0.6}
 

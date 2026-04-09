@@ -1,6 +1,7 @@
 """
-Evening run — executes at 11:30pm CST via GitHub Actions (after all games end).
-Fetches game results, compares to predictions, sends recap, updates Elo ratings.
+Evening run — executes at 05:30 UTC (after all games end) via GitHub Actions.
+Fetches results for yesterday's games (CST date), compares to predictions,
+sends recap, and updates Elo ratings.
 """
 
 import os
@@ -34,7 +35,11 @@ def save_history(history: dict):
 
 
 def main():
-    today_str = date.today().strftime("%Y-%m-%d")
+    # Evening recap runs at 05:30 UTC (after midnight UTC), so games scheduled
+    # for "yesterday" in CST/CDT haven't been keyed to today's UTC date.
+    # Look back one day to find the prediction entry for last night's games.
+    yesterday_str = (date.today() - timedelta(days=1)).strftime("%Y-%m-%d")
+    today_str = yesterday_str
     print(f"[evening_run] Starting for {today_str}")
 
     history = load_history()

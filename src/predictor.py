@@ -22,7 +22,26 @@ import injury_tracker
 MODELS_DIR = os.path.join(os.path.dirname(__file__), "..", "models")
 DATA_DIR = os.path.join(os.path.dirname(__file__), "..", "data")
 
-CURRENT_SEASON_MP_YEAR = 2025   # MoneyPuck year for current season stats
+def _current_nhl_season_year() -> int:
+    """Returns the starting year of the current NHL season (e.g. 2028 for the 2028-29 season).
+    NHL seasons start in October, so Oct-Dec belong to the current calendar year,
+    Jan-Aug belong to the previous calendar year's season."""
+    today = date.today()
+    return today.year if today.month >= 9 else today.year - 1
+
+
+def _mp_season_year(standings: list) -> int:
+    """
+    Returns the MoneyPuck season year to use for live predictions.
+    For the first 8 games of a new season, MoneyPuck won't have current-year data yet,
+    so we fall back to the previous season's stats.
+    """
+    season_year = _current_nhl_season_year()
+    avg_gp = (sum(s.get("gamesPlayed", 0) for s in standings) / len(standings)
+              if standings else 0)
+    if avg_gp < 8:
+        return season_year - 1
+    return season_year
 
 # Odds API (optional — set ODDS_API_KEY env var)
 ODDS_API_KEY = os.environ.get("ODDS_API_KEY", "")
@@ -145,9 +164,11 @@ def predict_games(game_date: Optional[str] = None) -> list:
     # Fetch standings
     standings = nhl_api.get_standings()
 
-    # Fetch MoneyPuck current season stats
-    mp_teams = moneypuck.get_team_stats(CURRENT_SEASON_MP_YEAR)
-    mp_goalies = moneypuck.get_goalie_stats(CURRENT_SEASON_MP_YEAR)
+    # Fetch MoneyPuck stats — use previous season for first 8 games of a new season
+    mp_year = _mp_season_year(standings)
+    print(f"[predictor] Using MoneyPuck year {mp_year} (avg GP: {sum(s.get('gamesPlayed',0) for s in standings)/max(len(standings),1):.1f})")
+    mp_teams = moneypuck.get_team_stats(mp_year)
+    mp_goalies = moneypuck.get_goalie_stats(mp_year)
 
     # Pre-fetch live PP%/PK% for all teams playing today (fixes the 0.0 bug)
     all_teams = list({g.get("homeTeam", {}).get("abbrev", "") for g in games} |
