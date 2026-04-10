@@ -1,0 +1,38 @@
+services:
+  - type: cron
+    name: nhl-morning-picks
+    runtime: python
+    schedule: "0 12 * * *"        # 6:00 AM CST / 7:00 AM CDT
+    buildCommand: pip install -r requirements.txt
+    startCommand: python render_runner.py morning
+    envVars:
+      - key: GITHUB_PAT
+        sync: false
+      - key: DISCORD_WEBHOOK_URL
+        sync: false
+      - key: ODDS_API_KEY
+        sync: false
+
+  - type: cron
+    name: nhl-evening-recap
+    runtime: python
+    schedule: "30 5 * * *"        # 11:30 PM CST / 12:30 AM CDT
+    buildCommand: pip install -r requirements.txt
+    startCommand: python render_runner.py evening
+    envVars:
+      - key: GITHUB_PAT
+        sync: false
+      - key: DISCORD_WEBHOOK_URL
+        sync: false
+
+  - type: cron
+    name: nhl-weekly-retrain
+    runtime: python
+    schedule: "0 3 * * 1"         # Every Monday 9:00 PM CST (3:00 AM UTC)
+    buildCommand: pip install -r requirements.txt
+    startCommand: python render_runner.py retrain
+    envVars:
+      - key: GITHUB_PAT
+        sync: false
+      - key: DISCORD_WEBHOOK_URL
+        sync: false
