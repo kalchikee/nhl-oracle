@@ -228,11 +228,20 @@ def compute_features(
     pp_pct_diff = h_pp - a_pp
     pk_pct_diff = h_pk - a_pk
 
-    l10_pts_diff = _l10_pts_pct(h) - _l10_pts_pct(a)
-    l5_pts_diff  = _l5_pts_pct(h)  - _l5_pts_pct(a)
+    # Anti-recency bias: blend 55% season baseline + 45% recent form
+    # Prevents hot/cold streaks from overly swinging win probabilities
+    BASELINE_W = 0.55
+    RECENT_W   = 0.45
+    h_l10 = BASELINE_W * h_pts + RECENT_W * _l10_pts_pct(h)
+    a_l10 = BASELINE_W * a_pts + RECENT_W * _l10_pts_pct(a)
+    l10_pts_diff = h_l10 - a_l10
+    h_l5 = BASELINE_W * h_pts + RECENT_W * _l5_pts_pct(h)
+    a_l5 = BASELINE_W * a_pts + RECENT_W * _l5_pts_pct(a)
+    l5_pts_diff = h_l5 - a_l5
     reg_win_pct_diff = _reg_win_pct(h) - _reg_win_pct(a)
     home_split_diff  = _home_win_pct(h) - _away_win_pct(a)
-    streak_diff      = _streak_value(h)  - _streak_value(a)
+    # Cap streak_diff at ±5 to prevent outlier streaks dominating
+    streak_diff = max(-5.0, min(5.0, _streak_value(h) - _streak_value(a)))
 
     # MoneyPuck xG features — use 0-diff default only when truly missing
     h_xg = home_xg or {}
