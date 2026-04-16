@@ -1,0 +1,24 @@
+{
+  "sport": "NHL",
+  "cv_accuracy_lr": 0.49589490968801314,
+  "feature_names": [
+    "elo_diff",
+    "win_pct_diff",
+    "gpg_diff",
+    "gapg_diff",
+    "pt_pct_diff",
+    "series_game_num",
+    "series_deficit",
+    "is_elimination_game"
+  ],
+  "playoff_seasons": [
+    2017,
+    2018,
+    2019,
+    2021,
+    2022,
+    2023,
+    2024,
+    2025
+  ]
+}

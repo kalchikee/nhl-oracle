@@ -1,0 +1,32 @@
+{
+  "mean": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    98.74712643678161,
+    0.0,
+    0.010217113665389528
+  ],
+  "scale": [
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    57.939171112589264,
+    1.0,
+    0.10056204181368851
+  ],
+  "feature_names": [
+    "elo_diff",
+    "win_pct_diff",
+    "gpg_diff",
+    "gapg_diff",
+    "pt_pct_diff",
+    "series_game_num",
+    "series_deficit",
+    "is_elimination_game"
+  ]
+}

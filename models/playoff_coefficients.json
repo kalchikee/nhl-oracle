@@ -1,0 +1,23 @@
+{
+  "intercept": -0.12597012487285786,
+  "coefficients": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    -0.15004870595499073,
+    0.0,
+    -0.06285581607783637
+  ],
+  "feature_names": [
+    "elo_diff",
+    "win_pct_diff",
+    "gpg_diff",
+    "gapg_diff",
+    "pt_pct_diff",
+    "series_game_num",
+    "series_deficit",
+    "is_elimination_game"
+  ]
+}
