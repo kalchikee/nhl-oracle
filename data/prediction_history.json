@@ -5513,7 +5513,11 @@
           },
           "b2b_home": false,
           "b2b_away": false,
-          "model_used": "ensemble_lr+xgb"
+          "model_used": "ensemble_lr+xgb",
+          "actual_home_score": 2,
+          "actual_away_score": 4,
+          "actual_winner": "NYR",
+          "correct": false
         },
         {
           "game_date": "2026-04-15",
@@ -5592,7 +5596,11 @@
           },
           "b2b_home": false,
           "b2b_away": false,
-          "model_used": "ensemble_lr+xgb"
+          "model_used": "ensemble_lr+xgb",
+          "actual_home_score": 3,
+          "actual_away_score": 1,
+          "actual_winner": "OTT",
+          "correct": true
         },
         {
           "game_date": "2026-04-15",
@@ -5671,7 +5679,11 @@
           },
           "b2b_home": false,
           "b2b_away": false,
-          "model_used": "ensemble_lr+xgb"
+          "model_used": "ensemble_lr+xgb",
+          "actual_home_score": 4,
+          "actual_away_score": 1,
+          "actual_winner": "VGK",
+          "correct": true
         },
         {
           "game_date": "2026-04-15",
@@ -5750,7 +5762,11 @@
           },
           "b2b_home": false,
           "b2b_away": false,
-          "model_used": "ensemble_lr+xgb"
+          "model_used": "ensemble_lr+xgb",
+          "actual_home_score": 8,
+          "actual_away_score": 1,
+          "actual_winner": "FLA",
+          "correct": false
         },
         {
           "game_date": "2026-04-15",
@@ -5829,7 +5845,11 @@
           },
           "b2b_home": false,
           "b2b_away": false,
-          "model_used": "ensemble_lr+xgb"
+          "model_used": "ensemble_lr+xgb",
+          "actual_home_score": 5,
+          "actual_away_score": 2,
+          "actual_winner": "CHI",
+          "correct": true
         },
         {
           "game_date": "2026-04-15",
@@ -5908,16 +5928,20 @@
           },
           "b2b_home": false,
           "b2b_away": false,
-          "model_used": "ensemble_lr+xgb"
+          "model_used": "ensemble_lr+xgb",
+          "actual_home_score": 3,
+          "actual_away_score": 4,
+          "actual_winner": "DAL",
+          "correct": true
         }
       ],
-      "results_recorded": false
+      "results_recorded": true
     }
   ],
   "season_record": {
-    "total": 68,
-    "correct": 40,
-    "high_conv_total": 18,
+    "total": 74,
+    "correct": 44,
+    "high_conv_total": 19,
     "high_conv_correct": 12,
     "rec_total": 0,
     "rec_correct": 0
