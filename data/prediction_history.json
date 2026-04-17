@@ -6017,7 +6017,11 @@
           },
           "b2b_home": false,
           "b2b_away": true,
-          "model_used": "ensemble_lr+xgb"
+          "model_used": "ensemble_lr+xgb",
+          "actual_home_score": 2,
+          "actual_away_score": 0,
+          "actual_winner": "COL",
+          "correct": true
         },
         {
           "game_date": "2026-04-16",
@@ -6096,7 +6100,11 @@
           },
           "b2b_home": false,
           "b2b_away": false,
-          "model_used": "ensemble_lr+xgb"
+          "model_used": "ensemble_lr+xgb",
+          "actual_home_score": 6,
+          "actual_away_score": 1,
+          "actual_winner": "EDM",
+          "correct": true
         },
         {
           "game_date": "2026-04-16",
@@ -6175,7 +6183,11 @@
           },
           "b2b_home": false,
           "b2b_away": true,
-          "model_used": "ensemble_lr+xgb"
+          "model_used": "ensemble_lr+xgb",
+          "actual_home_score": 1,
+          "actual_away_score": 6,
+          "actual_winner": "SJS",
+          "correct": false
         },
         {
           "game_date": "2026-04-16",
@@ -6254,7 +6266,11 @@
           },
           "b2b_home": false,
           "b2b_away": false,
-          "model_used": "ensemble_lr+xgb"
+          "model_used": "ensemble_lr+xgb",
+          "actual_home_score": 3,
+          "actual_away_score": 5,
+          "actual_winner": "STL",
+          "correct": false
         },
         {
           "game_date": "2026-04-16",
@@ -6333,7 +6349,11 @@
           },
           "b2b_home": false,
           "b2b_away": false,
-          "model_used": "ensemble_lr+xgb"
+          "model_used": "ensemble_lr+xgb",
+          "actual_home_score": 4,
+          "actual_away_score": 5,
+          "actual_winner": "ANA",
+          "correct": false
         },
         {
           "game_date": "2026-04-16",
@@ -6412,17 +6432,21 @@
           },
           "b2b_home": false,
           "b2b_away": false,
-          "model_used": "ensemble_lr+xgb"
+          "model_used": "ensemble_lr+xgb",
+          "actual_home_score": 3,
+          "actual_away_score": 1,
+          "actual_winner": "CGY",
+          "correct": false
         }
       ],
-      "results_recorded": false
+      "results_recorded": true
     }
   ],
   "season_record": {
-    "total": 74,
-    "correct": 44,
-    "high_conv_total": 19,
-    "high_conv_correct": 12,
+    "total": 80,
+    "correct": 46,
+    "high_conv_total": 23,
+    "high_conv_correct": 14,
     "rec_total": 0,
     "rec_correct": 0
   }
