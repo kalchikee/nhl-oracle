@@ -247,11 +247,29 @@ def build_training_dataset(all_games: list, mp_team_stats: dict, mp_goalie_stats
             h_xg = moneypuck.extract_team_xg_features(mp_team_stats[season], home)
             a_xg = moneypuck.extract_team_xg_features(mp_team_stats[season], away)
 
-        # Goalie features (season-level, no game-specific goalie info for historical)
+        # Goalie features: use team's #1 goalie (by GP) GSAx from MoneyPuck
         h_gsax = 0.0
         a_gsax = 0.0
         if season in mp_goalie_stats:
-            pass  # Could look up per-team starter GSAx but skip for simplicity
+            gdf = mp_goalie_stats[season]
+            if gdf is not None and not gdf.empty:
+                for team_abbr, gsax_var in [(home, 'h_gsax'), (away, 'a_gsax')]:
+                    team_goalies = gdf[gdf['team'].str.upper() == team_abbr.upper()]
+                    if team_goalies.empty:
+                        # Try MoneyPuck abbreviation variants
+                        for variant in moneypuck.ABBREV_VARIANTS.get(team_abbr, []):
+                            team_goalies = gdf[gdf['team'].str.upper() == variant.upper()]
+                            if not team_goalies.empty:
+                                break
+                    if not team_goalies.empty:
+                        starter = team_goalies.sort_values('games_played', ascending=False).iloc[0]
+                        val = float(starter.get('xGoals', 0) or 0) - float(starter.get('goals', 0) or 0)
+                        # Normalize to per-game to avoid GP bias
+                        gp = float(starter.get('games_played', 1) or 1)
+                        if gsax_var == 'h_gsax':
+                            h_gsax = val / gp
+                        else:
+                            a_gsax = val / gp
 
         # Rest days
         h_last = last_game_date_by_team.get(home)
