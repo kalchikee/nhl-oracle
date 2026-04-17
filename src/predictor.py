@@ -319,8 +319,8 @@ def predict_games(game_date: Optional[str] = None) -> list:
             # Without Vegas: 65% LR model, 35% Monte Carlo
             blended_prob = 0.65 * lr_prob + 0.35 * mc_result["home_win_pct"]
 
-        # Apply injury adjustment (capped at ±5%)
-        blended_prob = max(0.05, min(0.95, blended_prob + max(-0.05, min(0.05, injury_prob_adj))))
+        # Apply injury adjustment (capped at ±5%), then cap at 85%
+        blended_prob = max(0.15, min(0.85, blended_prob + max(-0.05, min(0.05, injury_prob_adj))))
 
         home_prob = blended_prob
         away_prob = 1.0 - blended_prob
