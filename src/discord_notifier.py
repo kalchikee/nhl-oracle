@@ -14,18 +14,21 @@ COLOR_RED    = 0xE74C3C  # bad recap day
 COLOR_GOLD   = 0xF1C40F  # season messages
 
 
-def _send_embed(embeds: list):
-    """Posts one or more embed objects to the Discord webhook."""
+def _send_embed(embeds: list) -> bool:
+    """Posts one or more embed objects to the Discord webhook.
+    Returns True on success, False on failure. Raises on missing webhook
+    so GitHub Actions can catch configuration errors."""
     if not WEBHOOK_URL:
-        print("[discord] No DISCORD_WEBHOOK_URL configured.")
-        for e in embeds:
-            print(e)
-        return
+        # Previously silent — now raise so GH Actions marks the run as failed
+        raise RuntimeError("DISCORD_WEBHOOK_URL not configured")
     try:
         r = requests.post(WEBHOOK_URL, json={"embeds": embeds}, timeout=10)
         r.raise_for_status()
+        return True
     except Exception as ex:
-        print(f"[discord] Failed to send embed: {ex}")
+        # Print AND re-raise so workflow fails visibly
+        print(f"[discord] Failed to send embed: {ex}", flush=True)
+        raise
 
 
 def _field(name: str, value: str, inline: bool = False) -> dict:
