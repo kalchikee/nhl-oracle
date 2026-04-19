@@ -1,6 +1,6 @@
 {
   "sport": "NHL",
-  "cv_accuracy_lr": 0.49589490968801314,
+  "cv_accuracy_lr": 0.49654975865280276,
   "feature_names": [
     "elo_diff",
     "win_pct_diff",

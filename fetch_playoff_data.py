@@ -92,6 +92,11 @@ def fetch_playoff_schedule(season_id: str) -> list:
                 a_score = int(game.get("awayTeam", {}).get("score", 0) or 0)
                 if not h_abbr or not a_abbr:
                     continue
+                # Skip 0-0 "games" — these are invalid data (scheduled but
+                # not played, or future-series placeholders). NHL games never
+                # end 0-0 (OT + shootout always produce a winner).
+                if h_score == 0 and a_score == 0:
+                    continue
                 games.append({
                     "game_id":    str(game.get("id", "")),
                     "game_date":  str(game.get("gameDate", ""))[:10],
