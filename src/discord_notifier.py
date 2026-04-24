@@ -102,7 +102,20 @@ def send_morning_briefing(predictions: list, season_record: dict):
             )
         bets_value = "\n".join(bet_lines)
     else:
-        bets_value = "No games cleared the 63% confidence threshold today"
+        # High-conviction picks (63%+) can exist without being recommended bets —
+        # recommendation also requires Vegas odds + 5% edge. Don't mislead by
+        # claiming no games cleared the confidence threshold.
+        if high_conv:
+            hc_list = "\n".join(
+                f"• **{p['pick_team']}** ({p['pick_prob']*100:.1f}%)"
+                for p in high_conv
+            )
+            bets_value = (
+                f"_No bettable edge vs Vegas today (need 63%+ AND 5%+ edge).\n"
+                f"High-conviction picks still worth watching:_\n{hc_list}"
+            )
+        else:
+            bets_value = "No games cleared the 63% confidence threshold today"
 
     embed = {
         "title": f"🏒 NHL Oracle — {date_str}",
