@@ -49,11 +49,12 @@ jobs:
         env:
           DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
           ODDS_API_KEY: ${{ secrets.ODDS_API_KEY }}
+          KALSHI_MIN_PROB: '0.58'
 
       - name: Commit updated data
         run: |
           git config --global user.email "nhl-oracle-bot@github.com"
           git config --global user.name "NHL Oracle Bot"
-          git add data/prediction_history.json data/season_state.json data/elo_ratings.json models/ || true
+          git add data/prediction_history.json data/season_state.json data/elo_ratings.json models/ predictions/ || true
           git diff --staged --quiet || git commit -m "Update predictions $(date -u +%Y-%m-%d) [skip ci]"
           git push || echo "Nothing to push"

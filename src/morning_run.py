@@ -13,6 +13,7 @@ import nhl_api
 import predictor
 import discord_notifier as discord
 import elo_system
+import predictions_file
 
 DATA_DIR = os.path.join(os.path.dirname(__file__), "..", "data")
 SEASON_STATE_FILE = os.path.join(DATA_DIR, "season_state.json")
@@ -134,6 +135,13 @@ def main():
     ]
     history["predictions"].append(today_entry)
     save_history(history)
+
+    # Emit predictions JSON for kalshi-safety to consume via GitHub raw URL
+    try:
+        json_path = predictions_file.write_predictions_file(today_str, predictions)
+        print(f"[morning_run] Wrote predictions JSON: {json_path}")
+    except Exception as e:
+        print(f"[morning_run] Failed to write predictions JSON: {e}")
 
     # Send Discord morning briefing
     discord.send_morning_briefing(predictions, history.get("season_record", {}))
