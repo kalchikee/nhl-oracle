@@ -8300,7 +8300,11 @@
           },
           "b2b_home": false,
           "b2b_away": false,
-          "model_used": "ensemble_lr+xgb"
+          "model_used": "ensemble_lr+xgb",
+          "actual_home_score": 4,
+          "actual_away_score": 2,
+          "actual_winner": "UTA",
+          "correct": true
         },
         {
           "game_date": "2026-04-24",
@@ -8379,7 +8383,11 @@
           },
           "b2b_home": false,
           "b2b_away": false,
-          "model_used": "ensemble_lr+xgb"
+          "model_used": "ensemble_lr+xgb",
+          "actual_home_score": 3,
+          "actual_away_score": 2,
+          "actual_winner": "MTL",
+          "correct": false
         },
         {
           "game_date": "2026-04-24",
@@ -8458,17 +8466,21 @@
           },
           "b2b_home": false,
           "b2b_away": false,
-          "model_used": "ensemble_lr+xgb"
+          "model_used": "ensemble_lr+xgb",
+          "actual_home_score": 7,
+          "actual_away_score": 4,
+          "actual_winner": "ANA",
+          "correct": false
         }
       ],
-      "results_recorded": false
+      "results_recorded": true
     }
   ],
   "season_record": {
-    "total": 101,
-    "correct": 58,
-    "high_conv_total": 30,
-    "high_conv_correct": 20,
+    "total": 104,
+    "correct": 59,
+    "high_conv_total": 31,
+    "high_conv_correct": 21,
     "rec_total": 0,
     "rec_correct": 0
   }
