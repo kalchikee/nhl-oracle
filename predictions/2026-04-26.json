@@ -1,0 +1,45 @@
+{
+  "sport": "NHL",
+  "date": "2026-04-26",
+  "generatedAt": "2026-04-26T12:13:27Z",
+  "picks": [
+    {
+      "gameId": "nhl-2026-04-26-COL-LAK",
+      "home": "LAK",
+      "away": "COL",
+      "pickedTeam": "COL",
+      "pickedSide": "away",
+      "modelProb": 0.6897,
+      "confidenceTier": "high",
+      "extra": {
+        "homeName": "Los Angeles Kings",
+        "awayName": "Colorado Avalanche",
+        "tier": "EXTREME CONVICTION",
+        "modelUsed": "ensemble_lr+xgb",
+        "recommendBet": false,
+        "gameTimeUtc": "2026-04-26T20:30:00Z"
+      },
+      "startTime": "2026-04-26T20:30:00Z",
+      "edge": 0.0
+    },
+    {
+      "gameId": "nhl-2026-04-26-BUF-BOS",
+      "home": "BOS",
+      "away": "BUF",
+      "pickedTeam": "BOS",
+      "pickedSide": "home",
+      "modelProb": 0.6253,
+      "confidenceTier": "medium",
+      "extra": {
+        "homeName": "Boston Bruins",
+        "awayName": "Buffalo Sabres",
+        "tier": "STRONG",
+        "modelUsed": "ensemble_lr+xgb",
+        "recommendBet": false,
+        "gameTimeUtc": "2026-04-26T18:00:00Z"
+      },
+      "startTime": "2026-04-26T18:00:00Z",
+      "edge": 0.0
+    }
+  ]
+}
