@@ -72,7 +72,7 @@
     "is_home": 0.0,
     "log5_prob": -0.07339038907271561
   },
-  "trained_date": "2026-04-20",
+  "trained_date": "2026-04-27",
   "models": [
     "logistic_regression",
     "xgboost",
