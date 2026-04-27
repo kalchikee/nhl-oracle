@@ -1,0 +1,26 @@
+{
+  "sport": "NHL",
+  "date": "2026-04-27",
+  "generatedAt": "2026-04-27T12:30:15Z",
+  "picks": [
+    {
+      "gameId": "nhl-2026-04-27-VGK-UTA",
+      "home": "UTA",
+      "away": "VGK",
+      "pickedTeam": "UTA",
+      "pickedSide": "home",
+      "modelProb": 0.6813,
+      "confidenceTier": "high",
+      "extra": {
+        "homeName": "Utah Mammoth",
+        "awayName": "Vegas Golden Knights",
+        "tier": "EXTREME CONVICTION",
+        "modelUsed": "ensemble_lr+xgb",
+        "recommendBet": false,
+        "gameTimeUtc": "2026-04-28T01:30:00Z"
+      },
+      "startTime": "2026-04-28T01:30:00Z",
+      "edge": 0.0
+    }
+  ]
+}

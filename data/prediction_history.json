@@ -9067,6 +9067,170 @@
         }
       ],
       "results_recorded": true
+    },
+    {
+      "date": "2026-04-27",
+      "predictions": [
+        {
+          "game_date": "2026-04-27",
+          "game_time_utc": "2026-04-28T01:30:00Z",
+          "home_team": "UTA",
+          "away_team": "VGK",
+          "home_name": "Utah Mammoth",
+          "away_name": "Vegas Golden Knights",
+          "home_prob": 0.6813,
+          "away_prob": 0.3187,
+          "pick_team": "UTA",
+          "pick_prob": 0.6813,
+          "tier": "EXTREME CONVICTION",
+          "tier_emoji": "\ud83d\udd25",
+          "mc": {
+            "home_win_pct": 0.532,
+            "home_reg_win_pct": 0.4443,
+            "away_win_pct": 0.468,
+            "away_reg_win_pct": 0.388,
+            "avg_total_goals": 6.1,
+            "home_shutout_pct": 0.0487,
+            "away_shutout_pct": 0.0413,
+            "most_likely_score": [
+              3,
+              3
+            ],
+            "lambda_home": 3.122,
+            "lambda_away": 2.973
+          },
+          "lr_prob": 0.7617,
+          "vegas_implied_home": null,
+          "recommend_bet": false,
+          "edge": 0.0,
+          "odds": {},
+          "injuries": {
+            "home": {
+              "n_injured": 0,
+              "impact": 0,
+              "players": []
+            },
+            "away": {
+              "n_injured": 0,
+              "impact": 0,
+              "players": []
+            }
+          },
+          "goalies": {
+            "home": "Vejmelka",
+            "away": "Hart",
+            "home_gsax": 6.92,
+            "away_gsax": -4.2
+          },
+          "features": {
+            "elo_diff": -58.7549,
+            "pts_pct_diff": -0.0183,
+            "pythagorean_diff": 0.0258,
+            "gf_pg_diff": 0.0366,
+            "ga_pg_diff": -0.122,
+            "gd_pg_diff": 0.1585,
+            "pp_pct_diff": -0.0458,
+            "pk_pct_diff": -0.0323,
+            "l10_pts_diff": -0.1226,
+            "l5_pts_diff": -0.1226,
+            "reg_win_pct_diff": 0.0366,
+            "home_split_diff": 0.0122,
+            "streak_diff": -4.0,
+            "xgf_pct_diff": -0.03,
+            "cf_pct_diff": 0.0,
+            "pdo_diff": 0.016,
+            "goalie_gsax_diff": 11.12,
+            "rest_days_diff": 0.0,
+            "b2b_home": 0.0,
+            "b2b_away": 0.0,
+            "is_home": 1.0,
+            "log5_prob": 0.4813
+          },
+          "b2b_home": false,
+          "b2b_away": false,
+          "model_used": "ensemble_lr+xgb"
+        },
+        {
+          "game_date": "2026-04-27",
+          "game_time_utc": "2026-04-27T23:00:00Z",
+          "home_team": "PIT",
+          "away_team": "PHI",
+          "home_name": "Pittsburgh Penguins",
+          "away_name": "Philadelphia Flyers",
+          "home_prob": 0.5514,
+          "away_prob": 0.4486,
+          "pick_team": "PIT",
+          "pick_prob": 0.5514,
+          "tier": "LEAN",
+          "tier_emoji": "\ud83d\udcca",
+          "mc": {
+            "home_win_pct": 0.4896,
+            "home_reg_win_pct": 0.3964,
+            "away_win_pct": 0.5104,
+            "away_reg_win_pct": 0.4216,
+            "avg_total_goals": 5.3,
+            "home_shutout_pct": 0.0719,
+            "away_shutout_pct": 0.0716,
+            "most_likely_score": [
+              2,
+              2
+            ],
+            "lambda_home": 2.599,
+            "lambda_away": 2.677
+          },
+          "lr_prob": 0.5847,
+          "vegas_implied_home": null,
+          "recommend_bet": false,
+          "edge": 0.0,
+          "odds": {},
+          "injuries": {
+            "home": {
+              "n_injured": 0,
+              "impact": 0,
+              "players": []
+            },
+            "away": {
+              "n_injured": 0,
+              "impact": 0,
+              "players": []
+            }
+          },
+          "goalies": {
+            "home": "Skinner",
+            "away": "Vladar",
+            "home_gsax": 8.31,
+            "away_gsax": 13.76
+          },
+          "features": {
+            "elo_diff": -25.9359,
+            "pts_pct_diff": 0.0,
+            "pythagorean_diff": 0.0303,
+            "gf_pg_diff": 0.5244,
+            "ga_pg_diff": 0.3049,
+            "gd_pg_diff": 0.2195,
+            "pp_pct_diff": 0.0839,
+            "pk_pct_diff": 0.0388,
+            "l10_pts_diff": -0.09,
+            "l5_pts_diff": -0.09,
+            "reg_win_pct_diff": 0.0854,
+            "home_split_diff": -0.0244,
+            "streak_diff": -5.0,
+            "xgf_pct_diff": 0.0,
+            "cf_pct_diff": 0.02,
+            "pdo_diff": 0.0085,
+            "goalie_gsax_diff": -5.45,
+            "rest_days_diff": 0.0,
+            "b2b_home": 0.0,
+            "b2b_away": 0.0,
+            "is_home": 1.0,
+            "log5_prob": 0.5
+          },
+          "b2b_home": false,
+          "b2b_away": false,
+          "model_used": "ensemble_lr+xgb"
+        }
+      ],
+      "results_recorded": false
     }
   ],
   "season_record": {
