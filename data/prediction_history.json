@@ -9148,7 +9148,11 @@
           },
           "b2b_home": false,
           "b2b_away": false,
-          "model_used": "ensemble_lr+xgb"
+          "model_used": "ensemble_lr+xgb",
+          "actual_home_score": 4,
+          "actual_away_score": 5,
+          "actual_winner": "VGK",
+          "correct": false
         },
         {
           "game_date": "2026-04-27",
@@ -9227,16 +9231,20 @@
           },
           "b2b_home": false,
           "b2b_away": false,
-          "model_used": "ensemble_lr+xgb"
+          "model_used": "ensemble_lr+xgb",
+          "actual_home_score": 3,
+          "actual_away_score": 2,
+          "actual_winner": "PIT",
+          "correct": true
         }
       ],
-      "results_recorded": false
+      "results_recorded": true
     }
   ],
   "season_record": {
-    "total": 111,
-    "correct": 63,
-    "high_conv_total": 32,
+    "total": 113,
+    "correct": 64,
+    "high_conv_total": 33,
     "high_conv_correct": 22,
     "rec_total": 0,
     "rec_correct": 0
