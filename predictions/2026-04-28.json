@@ -1,0 +1,26 @@
+{
+  "sport": "NHL",
+  "date": "2026-04-28",
+  "generatedAt": "2026-04-28T12:33:43Z",
+  "picks": [
+    {
+      "gameId": "nhl-2026-04-28-ANA-EDM",
+      "home": "EDM",
+      "away": "ANA",
+      "pickedTeam": "EDM",
+      "pickedSide": "home",
+      "modelProb": 0.6336,
+      "confidenceTier": "medium",
+      "extra": {
+        "homeName": "Edmonton Oilers",
+        "awayName": "Anaheim Ducks",
+        "tier": "HIGH CONVICTION",
+        "modelUsed": "ensemble_lr+xgb",
+        "recommendBet": false,
+        "gameTimeUtc": "2026-04-29T02:00:00Z"
+      },
+      "startTime": "2026-04-29T02:00:00Z",
+      "edge": 0.0
+    }
+  ]
+}
