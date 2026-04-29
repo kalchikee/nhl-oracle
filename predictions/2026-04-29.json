@@ -1,0 +1,45 @@
+{
+  "sport": "NHL",
+  "date": "2026-04-29",
+  "generatedAt": "2026-04-29T12:30:15Z",
+  "picks": [
+    {
+      "gameId": "nhl-2026-04-29-MTL-TBL",
+      "home": "TBL",
+      "away": "MTL",
+      "pickedTeam": "TBL",
+      "pickedSide": "home",
+      "modelProb": 0.6644,
+      "confidenceTier": "medium",
+      "extra": {
+        "homeName": "Tampa Bay Lightning",
+        "awayName": "Montr\u00e9al Canadiens",
+        "tier": "HIGH CONVICTION",
+        "modelUsed": "ensemble_lr+xgb",
+        "recommendBet": false,
+        "gameTimeUtc": "2026-04-29T23:00:00Z"
+      },
+      "startTime": "2026-04-29T23:00:00Z",
+      "edge": 0.0
+    },
+    {
+      "gameId": "nhl-2026-04-29-UTA-VGK",
+      "home": "VGK",
+      "away": "UTA",
+      "pickedTeam": "UTA",
+      "pickedSide": "away",
+      "modelProb": 0.6164,
+      "confidenceTier": "low",
+      "extra": {
+        "homeName": "Vegas Golden Knights",
+        "awayName": "Utah Mammoth",
+        "tier": "STRONG",
+        "modelUsed": "ensemble_lr+xgb",
+        "recommendBet": false,
+        "gameTimeUtc": "2026-04-30T02:00:00Z"
+      },
+      "startTime": "2026-04-30T02:00:00Z",
+      "edge": 0.0
+    }
+  ]
+}
