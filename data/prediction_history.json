@@ -10265,6 +10265,170 @@
         }
       ],
       "results_recorded": true
+    },
+    {
+      "date": "2026-05-03",
+      "predictions": [
+        {
+          "game_date": "2026-05-03",
+          "game_time_utc": "2026-05-04T01:00:00Z",
+          "home_team": "COL",
+          "away_team": "MIN",
+          "home_name": "Colorado Avalanche",
+          "away_name": "Minnesota Wild",
+          "home_prob": 0.7255,
+          "away_prob": 0.2745,
+          "pick_team": "COL",
+          "pick_prob": 0.7255,
+          "tier": "EXTREME CONVICTION",
+          "tier_emoji": "\ud83d\udd25",
+          "mc": {
+            "home_win_pct": 0.68,
+            "home_reg_win_pct": 0.5916,
+            "away_win_pct": 0.32,
+            "away_reg_win_pct": 0.2587,
+            "avg_total_goals": 5.7,
+            "home_shutout_pct": 0.0965,
+            "away_shutout_pct": 0.0337,
+            "most_likely_score": [
+              3,
+              2
+            ],
+            "lambda_home": 3.373,
+            "lambda_away": 2.364
+          },
+          "lr_prob": 0.7499,
+          "vegas_implied_home": null,
+          "recommend_bet": false,
+          "edge": 0.0,
+          "odds": {},
+          "injuries": {
+            "home": {
+              "n_injured": 0,
+              "impact": 0,
+              "players": []
+            },
+            "away": {
+              "n_injured": 0,
+              "impact": 0,
+              "players": []
+            }
+          },
+          "goalies": {
+            "home": "Wedgewood",
+            "away": "Wallstedt",
+            "home_gsax": 23.12,
+            "away_gsax": 6.18
+          },
+          "features": {
+            "elo_diff": 47.7506,
+            "pts_pct_diff": 0.1037,
+            "pythagorean_diff": 0.1265,
+            "gf_pg_diff": 0.3659,
+            "ga_pg_diff": -0.4512,
+            "gd_pg_diff": 0.8171,
+            "pp_pct_diff": -0.0808,
+            "pk_pct_diff": 0.048,
+            "l10_pts_diff": 0.1245,
+            "l5_pts_diff": 0.1245,
+            "reg_win_pct_diff": 0.2073,
+            "home_split_diff": 0.0976,
+            "streak_diff": 2.0,
+            "xgf_pct_diff": 0.05,
+            "cf_pct_diff": 0.07,
+            "pdo_diff": 0.0011,
+            "goalie_gsax_diff": 16.94,
+            "rest_days_diff": 4.0,
+            "b2b_home": 0.0,
+            "b2b_away": 0.0,
+            "is_home": 1.0,
+            "log5_prob": 0.6188
+          },
+          "b2b_home": false,
+          "b2b_away": false,
+          "model_used": "ensemble_lr+xgb"
+        },
+        {
+          "game_date": "2026-05-03",
+          "game_time_utc": "2026-05-03T22:00:00Z",
+          "home_team": "TBL",
+          "away_team": "MTL",
+          "home_name": "Tampa Bay Lightning",
+          "away_name": "Montr\u00e9al Canadiens",
+          "home_prob": 0.6618,
+          "away_prob": 0.3382,
+          "pick_team": "TBL",
+          "pick_prob": 0.6618,
+          "tier": "HIGH CONVICTION",
+          "tier_emoji": "\u2b50",
+          "mc": {
+            "home_win_pct": 0.6142,
+            "home_reg_win_pct": 0.5196,
+            "away_win_pct": 0.3858,
+            "away_reg_win_pct": 0.3094,
+            "avg_total_goals": 5.6,
+            "home_shutout_pct": 0.0795,
+            "away_shutout_pct": 0.041,
+            "most_likely_score": [
+              3,
+              2
+            ],
+            "lambda_home": 3.119,
+            "lambda_away": 2.499
+          },
+          "lr_prob": 0.6875,
+          "vegas_implied_home": null,
+          "recommend_bet": false,
+          "edge": 0.0,
+          "odds": {},
+          "injuries": {
+            "home": {
+              "n_injured": 0,
+              "impact": 0,
+              "players": []
+            },
+            "away": {
+              "n_injured": 0,
+              "impact": 0,
+              "players": []
+            }
+          },
+          "goalies": {
+            "home": "Vasilevskiy",
+            "away": "Dobes",
+            "home_gsax": 24.74,
+            "away_gsax": 17.26
+          },
+          "features": {
+            "elo_diff": 39.9435,
+            "pts_pct_diff": 0.0,
+            "pythagorean_diff": 0.0618,
+            "gf_pg_diff": 0.0854,
+            "ga_pg_diff": -0.3049,
+            "gd_pg_diff": 0.3902,
+            "pp_pct_diff": -0.0241,
+            "pk_pct_diff": 0.0433,
+            "l10_pts_diff": -0.09,
+            "l5_pts_diff": -0.09,
+            "reg_win_pct_diff": 0.0732,
+            "home_split_diff": -0.0366,
+            "streak_diff": 0.0,
+            "xgf_pct_diff": 0.04,
+            "cf_pct_diff": 0.05,
+            "pdo_diff": 0.0001,
+            "goalie_gsax_diff": 7.48,
+            "rest_days_diff": 0.0,
+            "b2b_home": 0.0,
+            "b2b_away": 0.0,
+            "is_home": 1.0,
+            "log5_prob": 0.5
+          },
+          "b2b_home": false,
+          "b2b_away": false,
+          "model_used": "ensemble_lr+xgb"
+        }
+      ],
+      "results_recorded": false
     }
   ],
   "season_record": {

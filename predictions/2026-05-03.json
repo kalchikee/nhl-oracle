@@ -1,0 +1,45 @@
+{
+  "sport": "NHL",
+  "date": "2026-05-03",
+  "generatedAt": "2026-05-03T12:15:33Z",
+  "picks": [
+    {
+      "gameId": "nhl-2026-05-03-MIN-COL",
+      "home": "COL",
+      "away": "MIN",
+      "pickedTeam": "COL",
+      "pickedSide": "home",
+      "modelProb": 0.7255,
+      "confidenceTier": "extreme",
+      "extra": {
+        "homeName": "Colorado Avalanche",
+        "awayName": "Minnesota Wild",
+        "tier": "EXTREME CONVICTION",
+        "modelUsed": "ensemble_lr+xgb",
+        "recommendBet": false,
+        "gameTimeUtc": "2026-05-04T01:00:00Z"
+      },
+      "startTime": "2026-05-04T01:00:00Z",
+      "edge": 0.0
+    },
+    {
+      "gameId": "nhl-2026-05-03-MTL-TBL",
+      "home": "TBL",
+      "away": "MTL",
+      "pickedTeam": "TBL",
+      "pickedSide": "home",
+      "modelProb": 0.6618,
+      "confidenceTier": "medium",
+      "extra": {
+        "homeName": "Tampa Bay Lightning",
+        "awayName": "Montr\u00e9al Canadiens",
+        "tier": "HIGH CONVICTION",
+        "modelUsed": "ensemble_lr+xgb",
+        "recommendBet": false,
+        "gameTimeUtc": "2026-05-03T22:00:00Z"
+      },
+      "startTime": "2026-05-03T22:00:00Z",
+      "edge": 0.0
+    }
+  ]
+}
