@@ -10870,6 +10870,91 @@
         }
       ],
       "results_recorded": true
+    },
+    {
+      "date": "2026-05-07",
+      "predictions": [
+        {
+          "game_date": "2026-05-07",
+          "game_time_utc": "2026-05-08T00:00:00Z",
+          "home_team": "PHI",
+          "away_team": "CAR",
+          "home_name": "Philadelphia Flyers",
+          "away_name": "Carolina Hurricanes",
+          "home_prob": 0.6163,
+          "away_prob": 0.3837,
+          "pick_team": "PHI",
+          "pick_prob": 0.6163,
+          "tier": "STRONG",
+          "tier_emoji": "\u2705",
+          "mc": {
+            "home_win_pct": 0.5405,
+            "home_reg_win_pct": 0.4465,
+            "away_win_pct": 0.4595,
+            "away_reg_win_pct": 0.383,
+            "avg_total_goals": 5.7,
+            "home_shutout_pct": 0.0624,
+            "away_shutout_pct": 0.0515,
+            "most_likely_score": [
+              2,
+              2
+            ],
+            "lambda_home": 2.939,
+            "lambda_away": 2.762
+          },
+          "lr_prob": 0.6571,
+          "vegas_implied_home": null,
+          "recommend_bet": false,
+          "edge": 0.0,
+          "odds": {},
+          "injuries": {
+            "home": {
+              "n_injured": 0,
+              "impact": 0,
+              "players": []
+            },
+            "away": {
+              "n_injured": 0,
+              "impact": 0,
+              "players": []
+            }
+          },
+          "goalies": {
+            "home": "Vladar",
+            "away": "Andersen",
+            "home_gsax": 13.76,
+            "away_gsax": -3.31
+          },
+          "features": {
+            "elo_diff": -60.6531,
+            "pts_pct_diff": -0.0915,
+            "pythagorean_diff": -0.0892,
+            "gf_pg_diff": -0.561,
+            "ga_pg_diff": 0.0366,
+            "gd_pg_diff": -0.5976,
+            "pp_pct_diff": -0.0915,
+            "pk_pct_diff": -0.0297,
+            "l10_pts_diff": -0.0728,
+            "l5_pts_diff": -0.0728,
+            "reg_win_pct_diff": -0.1463,
+            "home_split_diff": -0.061,
+            "streak_diff": 2.0,
+            "xgf_pct_diff": -0.05,
+            "cf_pct_diff": -0.11,
+            "pdo_diff": 0.0102,
+            "goalie_gsax_diff": 17.07,
+            "rest_days_diff": 0.0,
+            "b2b_home": 0.0,
+            "b2b_away": 0.0,
+            "is_home": 1.0,
+            "log5_prob": 0.4013
+          },
+          "b2b_home": false,
+          "b2b_away": false,
+          "model_used": "ensemble_lr+xgb"
+        }
+      ],
+      "results_recorded": false
     }
   ],
   "season_record": {
