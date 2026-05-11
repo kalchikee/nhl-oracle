@@ -11384,7 +11384,11 @@
           },
           "b2b_home": false,
           "b2b_away": false,
-          "model_used": "ensemble_lr+xgb"
+          "model_used": "ensemble_lr+xgb",
+          "actual_home_score": 6,
+          "actual_away_score": 2,
+          "actual_winner": "MTL",
+          "correct": true
         },
         {
           "game_date": "2026-05-10",
@@ -11463,15 +11467,19 @@
           },
           "b2b_home": false,
           "b2b_away": false,
-          "model_used": "ensemble_lr+xgb"
+          "model_used": "ensemble_lr+xgb",
+          "actual_home_score": 4,
+          "actual_away_score": 3,
+          "actual_winner": "ANA",
+          "correct": false
         }
       ],
-      "results_recorded": false
+      "results_recorded": true
     }
   ],
   "season_record": {
-    "total": 137,
-    "correct": 74,
+    "total": 139,
+    "correct": 75,
     "high_conv_total": 40,
     "high_conv_correct": 25,
     "rec_total": 0,
