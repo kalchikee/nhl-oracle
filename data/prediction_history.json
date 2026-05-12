@@ -11564,6 +11564,170 @@
         }
       ],
       "results_recorded": true
+    },
+    {
+      "date": "2026-05-12",
+      "predictions": [
+        {
+          "game_date": "2026-05-12",
+          "game_time_utc": "2026-05-13T01:30:00Z",
+          "home_team": "VGK",
+          "away_team": "ANA",
+          "home_name": "Vegas Golden Knights",
+          "away_name": "Anaheim Ducks",
+          "home_prob": 0.5993,
+          "away_prob": 0.4007,
+          "pick_team": "VGK",
+          "pick_prob": 0.5993,
+          "tier": "LEAN",
+          "tier_emoji": "\ud83d\udcca",
+          "mc": {
+            "home_win_pct": 0.5801,
+            "home_reg_win_pct": 0.4967,
+            "away_win_pct": 0.4199,
+            "away_reg_win_pct": 0.3497,
+            "avg_total_goals": 7.0,
+            "home_shutout_pct": 0.0381,
+            "away_shutout_pct": 0.0233,
+            "most_likely_score": [
+              3,
+              3
+            ],
+            "lambda_home": 3.752,
+            "lambda_away": 3.237
+          },
+          "lr_prob": 0.6096,
+          "vegas_implied_home": null,
+          "recommend_bet": false,
+          "edge": 0.0,
+          "odds": {},
+          "injuries": {
+            "home": {
+              "n_injured": 0,
+              "impact": 0,
+              "players": []
+            },
+            "away": {
+              "n_injured": 0,
+              "impact": 0,
+              "players": []
+            }
+          },
+          "goalies": {
+            "home": "Hart",
+            "away": "Dostal",
+            "home_gsax": -4.2,
+            "away_gsax": -2.92
+          },
+          "features": {
+            "elo_diff": 94.3673,
+            "pts_pct_diff": 0.0183,
+            "pythagorean_diff": 0.0558,
+            "gf_pg_diff": -0.0976,
+            "ga_pg_diff": -0.4634,
+            "gd_pg_diff": 0.3659,
+            "pp_pct_diff": 0.0602,
+            "pk_pct_diff": 0.0502,
+            "l10_pts_diff": 0.2576,
+            "l5_pts_diff": 0.2576,
+            "reg_win_pct_diff": 0.0488,
+            "home_split_diff": 0.1098,
+            "streak_diff": 2.0,
+            "xgf_pct_diff": 0.03,
+            "cf_pct_diff": 0.0,
+            "pdo_diff": 0.009,
+            "goalie_gsax_diff": -1.28,
+            "rest_days_diff": 0.0,
+            "b2b_home": 0.0,
+            "b2b_away": 0.0,
+            "is_home": 1.0,
+            "log5_prob": 0.5187
+          },
+          "b2b_home": false,
+          "b2b_away": false,
+          "model_used": "ensemble_lr+xgb"
+        },
+        {
+          "game_date": "2026-05-12",
+          "game_time_utc": "2026-05-12T23:00:00Z",
+          "home_team": "MTL",
+          "away_team": "BUF",
+          "home_name": "Montr\u00e9al Canadiens",
+          "away_name": "Buffalo Sabres",
+          "home_prob": 0.5845,
+          "away_prob": 0.4155,
+          "pick_team": "MTL",
+          "pick_prob": 0.5845,
+          "tier": "LEAN",
+          "tier_emoji": "\ud83d\udcca",
+          "mc": {
+            "home_win_pct": 0.5462,
+            "home_reg_win_pct": 0.4605,
+            "away_win_pct": 0.4538,
+            "away_reg_win_pct": 0.3792,
+            "avg_total_goals": 5.7,
+            "home_shutout_pct": 0.0651,
+            "away_shutout_pct": 0.0517,
+            "most_likely_score": [
+              2,
+              2
+            ],
+            "lambda_home": 2.998,
+            "lambda_away": 2.723
+          },
+          "lr_prob": 0.6051,
+          "vegas_implied_home": null,
+          "recommend_bet": false,
+          "edge": 0.0,
+          "odds": {},
+          "injuries": {
+            "home": {
+              "n_injured": 0,
+              "impact": 0,
+              "players": []
+            },
+            "away": {
+              "n_injured": 0,
+              "impact": 0,
+              "players": []
+            }
+          },
+          "goalies": {
+            "home": "Dobes",
+            "away": "Lyon",
+            "home_gsax": 17.26,
+            "away_gsax": 12.63
+          },
+          "features": {
+            "elo_diff": -6.3921,
+            "pts_pct_diff": -0.0183,
+            "pythagorean_diff": -0.0382,
+            "gf_pg_diff": -0.061,
+            "ga_pg_diff": 0.1829,
+            "gd_pg_diff": -0.2439,
+            "pp_pct_diff": 0.0363,
+            "pk_pct_diff": -0.0367,
+            "l10_pts_diff": 0.0124,
+            "l5_pts_diff": 0.0124,
+            "reg_win_pct_diff": -0.0976,
+            "home_split_diff": -0.0244,
+            "streak_diff": -0.5,
+            "xgf_pct_diff": 0.01,
+            "cf_pct_diff": -0.01,
+            "pdo_diff": -0.0027,
+            "goalie_gsax_diff": 4.63,
+            "rest_days_diff": 0.0,
+            "b2b_home": 0.0,
+            "b2b_away": 0.0,
+            "is_home": 1.0,
+            "log5_prob": 0.4798
+          },
+          "b2b_home": false,
+          "b2b_away": false,
+          "model_used": "ensemble_lr+xgb"
+        }
+      ],
+      "results_recorded": false
     }
   ],
   "season_record": {
