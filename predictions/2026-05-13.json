@@ -1,0 +1,26 @@
+{
+  "sport": "NHL",
+  "date": "2026-05-13",
+  "generatedAt": "2026-05-13T12:41:05Z",
+  "picks": [
+    {
+      "gameId": "nhl-2026-05-13-MIN-COL",
+      "home": "COL",
+      "away": "MIN",
+      "pickedTeam": "COL",
+      "pickedSide": "home",
+      "modelProb": 0.6963,
+      "confidenceTier": "high",
+      "extra": {
+        "homeName": "Colorado Avalanche",
+        "awayName": "Minnesota Wild",
+        "tier": "EXTREME CONVICTION",
+        "modelUsed": "ensemble_lr+xgb",
+        "recommendBet": false,
+        "gameTimeUtc": "2026-05-14T00:00:00Z"
+      },
+      "startTime": "2026-05-14T00:00:00Z",
+      "edge": 0.0
+    }
+  ]
+}
