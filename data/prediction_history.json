@@ -11817,17 +11817,21 @@
           },
           "b2b_home": false,
           "b2b_away": false,
-          "model_used": "ensemble_lr+xgb"
+          "model_used": "ensemble_lr+xgb",
+          "actual_home_score": 4,
+          "actual_away_score": 3,
+          "actual_winner": "COL",
+          "correct": true
         }
       ],
-      "results_recorded": false
+      "results_recorded": true
     }
   ],
   "season_record": {
-    "total": 142,
-    "correct": 77,
-    "high_conv_total": 41,
-    "high_conv_correct": 26,
+    "total": 143,
+    "correct": 78,
+    "high_conv_total": 42,
+    "high_conv_correct": 27,
     "rec_total": 0,
     "rec_correct": 0
   }
