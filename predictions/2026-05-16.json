@@ -1,0 +1,26 @@
+{
+  "sport": "NHL",
+  "date": "2026-05-16",
+  "generatedAt": "2026-05-16T12:19:28Z",
+  "picks": [
+    {
+      "gameId": "nhl-2026-05-16-BUF-MTL",
+      "home": "MTL",
+      "away": "BUF",
+      "pickedTeam": "MTL",
+      "pickedSide": "home",
+      "modelProb": 0.5851,
+      "confidenceTier": "low",
+      "extra": {
+        "homeName": "Montr\u00e9al Canadiens",
+        "awayName": "Buffalo Sabres",
+        "tier": "LEAN",
+        "modelUsed": "ensemble_lr+xgb",
+        "recommendBet": false,
+        "gameTimeUtc": "2026-05-17T00:00:00Z"
+      },
+      "startTime": "2026-05-17T00:00:00Z",
+      "edge": 0.0
+    }
+  ]
+}
