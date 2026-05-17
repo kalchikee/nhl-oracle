@@ -117,6 +117,18 @@ def send_morning_briefing(predictions: list, season_record: dict):
         else:
             bets_value = "No games cleared the 63% confidence threshold today"
 
+    # Season hit-rate — same source the evening recap uses, so morning + recap
+    # agree on the number. Only shown when the season has graded predictions.
+    fields = []
+    if total > 0:
+        season_acc = correct / total
+        fields.append(_field(
+            "📊 Season Accuracy",
+            f"**{season_acc*100:.1f}%** · {correct}/{total} predictions correct this season",
+        ))
+    fields.append(_field(f"📋 All Games ({n_games} total)", games_value))
+    fields.append(_field("🎯 Recommended Bets Today", bets_value))
+
     embed = {
         "title": f"🏒 NHL Oracle — {date_str}",
         "description": (
@@ -124,10 +136,7 @@ def send_morning_briefing(predictions: list, season_record: dict):
             f"**{len(high_conv)}** high-conviction (63%+) · {season_str}"
         ),
         "color": COLOR_BLUE,
-        "fields": [
-            _field(f"📋 All Games ({n_games} total)", games_value),
-            _field("🎯 Recommended Bets Today", bets_value),
-        ],
+        "fields": fields,
         "footer": {"text": "NHL Oracle v4.0 · Monte Carlo 10,000 simulations"},
         "timestamp": datetime.utcnow().strftime("%Y-%m-%dT%H:%M:%SZ"),
     }
