@@ -12086,6 +12086,91 @@
         }
       ],
       "results_recorded": true
+    },
+    {
+      "date": "2026-05-18",
+      "predictions": [
+        {
+          "game_date": "2026-05-18",
+          "game_time_utc": "2026-05-18T23:30:00Z",
+          "home_team": "BUF",
+          "away_team": "MTL",
+          "home_name": "Buffalo Sabres",
+          "away_name": "Montr\u00e9al Canadiens",
+          "home_prob": 0.4851,
+          "away_prob": 0.5149,
+          "pick_team": "MTL",
+          "pick_prob": 0.5149,
+          "tier": "COIN FLIP",
+          "tier_emoji": "\ud83e\ude99",
+          "mc": {
+            "home_win_pct": 0.4991,
+            "home_reg_win_pct": 0.4131,
+            "away_win_pct": 0.5009,
+            "away_reg_win_pct": 0.4154,
+            "avg_total_goals": 5.7,
+            "home_shutout_pct": 0.0545,
+            "away_shutout_pct": 0.0584,
+            "most_likely_score": [
+              2,
+              2
+            ],
+            "lambda_home": 2.831,
+            "lambda_away": 2.883
+          },
+          "lr_prob": 0.4776,
+          "vegas_implied_home": null,
+          "recommend_bet": false,
+          "edge": 0.0,
+          "odds": {},
+          "injuries": {
+            "home": {
+              "n_injured": 0,
+              "impact": 0,
+              "players": []
+            },
+            "away": {
+              "n_injured": 0,
+              "impact": 0,
+              "players": []
+            }
+          },
+          "goalies": {
+            "home": "Lyon",
+            "away": "Dobes",
+            "home_gsax": 12.63,
+            "away_gsax": 17.26
+          },
+          "features": {
+            "elo_diff": 12.5976,
+            "pts_pct_diff": 0.0183,
+            "pythagorean_diff": 0.0382,
+            "gf_pg_diff": 0.061,
+            "ga_pg_diff": -0.1829,
+            "gd_pg_diff": 0.2439,
+            "pp_pct_diff": -0.0363,
+            "pk_pct_diff": 0.0367,
+            "l10_pts_diff": -0.0124,
+            "l5_pts_diff": -0.0124,
+            "reg_win_pct_diff": 0.0976,
+            "home_split_diff": 0.0122,
+            "streak_diff": 0.5,
+            "xgf_pct_diff": -0.01,
+            "cf_pct_diff": 0.01,
+            "pdo_diff": 0.0027,
+            "goalie_gsax_diff": -4.63,
+            "rest_days_diff": 0.0,
+            "b2b_home": 0.0,
+            "b2b_away": 0.0,
+            "is_home": 1.0,
+            "log5_prob": 0.5202
+          },
+          "b2b_home": false,
+          "b2b_away": false,
+          "model_used": "ensemble_lr+xgb"
+        }
+      ],
+      "results_recorded": false
     }
   ],
   "season_record": {
