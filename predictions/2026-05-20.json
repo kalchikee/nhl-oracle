@@ -1,0 +1,26 @@
+{
+  "sport": "NHL",
+  "date": "2026-05-20",
+  "generatedAt": "2026-05-20T12:48:50Z",
+  "picks": [
+    {
+      "gameId": "nhl-2026-05-20-VGK-COL",
+      "home": "COL",
+      "away": "VGK",
+      "pickedTeam": "COL",
+      "pickedSide": "home",
+      "modelProb": 0.7584,
+      "confidenceTier": "extreme",
+      "extra": {
+        "homeName": "Colorado Avalanche",
+        "awayName": "Vegas Golden Knights",
+        "tier": "EXTREME CONVICTION",
+        "modelUsed": "ensemble_lr+xgb",
+        "recommendBet": false,
+        "gameTimeUtc": "2026-05-21T00:00:00Z"
+      },
+      "startTime": "2026-05-21T00:00:00Z",
+      "edge": 0.0
+    }
+  ]
+}
