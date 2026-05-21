@@ -1,0 +1,26 @@
+{
+  "sport": "NHL",
+  "date": "2026-05-21",
+  "generatedAt": "2026-05-21T13:03:22Z",
+  "picks": [
+    {
+      "gameId": "nhl-2026-05-21-MTL-CAR",
+      "home": "CAR",
+      "away": "MTL",
+      "pickedTeam": "MTL",
+      "pickedSide": "away",
+      "modelProb": 0.6233,
+      "confidenceTier": "medium",
+      "extra": {
+        "homeName": "Carolina Hurricanes",
+        "awayName": "Montr\u00e9al Canadiens",
+        "tier": "STRONG",
+        "modelUsed": "ensemble_lr+xgb",
+        "recommendBet": false,
+        "gameTimeUtc": "2026-05-22T00:00:00Z"
+      },
+      "startTime": "2026-05-22T00:00:00Z",
+      "edge": 0.0
+    }
+  ]
+}
