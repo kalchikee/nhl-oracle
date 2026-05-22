@@ -12345,15 +12345,19 @@
           },
           "b2b_home": false,
           "b2b_away": false,
-          "model_used": "ensemble_lr+xgb"
+          "model_used": "ensemble_lr+xgb",
+          "actual_home_score": 2,
+          "actual_away_score": 6,
+          "actual_winner": "MTL",
+          "correct": true
         }
       ],
-      "results_recorded": false
+      "results_recorded": true
     }
   ],
   "season_record": {
-    "total": 148,
-    "correct": 81,
+    "total": 149,
+    "correct": 82,
     "high_conv_total": 43,
     "high_conv_correct": 27,
     "rec_total": 0,
