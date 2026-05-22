@@ -12353,6 +12353,91 @@
         }
       ],
       "results_recorded": true
+    },
+    {
+      "date": "2026-05-22",
+      "predictions": [
+        {
+          "game_date": "2026-05-22",
+          "game_time_utc": "2026-05-23T00:00:00Z",
+          "home_team": "COL",
+          "away_team": "VGK",
+          "home_name": "Colorado Avalanche",
+          "away_name": "Vegas Golden Knights",
+          "home_prob": 0.7495,
+          "away_prob": 0.2505,
+          "pick_team": "COL",
+          "pick_prob": 0.7495,
+          "tier": "EXTREME CONVICTION",
+          "tier_emoji": "\ud83d\udd25",
+          "mc": {
+            "home_win_pct": 0.7087,
+            "home_reg_win_pct": 0.6149,
+            "away_win_pct": 0.2913,
+            "away_reg_win_pct": 0.2348,
+            "avg_total_goals": 5.9,
+            "home_shutout_pct": 0.0948,
+            "away_shutout_pct": 0.0292,
+            "most_likely_score": [
+              3,
+              2
+            ],
+            "lambda_home": 3.567,
+            "lambda_away": 2.353
+          },
+          "lr_prob": 0.7714,
+          "vegas_implied_home": null,
+          "recommend_bet": false,
+          "edge": 0.0,
+          "odds": {},
+          "injuries": {
+            "home": {
+              "n_injured": 0,
+              "impact": 0,
+              "players": []
+            },
+            "away": {
+              "n_injured": 0,
+              "impact": 0,
+              "players": []
+            }
+          },
+          "goalies": {
+            "home": "Wedgewood",
+            "away": "Hart",
+            "home_gsax": 23.12,
+            "away_gsax": -4.2
+          },
+          "features": {
+            "elo_diff": 4.8165,
+            "pts_pct_diff": 0.1585,
+            "pythagorean_diff": 0.1597,
+            "gf_pg_diff": 0.4512,
+            "ga_pg_diff": -0.5732,
+            "gd_pg_diff": 1.0244,
+            "pp_pct_diff": -0.0747,
+            "pk_pct_diff": 0.0324,
+            "l10_pts_diff": 0.0422,
+            "l5_pts_diff": 0.0422,
+            "reg_win_pct_diff": 0.2195,
+            "home_split_diff": 0.1463,
+            "streak_diff": 0.0,
+            "xgf_pct_diff": 0.03,
+            "cf_pct_diff": 0.04,
+            "pdo_diff": 0.0257,
+            "goalie_gsax_diff": 27.32,
+            "rest_days_diff": 0.0,
+            "b2b_home": 0.0,
+            "b2b_away": 0.0,
+            "is_home": 1.0,
+            "log5_prob": 0.6715
+          },
+          "b2b_home": false,
+          "b2b_away": false,
+          "model_used": "ensemble_lr+xgb"
+        }
+      ],
+      "results_recorded": false
     }
   ],
   "season_record": {
