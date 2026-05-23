@@ -1,0 +1,26 @@
+{
+  "sport": "NHL",
+  "date": "2026-05-23",
+  "generatedAt": "2026-05-23T12:18:38Z",
+  "picks": [
+    {
+      "gameId": "nhl-2026-05-23-MTL-CAR",
+      "home": "CAR",
+      "away": "MTL",
+      "pickedTeam": "MTL",
+      "pickedSide": "away",
+      "modelProb": 0.6453,
+      "confidenceTier": "medium",
+      "extra": {
+        "homeName": "Carolina Hurricanes",
+        "awayName": "Montr\u00e9al Canadiens",
+        "tier": "HIGH CONVICTION",
+        "modelUsed": "ensemble_lr+xgb",
+        "recommendBet": false,
+        "gameTimeUtc": "2026-05-23T23:00:00Z"
+      },
+      "startTime": "2026-05-23T23:00:00Z",
+      "edge": 0.0
+    }
+  ]
+}
