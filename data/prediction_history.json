@@ -12968,14 +12968,18 @@
           },
           "b2b_home": false,
           "b2b_away": false,
-          "model_used": "ensemble_lr+xgb"
+          "model_used": "ensemble_lr+xgb",
+          "actual_home_score": 6,
+          "actual_away_score": 1,
+          "actual_winner": "CAR",
+          "correct": false
         }
       ],
-      "results_recorded": false
+      "results_recorded": true
     }
   ],
   "season_record": {
-    "total": 155,
+    "total": 156,
     "correct": 82,
     "high_conv_total": 49,
     "high_conv_correct": 27,
