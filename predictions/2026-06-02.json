@@ -1,0 +1,26 @@
+{
+  "sport": "NHL",
+  "date": "2026-06-02",
+  "generatedAt": "2026-06-02T13:11:51Z",
+  "picks": [
+    {
+      "gameId": "nhl-2026-06-02-VGK-CAR",
+      "home": "CAR",
+      "away": "VGK",
+      "pickedTeam": "CAR",
+      "pickedSide": "home",
+      "modelProb": 0.6139,
+      "confidenceTier": "low",
+      "extra": {
+        "homeName": "Carolina Hurricanes",
+        "awayName": "Vegas Golden Knights",
+        "tier": "STRONG",
+        "modelUsed": "ensemble_lr+xgb",
+        "recommendBet": false,
+        "gameTimeUtc": "2026-06-03T00:00:00Z"
+      },
+      "startTime": "2026-06-03T00:00:00Z",
+      "edge": 0.0
+    }
+  ]
+}
