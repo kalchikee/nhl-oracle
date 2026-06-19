@@ -34,6 +34,51 @@ def save_history(history: dict):
         json.dump(history, f, indent=2)
 
 
+# Confidence buckets for calibration display. Bins are half-open [lo, hi) on
+# the pick-side probability so each graded pick lands in exactly one bucket.
+# pick_prob is already stored as max(home_prob, away_prob) so it's ≥ 0.50,
+# but we still defensively take max(p, 1-p) in case of legacy rows.
+CONFIDENCE_BUCKETS = [
+    (0.50, 0.60, "50-60%"),
+    (0.60, 0.70, "60-70%"),
+    (0.70, 0.80, "70-80%"),
+    (0.80, 0.90, "80-90%"),
+    (0.90, 1.01, "90%+"),
+]
+
+
+def compute_confidence_buckets(history: dict) -> list:
+    """For each confidence bucket return {label, total, correct, accuracy}.
+
+    Only buckets with at least one graded pick are returned so the embed
+    doesn't carry empty rows when the season is young. Walks the nested
+    history[predictions][*].predictions[*] structure and only counts picks
+    that have been graded (i.e. have a `correct` boolean)."""
+    graded = []
+    for entry in history.get("predictions", []):
+        for pred in entry.get("predictions", []):
+            if "correct" not in pred:
+                continue
+            p = pred.get("pick_prob")
+            if p is None:
+                continue
+            graded.append((max(float(p), 1.0 - float(p)), bool(pred["correct"])))
+
+    out = []
+    for lo, hi, label in CONFIDENCE_BUCKETS:
+        rows = [(p, c) for p, c in graded if lo <= p < hi]
+        if not rows:
+            continue
+        correct = sum(1 for _, c in rows if c)
+        out.append({
+            "label":    label,
+            "total":    len(rows),
+            "correct":  correct,
+            "accuracy": correct / len(rows),
+        })
+    return out
+
+
 def main():
     # Evening recap runs at 05:30 UTC (after midnight UTC), so games scheduled
     # for "yesterday" in CST/CDT haven't been keyed to today's UTC date.

@@ -126,6 +126,24 @@ def send_morning_briefing(predictions: list, season_record: dict):
             "📊 Season Accuracy",
             f"**{season_acc*100:.1f}%** · {correct}/{total} predictions correct this season",
         ))
+        # Per-bucket calibration so the user can see how accurate the model
+        # is at each declared-confidence tier (e.g. "of picks we tagged
+        # 70-80%, how many actually won"). Wrapped in try/except so a
+        # malformed history file can't block the morning briefing.
+        try:
+            import evening_run  # local import to avoid circular import on module load
+            buckets = evening_run.compute_confidence_buckets(evening_run.load_history())
+            if buckets:
+                bucket_lines = [
+                    f"**{b['label']}** · {b['correct']}/{b['total']} ({b['accuracy']*100:.1f}%)"
+                    for b in buckets
+                ]
+                fields.append(_field(
+                    "🎯 Calibration by confidence",
+                    "\n".join(bucket_lines),
+                ))
+        except Exception as e:
+            print(f"[discord] confidence-bucket read failed (non-blocking): {e}", flush=True)
     fields.append(_field(f"📋 All Games ({n_games} total)", games_value))
     fields.append(_field("🎯 Recommended Bets Today", bets_value))
 
