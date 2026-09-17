@@ -1,6 +1,6 @@
 {
-  "was_active": false,
-  "last_game_date": "2026-06-14",
-  "season_over_notified": true,
-  "season_start_notified": false
+  "was_active": true,
+  "last_game_date": "2026-09-17",
+  "season_over_notified": false,
+  "season_start_notified": true
 }
