@@ -1,0 +1,83 @@
+{
+  "sport": "NHL",
+  "date": "2026-09-19",
+  "generatedAt": "2026-09-19T12:07:40Z",
+  "picks": [
+    {
+      "gameId": "nhl-2026-09-19-TOR-MTL",
+      "home": "MTL",
+      "away": "TOR",
+      "pickedTeam": "MTL",
+      "pickedSide": "home",
+      "modelProb": 0.7814,
+      "confidenceTier": "extreme",
+      "extra": {
+        "homeName": "Montr\u00e9al Canadiens",
+        "awayName": "Toronto Maple Leafs",
+        "tier": "EXTREME CONVICTION",
+        "modelUsed": "ensemble_lr+xgb",
+        "recommendBet": false,
+        "gameTimeUtc": "2026-09-19T23:00:00Z"
+      },
+      "startTime": "2026-09-19T23:00:00Z",
+      "edge": 0.0
+    },
+    {
+      "gameId": "nhl-2026-09-19-MTL-TOR",
+      "home": "TOR",
+      "away": "MTL",
+      "pickedTeam": "MTL",
+      "pickedSide": "away",
+      "modelProb": 0.7776,
+      "confidenceTier": "extreme",
+      "extra": {
+        "homeName": "Toronto Maple Leafs",
+        "awayName": "Montr\u00e9al Canadiens",
+        "tier": "EXTREME CONVICTION",
+        "modelUsed": "ensemble_lr+xgb",
+        "recommendBet": false,
+        "gameTimeUtc": "2026-09-19T23:00:00Z"
+      },
+      "startTime": "2026-09-19T23:00:00Z",
+      "edge": 0.0
+    },
+    {
+      "gameId": "nhl-2026-09-19-VAN-SEA",
+      "home": "SEA",
+      "away": "VAN",
+      "pickedTeam": "SEA",
+      "pickedSide": "home",
+      "modelProb": 0.7198,
+      "confidenceTier": "high",
+      "extra": {
+        "homeName": "Seattle Kraken",
+        "awayName": "Vancouver Canucks",
+        "tier": "EXTREME CONVICTION",
+        "modelUsed": "ensemble_lr+xgb",
+        "recommendBet": false,
+        "gameTimeUtc": "2026-09-20T01:00:00Z"
+      },
+      "startTime": "2026-09-20T01:00:00Z",
+      "edge": 0.0
+    },
+    {
+      "gameId": "nhl-2026-09-19-CHI-MIN",
+      "home": "MIN",
+      "away": "CHI",
+      "pickedTeam": "MIN",
+      "pickedSide": "home",
+      "modelProb": 0.6196,
+      "confidenceTier": "low",
+      "extra": {
+        "homeName": "Minnesota Wild",
+        "awayName": "Chicago Blackhawks",
+        "tier": "STRONG",
+        "modelUsed": "ensemble_lr+xgb",
+        "recommendBet": false,
+        "gameTimeUtc": "2026-09-20T00:00:00Z"
+      },
+      "startTime": "2026-09-20T00:00:00Z",
+      "edge": 0.0
+    }
+  ]
+}
