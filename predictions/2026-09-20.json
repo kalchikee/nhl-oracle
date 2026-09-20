@@ -1,0 +1,102 @@
+{
+  "sport": "NHL",
+  "date": "2026-09-20",
+  "generatedAt": "2026-09-20T12:07:44Z",
+  "picks": [
+    {
+      "gameId": "nhl-2026-09-20-NSH-TBL",
+      "home": "TBL",
+      "away": "NSH",
+      "pickedTeam": "TBL",
+      "pickedSide": "home",
+      "modelProb": 0.7839,
+      "confidenceTier": "extreme",
+      "extra": {
+        "homeName": "Tampa Bay Lightning",
+        "awayName": "Nashville Predators",
+        "tier": "EXTREME CONVICTION",
+        "modelUsed": "ensemble_lr+xgb",
+        "recommendBet": false,
+        "gameTimeUtc": "2026-09-20T21:00:00Z"
+      },
+      "startTime": "2026-09-20T21:00:00Z",
+      "edge": 0.0
+    },
+    {
+      "gameId": "nhl-2026-09-20-UTA-COL",
+      "home": "COL",
+      "away": "UTA",
+      "pickedTeam": "COL",
+      "pickedSide": "home",
+      "modelProb": 0.7086,
+      "confidenceTier": "high",
+      "extra": {
+        "homeName": "Colorado Avalanche",
+        "awayName": "Utah Mammoth",
+        "tier": "EXTREME CONVICTION",
+        "modelUsed": "ensemble_lr+xgb",
+        "recommendBet": false,
+        "gameTimeUtc": "2026-09-20T23:00:00Z"
+      },
+      "startTime": "2026-09-20T23:00:00Z",
+      "edge": 0.0
+    },
+    {
+      "gameId": "nhl-2026-09-20-CAR-FLA",
+      "home": "FLA",
+      "away": "CAR",
+      "pickedTeam": "CAR",
+      "pickedSide": "away",
+      "modelProb": 0.702,
+      "confidenceTier": "high",
+      "extra": {
+        "homeName": "Florida Panthers",
+        "awayName": "Carolina Hurricanes",
+        "tier": "EXTREME CONVICTION",
+        "modelUsed": "ensemble_lr+xgb",
+        "recommendBet": false,
+        "gameTimeUtc": "2026-09-20T23:00:00Z"
+      },
+      "startTime": "2026-09-20T23:00:00Z",
+      "edge": 0.0
+    },
+    {
+      "gameId": "nhl-2026-09-20-NYI-NJD",
+      "home": "NJD",
+      "away": "NYI",
+      "pickedTeam": "NYI",
+      "pickedSide": "away",
+      "modelProb": 0.6905,
+      "confidenceTier": "high",
+      "extra": {
+        "homeName": "New Jersey Devils",
+        "awayName": "New York Islanders",
+        "tier": "EXTREME CONVICTION",
+        "modelUsed": "ensemble_lr+xgb",
+        "recommendBet": false,
+        "gameTimeUtc": "2026-09-20T17:00:00Z"
+      },
+      "startTime": "2026-09-20T17:00:00Z",
+      "edge": 0.0
+    },
+    {
+      "gameId": "nhl-2026-09-20-SJS-ANA",
+      "home": "ANA",
+      "away": "SJS",
+      "pickedTeam": "ANA",
+      "pickedSide": "home",
+      "modelProb": 0.6766,
+      "confidenceTier": "high",
+      "extra": {
+        "homeName": "Anaheim Ducks",
+        "awayName": "San Jose Sharks",
+        "tier": "HIGH CONVICTION",
+        "modelUsed": "ensemble_lr+xgb",
+        "recommendBet": false,
+        "gameTimeUtc": "2026-09-20T20:00:00Z"
+      },
+      "startTime": "2026-09-20T20:00:00Z",
+      "edge": 0.0
+    }
+  ]
+}
