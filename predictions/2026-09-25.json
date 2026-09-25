@@ -1,0 +1,26 @@
+{
+  "sport": "NHL",
+  "date": "2026-09-25",
+  "generatedAt": "2026-09-25T12:08:47Z",
+  "picks": [
+    {
+      "gameId": "nhl-2026-09-25-WPG-COL",
+      "home": "COL",
+      "away": "WPG",
+      "pickedTeam": "COL",
+      "pickedSide": "home",
+      "modelProb": 0.7732,
+      "confidenceTier": "extreme",
+      "extra": {
+        "homeName": "Colorado Avalanche",
+        "awayName": "Winnipeg Jets",
+        "tier": "EXTREME CONVICTION",
+        "modelUsed": "ensemble_lr+xgb",
+        "recommendBet": false,
+        "gameTimeUtc": "2026-09-26T00:30:00Z"
+      },
+      "startTime": "2026-09-26T00:30:00Z",
+      "edge": 0.0
+    }
+  ]
+}
