@@ -1,0 +1,64 @@
+{
+  "sport": "NHL",
+  "date": "2026-10-01",
+  "generatedAt": "2026-10-01T12:09:30Z",
+  "picks": [
+    {
+      "gameId": "nhl-2026-10-01-EDM-VAN",
+      "home": "VAN",
+      "away": "EDM",
+      "pickedTeam": "EDM",
+      "pickedSide": "away",
+      "modelProb": 0.7734,
+      "confidenceTier": "extreme",
+      "extra": {
+        "homeName": "Vancouver Canucks",
+        "awayName": "Edmonton Oilers",
+        "tier": "EXTREME CONVICTION",
+        "modelUsed": "ensemble_lr+xgb",
+        "recommendBet": false,
+        "gameTimeUtc": "2026-10-02T02:00:00Z"
+      },
+      "startTime": "2026-10-02T02:00:00Z",
+      "edge": 0.0
+    },
+    {
+      "gameId": "nhl-2026-10-01-FLA-SJS",
+      "home": "SJS",
+      "away": "FLA",
+      "pickedTeam": "SJS",
+      "pickedSide": "home",
+      "modelProb": 0.7314,
+      "confidenceTier": "extreme",
+      "extra": {
+        "homeName": "San Jose Sharks",
+        "awayName": "Florida Panthers",
+        "tier": "EXTREME CONVICTION",
+        "modelUsed": "ensemble_lr+xgb",
+        "recommendBet": false,
+        "gameTimeUtc": "2026-10-02T02:00:00Z"
+      },
+      "startTime": "2026-10-02T02:00:00Z",
+      "edge": 0.0
+    },
+    {
+      "gameId": "nhl-2026-10-01-MIN-NSH",
+      "home": "NSH",
+      "away": "MIN",
+      "pickedTeam": "MIN",
+      "pickedSide": "away",
+      "modelProb": 0.6046,
+      "confidenceTier": "low",
+      "extra": {
+        "homeName": "Nashville Predators",
+        "awayName": "Minnesota Wild",
+        "tier": "STRONG",
+        "modelUsed": "ensemble_lr+xgb",
+        "recommendBet": false,
+        "gameTimeUtc": "2026-10-02T00:00:00Z"
+      },
+      "startTime": "2026-10-02T00:00:00Z",
+      "edge": 0.0
+    }
+  ]
+}
