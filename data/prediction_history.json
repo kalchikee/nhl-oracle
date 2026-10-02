@@ -19710,7 +19710,11 @@
           },
           "b2b_home": false,
           "b2b_away": false,
-          "model_used": "ensemble_lr+xgb"
+          "model_used": "ensemble_lr+xgb",
+          "actual_home_score": 7,
+          "actual_away_score": 9,
+          "actual_winner": "EDM",
+          "correct": true
         },
         {
           "game_date": "2026-10-01",
@@ -19789,7 +19793,11 @@
           },
           "b2b_home": false,
           "b2b_away": false,
-          "model_used": "ensemble_lr+xgb"
+          "model_used": "ensemble_lr+xgb",
+          "actual_home_score": 4,
+          "actual_away_score": 3,
+          "actual_winner": "SJS",
+          "correct": true
         },
         {
           "game_date": "2026-10-01",
@@ -19868,7 +19876,11 @@
           },
           "b2b_home": false,
           "b2b_away": false,
-          "model_used": "ensemble_lr+xgb"
+          "model_used": "ensemble_lr+xgb",
+          "actual_home_score": 1,
+          "actual_away_score": 3,
+          "actual_winner": "MIN",
+          "correct": true
         },
         {
           "game_date": "2026-10-01",
@@ -19947,7 +19959,11 @@
           },
           "b2b_home": false,
           "b2b_away": false,
-          "model_used": "ensemble_lr+xgb"
+          "model_used": "ensemble_lr+xgb",
+          "actual_home_score": 6,
+          "actual_away_score": 3,
+          "actual_winner": "CBJ",
+          "correct": false
         },
         {
           "game_date": "2026-10-01",
@@ -20026,7 +20042,11 @@
           },
           "b2b_home": false,
           "b2b_away": false,
-          "model_used": "ensemble_lr+xgb"
+          "model_used": "ensemble_lr+xgb",
+          "actual_home_score": 6,
+          "actual_away_score": 0,
+          "actual_winner": "UTA",
+          "correct": true
         },
         {
           "game_date": "2026-10-01",
@@ -20105,7 +20125,11 @@
           },
           "b2b_home": false,
           "b2b_away": false,
-          "model_used": "ensemble_lr+xgb"
+          "model_used": "ensemble_lr+xgb",
+          "actual_home_score": 3,
+          "actual_away_score": 2,
+          "actual_winner": "NJD",
+          "correct": false
         },
         {
           "game_date": "2026-10-01",
@@ -20184,7 +20208,11 @@
           },
           "b2b_home": false,
           "b2b_away": false,
-          "model_used": "ensemble_lr+xgb"
+          "model_used": "ensemble_lr+xgb",
+          "actual_home_score": 5,
+          "actual_away_score": 1,
+          "actual_winner": "NYR",
+          "correct": true
         },
         {
           "game_date": "2026-10-01",
@@ -20263,17 +20291,21 @@
           },
           "b2b_home": false,
           "b2b_away": false,
-          "model_used": "ensemble_lr+xgb"
+          "model_used": "ensemble_lr+xgb",
+          "actual_home_score": 1,
+          "actual_away_score": 6,
+          "actual_winner": "SEA",
+          "correct": false
         }
       ],
-      "results_recorded": false
+      "results_recorded": true
     }
   ],
   "season_record": {
-    "total": 235,
-    "correct": 128,
-    "high_conv_total": 88,
-    "high_conv_correct": 50,
+    "total": 243,
+    "correct": 133,
+    "high_conv_total": 90,
+    "high_conv_correct": 52,
     "rec_total": 0,
     "rec_correct": 0
   }
