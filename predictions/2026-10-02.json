@@ -1,0 +1,83 @@
+{
+  "sport": "NHL",
+  "date": "2026-10-02",
+  "generatedAt": "2026-10-02T12:08:50Z",
+  "picks": [
+    {
+      "gameId": "nhl-2026-10-02-STL-DAL",
+      "home": "DAL",
+      "away": "STL",
+      "pickedTeam": "DAL",
+      "pickedSide": "home",
+      "modelProb": 0.6763,
+      "confidenceTier": "high",
+      "extra": {
+        "homeName": "Dallas Stars",
+        "awayName": "St. Louis Blues",
+        "tier": "HIGH CONVICTION",
+        "modelUsed": "ensemble_lr+xgb",
+        "recommendBet": false,
+        "gameTimeUtc": "2026-10-03T01:00:00Z"
+      },
+      "startTime": "2026-10-03T01:00:00Z",
+      "edge": 0.0
+    },
+    {
+      "gameId": "nhl-2026-10-02-BOS-WPG",
+      "home": "WPG",
+      "away": "BOS",
+      "pickedTeam": "BOS",
+      "pickedSide": "away",
+      "modelProb": 0.6661,
+      "confidenceTier": "medium",
+      "extra": {
+        "homeName": "Winnipeg Jets",
+        "awayName": "Boston Bruins",
+        "tier": "HIGH CONVICTION",
+        "modelUsed": "ensemble_lr+xgb",
+        "recommendBet": false,
+        "gameTimeUtc": "2026-10-03T00:00:00Z"
+      },
+      "startTime": "2026-10-03T00:00:00Z",
+      "edge": 0.0
+    },
+    {
+      "gameId": "nhl-2026-10-02-WSH-CAR",
+      "home": "CAR",
+      "away": "WSH",
+      "pickedTeam": "CAR",
+      "pickedSide": "home",
+      "modelProb": 0.6469,
+      "confidenceTier": "medium",
+      "extra": {
+        "homeName": "Carolina Hurricanes",
+        "awayName": "Washington Capitals",
+        "tier": "HIGH CONVICTION",
+        "modelUsed": "ensemble_lr+xgb",
+        "recommendBet": false,
+        "gameTimeUtc": "2026-10-02T23:00:00Z"
+      },
+      "startTime": "2026-10-02T23:00:00Z",
+      "edge": 0.0
+    },
+    {
+      "gameId": "nhl-2026-10-02-NYR-DET",
+      "home": "DET",
+      "away": "NYR",
+      "pickedTeam": "NYR",
+      "pickedSide": "away",
+      "modelProb": 0.5886,
+      "confidenceTier": "low",
+      "extra": {
+        "homeName": "Detroit Red Wings",
+        "awayName": "New York Rangers",
+        "tier": "LEAN",
+        "modelUsed": "ensemble_lr+xgb",
+        "recommendBet": false,
+        "gameTimeUtc": "2026-10-02T22:30:00Z"
+      },
+      "startTime": "2026-10-02T22:30:00Z",
+      "edge": 0.0
+    }
+  ]
+}
