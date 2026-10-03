@@ -20380,7 +20380,11 @@
           },
           "b2b_home": false,
           "b2b_away": false,
-          "model_used": "ensemble_lr+xgb"
+          "model_used": "ensemble_lr+xgb",
+          "actual_home_score": 0,
+          "actual_away_score": 4,
+          "actual_winner": "STL",
+          "correct": false
         },
         {
           "game_date": "2026-10-02",
@@ -20459,7 +20463,11 @@
           },
           "b2b_home": false,
           "b2b_away": false,
-          "model_used": "ensemble_lr+xgb"
+          "model_used": "ensemble_lr+xgb",
+          "actual_home_score": 3,
+          "actual_away_score": 4,
+          "actual_winner": "BOS",
+          "correct": true
         },
         {
           "game_date": "2026-10-02",
@@ -20538,7 +20546,11 @@
           },
           "b2b_home": false,
           "b2b_away": false,
-          "model_used": "ensemble_lr+xgb"
+          "model_used": "ensemble_lr+xgb",
+          "actual_home_score": 2,
+          "actual_away_score": 5,
+          "actual_winner": "WSH",
+          "correct": false
         },
         {
           "game_date": "2026-10-02",
@@ -20617,7 +20629,11 @@
           },
           "b2b_home": false,
           "b2b_away": false,
-          "model_used": "ensemble_lr+xgb"
+          "model_used": "ensemble_lr+xgb",
+          "actual_home_score": 0,
+          "actual_away_score": 2,
+          "actual_winner": "NYR",
+          "correct": true
         },
         {
           "game_date": "2026-10-02",
@@ -20696,17 +20712,21 @@
           },
           "b2b_home": false,
           "b2b_away": false,
-          "model_used": "ensemble_lr+xgb"
+          "model_used": "ensemble_lr+xgb",
+          "actual_home_score": 3,
+          "actual_away_score": 4,
+          "actual_winner": "ANA",
+          "correct": true
         }
       ],
-      "results_recorded": false
+      "results_recorded": true
     }
   ],
   "season_record": {
-    "total": 243,
-    "correct": 133,
-    "high_conv_total": 90,
-    "high_conv_correct": 52,
+    "total": 248,
+    "correct": 136,
+    "high_conv_total": 93,
+    "high_conv_correct": 53,
     "rec_total": 0,
     "rec_correct": 0
   }
