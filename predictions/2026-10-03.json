@@ -1,0 +1,159 @@
+{
+  "sport": "NHL",
+  "date": "2026-10-03",
+  "generatedAt": "2026-10-03T13:39:52Z",
+  "picks": [
+    {
+      "gameId": "nhl-2026-10-03-OTT-TOR",
+      "home": "TOR",
+      "away": "OTT",
+      "pickedTeam": "OTT",
+      "pickedSide": "away",
+      "modelProb": 0.7868,
+      "confidenceTier": "extreme",
+      "extra": {
+        "homeName": "Toronto Maple Leafs",
+        "awayName": "Ottawa Senators",
+        "tier": "EXTREME CONVICTION",
+        "modelUsed": "ensemble_lr+xgb",
+        "recommendBet": false,
+        "gameTimeUtc": "2026-10-03T23:00:00Z"
+      },
+      "startTime": "2026-10-03T23:00:00Z",
+      "edge": 0.0
+    },
+    {
+      "gameId": "nhl-2026-10-03-DAL-NSH",
+      "home": "NSH",
+      "away": "DAL",
+      "pickedTeam": "DAL",
+      "pickedSide": "away",
+      "modelProb": 0.7398,
+      "confidenceTier": "extreme",
+      "extra": {
+        "homeName": "Nashville Predators",
+        "awayName": "Dallas Stars",
+        "tier": "EXTREME CONVICTION",
+        "modelUsed": "ensemble_lr+xgb",
+        "recommendBet": false,
+        "gameTimeUtc": "2026-10-04T00:00:00Z"
+      },
+      "startTime": "2026-10-04T00:00:00Z",
+      "edge": 0.0
+    },
+    {
+      "gameId": "nhl-2026-10-03-NJD-NYI",
+      "home": "NYI",
+      "away": "NJD",
+      "pickedTeam": "NYI",
+      "pickedSide": "home",
+      "modelProb": 0.7089,
+      "confidenceTier": "high",
+      "extra": {
+        "homeName": "New York Islanders",
+        "awayName": "New Jersey Devils",
+        "tier": "EXTREME CONVICTION",
+        "modelUsed": "ensemble_lr+xgb",
+        "recommendBet": false,
+        "gameTimeUtc": "2026-10-03T23:30:00Z"
+      },
+      "startTime": "2026-10-03T23:30:00Z",
+      "edge": 0.0
+    },
+    {
+      "gameId": "nhl-2026-10-03-STL-COL",
+      "home": "COL",
+      "away": "STL",
+      "pickedTeam": "COL",
+      "pickedSide": "home",
+      "modelProb": 0.6939,
+      "confidenceTier": "high",
+      "extra": {
+        "homeName": "Colorado Avalanche",
+        "awayName": "St. Louis Blues",
+        "tier": "EXTREME CONVICTION",
+        "modelUsed": "ensemble_lr+xgb",
+        "recommendBet": false,
+        "gameTimeUtc": "2026-10-04T01:00:00Z"
+      },
+      "startTime": "2026-10-04T01:00:00Z",
+      "edge": 0.0
+    },
+    {
+      "gameId": "nhl-2026-10-03-CHI-BUF",
+      "home": "BUF",
+      "away": "CHI",
+      "pickedTeam": "BUF",
+      "pickedSide": "home",
+      "modelProb": 0.6856,
+      "confidenceTier": "high",
+      "extra": {
+        "homeName": "Buffalo Sabres",
+        "awayName": "Chicago Blackhawks",
+        "tier": "EXTREME CONVICTION",
+        "modelUsed": "ensemble_lr+xgb",
+        "recommendBet": false,
+        "gameTimeUtc": "2026-10-03T23:00:00Z"
+      },
+      "startTime": "2026-10-03T23:00:00Z",
+      "edge": 0.0
+    },
+    {
+      "gameId": "nhl-2026-10-03-CGY-VAN",
+      "home": "VAN",
+      "away": "CGY",
+      "pickedTeam": "CGY",
+      "pickedSide": "away",
+      "modelProb": 0.6372,
+      "confidenceTier": "medium",
+      "extra": {
+        "homeName": "Vancouver Canucks",
+        "awayName": "Calgary Flames",
+        "tier": "HIGH CONVICTION",
+        "modelUsed": "ensemble_lr+xgb",
+        "recommendBet": false,
+        "gameTimeUtc": "2026-10-04T02:00:00Z"
+      },
+      "startTime": "2026-10-04T02:00:00Z",
+      "edge": 0.0
+    },
+    {
+      "gameId": "nhl-2026-10-03-LAK-SJS",
+      "home": "SJS",
+      "away": "LAK",
+      "pickedTeam": "LAK",
+      "pickedSide": "away",
+      "modelProb": 0.6242,
+      "confidenceTier": "medium",
+      "extra": {
+        "homeName": "San Jose Sharks",
+        "awayName": "Los Angeles Kings",
+        "tier": "STRONG",
+        "modelUsed": "ensemble_lr+xgb",
+        "recommendBet": false,
+        "gameTimeUtc": "2026-10-04T02:00:00Z"
+      },
+      "startTime": "2026-10-04T02:00:00Z",
+      "edge": 0.0
+    },
+    {
+      "gameId": "nhl-2026-10-03-BOS-MIN",
+      "home": "MIN",
+      "away": "BOS",
+      "pickedTeam": "BOS",
+      "pickedSide": "away",
+      "modelProb": 0.5994,
+      "confidenceTier": "low",
+      "extra": {
+        "homeName": "Minnesota Wild",
+        "awayName": "Boston Bruins",
+        "tier": "LEAN",
+        "modelUsed": "ensemble_lr+xgb",
+        "recommendBet": false,
+        "gameTimeUtc": "2026-10-04T00:00:00Z"
+      },
+      "startTime": "2026-10-04T00:00:00Z",
+      "edge": 0.0
+    }
+  ]
+}
