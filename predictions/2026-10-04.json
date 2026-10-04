@@ -1,0 +1,64 @@
+{
+  "sport": "NHL",
+  "date": "2026-10-04",
+  "generatedAt": "2026-10-04T13:52:04Z",
+  "picks": [
+    {
+      "gameId": "nhl-2026-10-04-VGK-VAN",
+      "home": "VAN",
+      "away": "VGK",
+      "pickedTeam": "VGK",
+      "pickedSide": "away",
+      "modelProb": 0.8143,
+      "confidenceTier": "extreme",
+      "extra": {
+        "homeName": "Vancouver Canucks",
+        "awayName": "Vegas Golden Knights",
+        "tier": "EXTREME CONVICTION",
+        "modelUsed": "ensemble_lr+xgb",
+        "recommendBet": false,
+        "gameTimeUtc": "2026-10-05T01:00:00Z"
+      },
+      "startTime": "2026-10-05T01:00:00Z",
+      "edge": 0.0
+    },
+    {
+      "gameId": "nhl-2026-10-04-WPG-DET",
+      "home": "DET",
+      "away": "WPG",
+      "pickedTeam": "DET",
+      "pickedSide": "home",
+      "modelProb": 0.6962,
+      "confidenceTier": "high",
+      "extra": {
+        "homeName": "Detroit Red Wings",
+        "awayName": "Winnipeg Jets",
+        "tier": "EXTREME CONVICTION",
+        "modelUsed": "ensemble_lr+xgb",
+        "recommendBet": false,
+        "gameTimeUtc": "2026-10-04T17:00:00Z"
+      },
+      "startTime": "2026-10-04T17:00:00Z",
+      "edge": 0.0
+    },
+    {
+      "gameId": "nhl-2026-10-04-CGY-SEA",
+      "home": "SEA",
+      "away": "CGY",
+      "pickedTeam": "SEA",
+      "pickedSide": "home",
+      "modelProb": 0.6304,
+      "confidenceTier": "medium",
+      "extra": {
+        "homeName": "Seattle Kraken",
+        "awayName": "Calgary Flames",
+        "tier": "HIGH CONVICTION",
+        "modelUsed": "ensemble_lr+xgb",
+        "recommendBet": false,
+        "gameTimeUtc": "2026-10-05T00:00:00Z"
+      },
+      "startTime": "2026-10-05T00:00:00Z",
+      "edge": 0.0
+    }
+  ]
+}
