@@ -1,0 +1,64 @@
+{
+  "sport": "NHL",
+  "date": "2026-10-05",
+  "generatedAt": "2026-10-05T12:09:24Z",
+  "picks": [
+    {
+      "gameId": "nhl-2026-10-05-SJS-DAL",
+      "home": "DAL",
+      "away": "SJS",
+      "pickedTeam": "DAL",
+      "pickedSide": "home",
+      "modelProb": 0.7845,
+      "confidenceTier": "extreme",
+      "extra": {
+        "homeName": "Dallas Stars",
+        "awayName": "San Jose Sharks",
+        "tier": "EXTREME CONVICTION",
+        "modelUsed": "ensemble_lr+xgb",
+        "recommendBet": false,
+        "gameTimeUtc": "2026-10-06T00:00:00Z"
+      },
+      "startTime": "2026-10-06T00:00:00Z",
+      "edge": 0.0
+    },
+    {
+      "gameId": "nhl-2026-10-05-PHI-TBL",
+      "home": "TBL",
+      "away": "PHI",
+      "pickedTeam": "TBL",
+      "pickedSide": "home",
+      "modelProb": 0.7644,
+      "confidenceTier": "extreme",
+      "extra": {
+        "homeName": "Tampa Bay Lightning",
+        "awayName": "Philadelphia Flyers",
+        "tier": "EXTREME CONVICTION",
+        "modelUsed": "ensemble_lr+xgb",
+        "recommendBet": false,
+        "gameTimeUtc": "2026-10-05T23:00:00Z"
+      },
+      "startTime": "2026-10-05T23:00:00Z",
+      "edge": 0.0
+    },
+    {
+      "gameId": "nhl-2026-10-05-OTT-BOS",
+      "home": "BOS",
+      "away": "OTT",
+      "pickedTeam": "BOS",
+      "pickedSide": "home",
+      "modelProb": 0.7038,
+      "confidenceTier": "high",
+      "extra": {
+        "homeName": "Boston Bruins",
+        "awayName": "Ottawa Senators",
+        "tier": "EXTREME CONVICTION",
+        "modelUsed": "ensemble_lr+xgb",
+        "recommendBet": false,
+        "gameTimeUtc": "2026-10-05T23:30:00Z"
+      },
+      "startTime": "2026-10-05T23:30:00Z",
+      "edge": 0.0
+    }
+  ]
+}
