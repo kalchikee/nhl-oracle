@@ -1,0 +1,102 @@
+{
+  "sport": "NHL",
+  "date": "2026-10-06",
+  "generatedAt": "2026-10-06T12:08:53Z",
+  "picks": [
+    {
+      "gameId": "nhl-2026-10-06-OTT-DET",
+      "home": "DET",
+      "away": "OTT",
+      "pickedTeam": "DET",
+      "pickedSide": "home",
+      "modelProb": 0.7021,
+      "confidenceTier": "high",
+      "extra": {
+        "homeName": "Detroit Red Wings",
+        "awayName": "Ottawa Senators",
+        "tier": "EXTREME CONVICTION",
+        "modelUsed": "ensemble_lr+xgb",
+        "recommendBet": false,
+        "gameTimeUtc": "2026-10-06T23:00:00Z"
+      },
+      "startTime": "2026-10-06T23:00:00Z",
+      "edge": 0.0
+    },
+    {
+      "gameId": "nhl-2026-10-06-STL-CHI",
+      "home": "CHI",
+      "away": "STL",
+      "pickedTeam": "CHI",
+      "pickedSide": "home",
+      "modelProb": 0.7016,
+      "confidenceTier": "high",
+      "extra": {
+        "homeName": "Chicago Blackhawks",
+        "awayName": "St. Louis Blues",
+        "tier": "EXTREME CONVICTION",
+        "modelUsed": "ensemble_lr+xgb",
+        "recommendBet": false,
+        "gameTimeUtc": "2026-10-07T00:00:00Z"
+      },
+      "startTime": "2026-10-07T00:00:00Z",
+      "edge": 0.0
+    },
+    {
+      "gameId": "nhl-2026-10-06-VGK-SEA",
+      "home": "SEA",
+      "away": "VGK",
+      "pickedTeam": "VGK",
+      "pickedSide": "away",
+      "modelProb": 0.6034,
+      "confidenceTier": "low",
+      "extra": {
+        "homeName": "Seattle Kraken",
+        "awayName": "Vegas Golden Knights",
+        "tier": "STRONG",
+        "modelUsed": "ensemble_lr+xgb",
+        "recommendBet": false,
+        "gameTimeUtc": "2026-10-07T01:40:00Z"
+      },
+      "startTime": "2026-10-07T01:40:00Z",
+      "edge": 0.0
+    },
+    {
+      "gameId": "nhl-2026-10-06-FLA-LAK",
+      "home": "LAK",
+      "away": "FLA",
+      "pickedTeam": "LAK",
+      "pickedSide": "home",
+      "modelProb": 0.5974,
+      "confidenceTier": "low",
+      "extra": {
+        "homeName": "Los Angeles Kings",
+        "awayName": "Florida Panthers",
+        "tier": "LEAN",
+        "modelUsed": "ensemble_lr+xgb",
+        "recommendBet": false,
+        "gameTimeUtc": "2026-10-07T02:00:00Z"
+      },
+      "startTime": "2026-10-07T02:00:00Z",
+      "edge": 0.0
+    },
+    {
+      "gameId": "nhl-2026-10-06-CAR-MTL",
+      "home": "MTL",
+      "away": "CAR",
+      "pickedTeam": "MTL",
+      "pickedSide": "home",
+      "modelProb": 0.5844,
+      "confidenceTier": "low",
+      "extra": {
+        "homeName": "Montr\u00e9al Canadiens",
+        "awayName": "Carolina Hurricanes",
+        "tier": "LEAN",
+        "modelUsed": "ensemble_lr+xgb",
+        "recommendBet": false,
+        "gameTimeUtc": "2026-10-06T23:00:00Z"
+      },
+      "startTime": "2026-10-06T23:00:00Z",
+      "edge": 0.0
+    }
+  ]
+}
