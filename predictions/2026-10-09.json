@@ -1,0 +1,83 @@
+{
+  "sport": "NHL",
+  "date": "2026-10-09",
+  "generatedAt": "2026-10-09T12:08:14Z",
+  "picks": [
+    {
+      "gameId": "nhl-2026-10-09-SEA-DET",
+      "home": "DET",
+      "away": "SEA",
+      "pickedTeam": "DET",
+      "pickedSide": "home",
+      "modelProb": 0.7713,
+      "confidenceTier": "extreme",
+      "extra": {
+        "homeName": "Detroit Red Wings",
+        "awayName": "Seattle Kraken",
+        "tier": "EXTREME CONVICTION",
+        "modelUsed": "ensemble_lr+xgb",
+        "recommendBet": false,
+        "gameTimeUtc": "2026-10-09T23:00:00Z"
+      },
+      "startTime": "2026-10-09T23:00:00Z",
+      "edge": 0.0
+    },
+    {
+      "gameId": "nhl-2026-10-09-PIT-CBJ",
+      "home": "CBJ",
+      "away": "PIT",
+      "pickedTeam": "CBJ",
+      "pickedSide": "home",
+      "modelProb": 0.7081,
+      "confidenceTier": "high",
+      "extra": {
+        "homeName": "Columbus Blue Jackets",
+        "awayName": "Pittsburgh Penguins",
+        "tier": "EXTREME CONVICTION",
+        "modelUsed": "ensemble_lr+xgb",
+        "recommendBet": false,
+        "gameTimeUtc": "2026-10-09T23:00:00Z"
+      },
+      "startTime": "2026-10-09T23:00:00Z",
+      "edge": 0.0
+    },
+    {
+      "gameId": "nhl-2026-10-09-NYR-WSH",
+      "home": "WSH",
+      "away": "NYR",
+      "pickedTeam": "WSH",
+      "pickedSide": "home",
+      "modelProb": 0.6576,
+      "confidenceTier": "medium",
+      "extra": {
+        "homeName": "Washington Capitals",
+        "awayName": "New York Rangers",
+        "tier": "HIGH CONVICTION",
+        "modelUsed": "ensemble_lr+xgb",
+        "recommendBet": false,
+        "gameTimeUtc": "2026-10-09T23:00:00Z"
+      },
+      "startTime": "2026-10-09T23:00:00Z",
+      "edge": 0.0
+    },
+    {
+      "gameId": "nhl-2026-10-09-ANA-WPG",
+      "home": "WPG",
+      "away": "ANA",
+      "pickedTeam": "WPG",
+      "pickedSide": "home",
+      "modelProb": 0.5813,
+      "confidenceTier": "low",
+      "extra": {
+        "homeName": "Winnipeg Jets",
+        "awayName": "Anaheim Ducks",
+        "tier": "LEAN",
+        "modelUsed": "ensemble_lr+xgb",
+        "recommendBet": false,
+        "gameTimeUtc": "2026-10-10T00:00:00Z"
+      },
+      "startTime": "2026-10-10T00:00:00Z",
+      "edge": 0.0
+    }
+  ]
+}
