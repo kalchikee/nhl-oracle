@@ -23653,7 +23653,11 @@
           },
           "b2b_home": false,
           "b2b_away": false,
-          "model_used": "ensemble_lr+xgb"
+          "model_used": "ensemble_lr+xgb",
+          "actual_home_score": 3,
+          "actual_away_score": 7,
+          "actual_winner": "COL",
+          "correct": true
         },
         {
           "game_date": "2026-10-08",
@@ -23732,7 +23736,11 @@
           },
           "b2b_home": false,
           "b2b_away": false,
-          "model_used": "ensemble_lr+xgb"
+          "model_used": "ensemble_lr+xgb",
+          "actual_home_score": 7,
+          "actual_away_score": 2,
+          "actual_winner": "CAR",
+          "correct": true
         },
         {
           "game_date": "2026-10-08",
@@ -23811,7 +23819,11 @@
           },
           "b2b_home": false,
           "b2b_away": false,
-          "model_used": "ensemble_lr+xgb"
+          "model_used": "ensemble_lr+xgb",
+          "actual_home_score": 2,
+          "actual_away_score": 5,
+          "actual_winner": "NSH",
+          "correct": false
         },
         {
           "game_date": "2026-10-08",
@@ -23890,7 +23902,11 @@
           },
           "b2b_home": false,
           "b2b_away": false,
-          "model_used": "ensemble_lr+xgb"
+          "model_used": "ensemble_lr+xgb",
+          "actual_home_score": 3,
+          "actual_away_score": 2,
+          "actual_winner": "TBL",
+          "correct": true
         },
         {
           "game_date": "2026-10-08",
@@ -23969,7 +23985,11 @@
           },
           "b2b_home": false,
           "b2b_away": false,
-          "model_used": "ensemble_lr+xgb"
+          "model_used": "ensemble_lr+xgb",
+          "actual_home_score": 2,
+          "actual_away_score": 3,
+          "actual_winner": "SJS",
+          "correct": false
         },
         {
           "game_date": "2026-10-08",
@@ -24048,7 +24068,11 @@
           },
           "b2b_home": false,
           "b2b_away": false,
-          "model_used": "ensemble_lr+xgb"
+          "model_used": "ensemble_lr+xgb",
+          "actual_home_score": 4,
+          "actual_away_score": 1,
+          "actual_winner": "NYI",
+          "correct": true
         },
         {
           "game_date": "2026-10-08",
@@ -24127,7 +24151,11 @@
           },
           "b2b_home": false,
           "b2b_away": false,
-          "model_used": "ensemble_lr+xgb"
+          "model_used": "ensemble_lr+xgb",
+          "actual_home_score": 4,
+          "actual_away_score": 3,
+          "actual_winner": "VGK",
+          "correct": true
         },
         {
           "game_date": "2026-10-08",
@@ -24206,7 +24234,11 @@
           },
           "b2b_home": false,
           "b2b_away": false,
-          "model_used": "ensemble_lr+xgb"
+          "model_used": "ensemble_lr+xgb",
+          "actual_home_score": 2,
+          "actual_away_score": 1,
+          "actual_winner": "OTT",
+          "correct": false
         },
         {
           "game_date": "2026-10-08",
@@ -24285,7 +24317,11 @@
           },
           "b2b_home": false,
           "b2b_away": false,
-          "model_used": "ensemble_lr+xgb"
+          "model_used": "ensemble_lr+xgb",
+          "actual_home_score": 6,
+          "actual_away_score": 1,
+          "actual_winner": "BOS",
+          "correct": true
         },
         {
           "game_date": "2026-10-08",
@@ -24364,17 +24400,21 @@
           },
           "b2b_home": false,
           "b2b_away": false,
-          "model_used": "ensemble_lr+xgb"
+          "model_used": "ensemble_lr+xgb",
+          "actual_home_score": 0,
+          "actual_away_score": 4,
+          "actual_winner": "DAL",
+          "correct": true
         }
       ],
-      "results_recorded": false
+      "results_recorded": true
     }
   ],
   "season_record": {
-    "total": 282,
-    "correct": 158,
-    "high_conv_total": 108,
-    "high_conv_correct": 63,
+    "total": 292,
+    "correct": 165,
+    "high_conv_total": 117,
+    "high_conv_correct": 69,
     "rec_total": 0,
     "rec_correct": 0
   }
