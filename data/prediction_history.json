@@ -24489,7 +24489,11 @@
           },
           "b2b_home": false,
           "b2b_away": false,
-          "model_used": "ensemble_lr+xgb"
+          "model_used": "ensemble_lr+xgb",
+          "actual_home_score": 3,
+          "actual_away_score": 6,
+          "actual_winner": "SEA",
+          "correct": false
         },
         {
           "game_date": "2026-10-09",
@@ -24568,7 +24572,11 @@
           },
           "b2b_home": false,
           "b2b_away": false,
-          "model_used": "ensemble_lr+xgb"
+          "model_used": "ensemble_lr+xgb",
+          "actual_home_score": 3,
+          "actual_away_score": 2,
+          "actual_winner": "CBJ",
+          "correct": true
         },
         {
           "game_date": "2026-10-09",
@@ -24647,7 +24655,11 @@
           },
           "b2b_home": false,
           "b2b_away": false,
-          "model_used": "ensemble_lr+xgb"
+          "model_used": "ensemble_lr+xgb",
+          "actual_home_score": 3,
+          "actual_away_score": 1,
+          "actual_winner": "WSH",
+          "correct": true
         },
         {
           "game_date": "2026-10-09",
@@ -24726,17 +24738,21 @@
           },
           "b2b_home": false,
           "b2b_away": false,
-          "model_used": "ensemble_lr+xgb"
+          "model_used": "ensemble_lr+xgb",
+          "actual_home_score": 1,
+          "actual_away_score": 5,
+          "actual_winner": "ANA",
+          "correct": false
         }
       ],
-      "results_recorded": false
+      "results_recorded": true
     }
   ],
   "season_record": {
-    "total": 292,
-    "correct": 165,
-    "high_conv_total": 117,
-    "high_conv_correct": 69,
+    "total": 296,
+    "correct": 167,
+    "high_conv_total": 120,
+    "high_conv_correct": 71,
     "rec_total": 0,
     "rec_correct": 0
   }
