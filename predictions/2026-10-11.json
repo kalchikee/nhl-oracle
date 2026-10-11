@@ -1,0 +1,64 @@
+{
+  "sport": "NHL",
+  "date": "2026-10-11",
+  "generatedAt": "2026-10-11T12:08:13Z",
+  "picks": [
+    {
+      "gameId": "nhl-2026-10-11-VAN-NYR",
+      "home": "NYR",
+      "away": "VAN",
+      "pickedTeam": "NYR",
+      "pickedSide": "home",
+      "modelProb": 0.768,
+      "confidenceTier": "extreme",
+      "extra": {
+        "homeName": "New York Rangers",
+        "awayName": "Vancouver Canucks",
+        "tier": "EXTREME CONVICTION",
+        "modelUsed": "ensemble_lr+xgb",
+        "recommendBet": false,
+        "gameTimeUtc": "2026-10-11T22:00:00Z"
+      },
+      "startTime": "2026-10-11T22:00:00Z",
+      "edge": 0.0
+    },
+    {
+      "gameId": "nhl-2026-10-11-SEA-WSH",
+      "home": "WSH",
+      "away": "SEA",
+      "pickedTeam": "WSH",
+      "pickedSide": "home",
+      "modelProb": 0.7421,
+      "confidenceTier": "extreme",
+      "extra": {
+        "homeName": "Washington Capitals",
+        "awayName": "Seattle Kraken",
+        "tier": "EXTREME CONVICTION",
+        "modelUsed": "ensemble_lr+xgb",
+        "recommendBet": false,
+        "gameTimeUtc": "2026-10-11T21:00:00Z"
+      },
+      "startTime": "2026-10-11T21:00:00Z",
+      "edge": 0.0
+    },
+    {
+      "gameId": "nhl-2026-10-11-CAR-PHI",
+      "home": "PHI",
+      "away": "CAR",
+      "pickedTeam": "PHI",
+      "pickedSide": "home",
+      "modelProb": 0.6201,
+      "confidenceTier": "medium",
+      "extra": {
+        "homeName": "Philadelphia Flyers",
+        "awayName": "Carolina Hurricanes",
+        "tier": "STRONG",
+        "modelUsed": "ensemble_lr+xgb",
+        "recommendBet": false,
+        "gameTimeUtc": "2026-10-11T23:00:00Z"
+      },
+      "startTime": "2026-10-11T23:00:00Z",
+      "edge": 0.0
+    }
+  ]
+}
