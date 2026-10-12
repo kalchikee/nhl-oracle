@@ -1,0 +1,64 @@
+{
+  "sport": "NHL",
+  "date": "2026-10-12",
+  "generatedAt": "2026-10-12T12:12:15Z",
+  "picks": [
+    {
+      "gameId": "nhl-2026-10-12-FLA-BUF",
+      "home": "BUF",
+      "away": "FLA",
+      "pickedTeam": "BUF",
+      "pickedSide": "home",
+      "modelProb": 0.7726,
+      "confidenceTier": "extreme",
+      "extra": {
+        "homeName": "Buffalo Sabres",
+        "awayName": "Florida Panthers",
+        "tier": "EXTREME CONVICTION",
+        "modelUsed": "ensemble_lr+xgb",
+        "recommendBet": false,
+        "gameTimeUtc": "2026-10-12T17:00:00Z"
+      },
+      "startTime": "2026-10-12T17:00:00Z",
+      "edge": 0.0
+    },
+    {
+      "gameId": "nhl-2026-10-12-VGK-MIN",
+      "home": "MIN",
+      "away": "VGK",
+      "pickedTeam": "MIN",
+      "pickedSide": "home",
+      "modelProb": 0.6346,
+      "confidenceTier": "medium",
+      "extra": {
+        "homeName": "Minnesota Wild",
+        "awayName": "Vegas Golden Knights",
+        "tier": "HIGH CONVICTION",
+        "modelUsed": "ensemble_lr+xgb",
+        "recommendBet": false,
+        "gameTimeUtc": "2026-10-13T00:00:00Z"
+      },
+      "startTime": "2026-10-13T00:00:00Z",
+      "edge": 0.0
+    },
+    {
+      "gameId": "nhl-2026-10-12-OTT-NJD",
+      "home": "NJD",
+      "away": "OTT",
+      "pickedTeam": "NJD",
+      "pickedSide": "home",
+      "modelProb": 0.5994,
+      "confidenceTier": "low",
+      "extra": {
+        "homeName": "New Jersey Devils",
+        "awayName": "Ottawa Senators",
+        "tier": "LEAN",
+        "modelUsed": "ensemble_lr+xgb",
+        "recommendBet": false,
+        "gameTimeUtc": "2026-10-12T23:00:00Z"
+      },
+      "startTime": "2026-10-12T23:00:00Z",
+      "edge": 0.0
+    }
+  ]
+}
