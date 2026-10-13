@@ -1,0 +1,178 @@
+{
+  "sport": "NHL",
+  "date": "2026-10-13",
+  "generatedAt": "2026-10-13T12:10:33Z",
+  "picks": [
+    {
+      "gameId": "nhl-2026-10-13-VAN-NYI",
+      "home": "NYI",
+      "away": "VAN",
+      "pickedTeam": "NYI",
+      "pickedSide": "home",
+      "modelProb": 0.8144,
+      "confidenceTier": "extreme",
+      "extra": {
+        "homeName": "New York Islanders",
+        "awayName": "Vancouver Canucks",
+        "tier": "EXTREME CONVICTION",
+        "modelUsed": "ensemble_lr+xgb",
+        "recommendBet": false,
+        "gameTimeUtc": "2026-10-13T23:45:00Z"
+      },
+      "startTime": "2026-10-13T23:45:00Z",
+      "edge": 0.0
+    },
+    {
+      "gameId": "nhl-2026-10-13-TOR-UTA",
+      "home": "UTA",
+      "away": "TOR",
+      "pickedTeam": "UTA",
+      "pickedSide": "home",
+      "modelProb": 0.7431,
+      "confidenceTier": "extreme",
+      "extra": {
+        "homeName": "Utah Mammoth",
+        "awayName": "Toronto Maple Leafs",
+        "tier": "EXTREME CONVICTION",
+        "modelUsed": "ensemble_lr+xgb",
+        "recommendBet": false,
+        "gameTimeUtc": "2026-10-14T01:00:00Z"
+      },
+      "startTime": "2026-10-14T01:00:00Z",
+      "edge": 0.0
+    },
+    {
+      "gameId": "nhl-2026-10-13-FLA-CBJ",
+      "home": "CBJ",
+      "away": "FLA",
+      "pickedTeam": "CBJ",
+      "pickedSide": "home",
+      "modelProb": 0.7192,
+      "confidenceTier": "high",
+      "extra": {
+        "homeName": "Columbus Blue Jackets",
+        "awayName": "Florida Panthers",
+        "tier": "EXTREME CONVICTION",
+        "modelUsed": "ensemble_lr+xgb",
+        "recommendBet": false,
+        "gameTimeUtc": "2026-10-13T22:15:00Z"
+      },
+      "startTime": "2026-10-13T22:15:00Z",
+      "edge": 0.0
+    },
+    {
+      "gameId": "nhl-2026-10-13-BOS-SJS",
+      "home": "SJS",
+      "away": "BOS",
+      "pickedTeam": "BOS",
+      "pickedSide": "away",
+      "modelProb": 0.6816,
+      "confidenceTier": "high",
+      "extra": {
+        "homeName": "San Jose Sharks",
+        "awayName": "Boston Bruins",
+        "tier": "EXTREME CONVICTION",
+        "modelUsed": "ensemble_lr+xgb",
+        "recommendBet": false,
+        "gameTimeUtc": "2026-10-14T03:00:00Z"
+      },
+      "startTime": "2026-10-14T03:00:00Z",
+      "edge": 0.0
+    },
+    {
+      "gameId": "nhl-2026-10-13-SEA-PHI",
+      "home": "PHI",
+      "away": "SEA",
+      "pickedTeam": "PHI",
+      "pickedSide": "home",
+      "modelProb": 0.6597,
+      "confidenceTier": "medium",
+      "extra": {
+        "homeName": "Philadelphia Flyers",
+        "awayName": "Seattle Kraken",
+        "tier": "HIGH CONVICTION",
+        "modelUsed": "ensemble_lr+xgb",
+        "recommendBet": false,
+        "gameTimeUtc": "2026-10-13T23:00:00Z"
+      },
+      "startTime": "2026-10-13T23:00:00Z",
+      "edge": 0.0
+    },
+    {
+      "gameId": "nhl-2026-10-13-TBL-NYR",
+      "home": "NYR",
+      "away": "TBL",
+      "pickedTeam": "TBL",
+      "pickedSide": "away",
+      "modelProb": 0.6532,
+      "confidenceTier": "medium",
+      "extra": {
+        "homeName": "New York Rangers",
+        "awayName": "Tampa Bay Lightning",
+        "tier": "HIGH CONVICTION",
+        "modelUsed": "ensemble_lr+xgb",
+        "recommendBet": false,
+        "gameTimeUtc": "2026-10-13T23:15:00Z"
+      },
+      "startTime": "2026-10-13T23:15:00Z",
+      "edge": 0.0
+    },
+    {
+      "gameId": "nhl-2026-10-13-WSH-CAR",
+      "home": "CAR",
+      "away": "WSH",
+      "pickedTeam": "WSH",
+      "pickedSide": "away",
+      "modelProb": 0.6347,
+      "confidenceTier": "medium",
+      "extra": {
+        "homeName": "Carolina Hurricanes",
+        "awayName": "Washington Capitals",
+        "tier": "HIGH CONVICTION",
+        "modelUsed": "ensemble_lr+xgb",
+        "recommendBet": false,
+        "gameTimeUtc": "2026-10-13T22:45:00Z"
+      },
+      "startTime": "2026-10-13T22:45:00Z",
+      "edge": 0.0
+    },
+    {
+      "gameId": "nhl-2026-10-13-STL-OTT",
+      "home": "OTT",
+      "away": "STL",
+      "pickedTeam": "STL",
+      "pickedSide": "away",
+      "modelProb": 0.6302,
+      "confidenceTier": "medium",
+      "extra": {
+        "homeName": "Ottawa Senators",
+        "awayName": "St. Louis Blues",
+        "tier": "HIGH CONVICTION",
+        "modelUsed": "ensemble_lr+xgb",
+        "recommendBet": false,
+        "gameTimeUtc": "2026-10-13T23:30:00Z"
+      },
+      "startTime": "2026-10-13T23:30:00Z",
+      "edge": 0.0
+    },
+    {
+      "gameId": "nhl-2026-10-13-NJD-DET",
+      "home": "DET",
+      "away": "NJD",
+      "pickedTeam": "DET",
+      "pickedSide": "home",
+      "modelProb": 0.6244,
+      "confidenceTier": "medium",
+      "extra": {
+        "homeName": "Detroit Red Wings",
+        "awayName": "New Jersey Devils",
+        "tier": "STRONG",
+        "modelUsed": "ensemble_lr+xgb",
+        "recommendBet": false,
+        "gameTimeUtc": "2026-10-13T22:00:00Z"
+      },
+      "startTime": "2026-10-13T22:00:00Z",
+      "edge": 0.0
+    }
+  ]
+}
