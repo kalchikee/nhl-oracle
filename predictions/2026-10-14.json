@@ -1,0 +1,45 @@
+{
+  "sport": "NHL",
+  "date": "2026-10-14",
+  "generatedAt": "2026-10-14T12:08:10Z",
+  "picks": [
+    {
+      "gameId": "nhl-2026-10-14-DAL-COL",
+      "home": "COL",
+      "away": "DAL",
+      "pickedTeam": "COL",
+      "pickedSide": "home",
+      "modelProb": 0.617,
+      "confidenceTier": "low",
+      "extra": {
+        "homeName": "Colorado Avalanche",
+        "awayName": "Dallas Stars",
+        "tier": "STRONG",
+        "modelUsed": "ensemble_lr+xgb",
+        "recommendBet": false,
+        "gameTimeUtc": "2026-10-15T00:30:00Z"
+      },
+      "startTime": "2026-10-15T00:30:00Z",
+      "edge": 0.0
+    },
+    {
+      "gameId": "nhl-2026-10-14-MTL-WSH",
+      "home": "WSH",
+      "away": "MTL",
+      "pickedTeam": "WSH",
+      "pickedSide": "home",
+      "modelProb": 0.6,
+      "confidenceTier": "low",
+      "extra": {
+        "homeName": "Washington Capitals",
+        "awayName": "Montr\u00e9al Canadiens",
+        "tier": "STRONG",
+        "modelUsed": "ensemble_lr+xgb",
+        "recommendBet": false,
+        "gameTimeUtc": "2026-10-14T23:30:00Z"
+      },
+      "startTime": "2026-10-14T23:30:00Z",
+      "edge": 0.0
+    }
+  ]
+}

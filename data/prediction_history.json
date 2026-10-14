@@ -27758,6 +27758,170 @@
         }
       ],
       "results_recorded": true
+    },
+    {
+      "date": "2026-10-14",
+      "predictions": [
+        {
+          "game_date": "2026-10-14",
+          "game_time_utc": "2026-10-15T00:30:00Z",
+          "home_team": "COL",
+          "away_team": "DAL",
+          "home_name": "Colorado Avalanche",
+          "away_name": "Dallas Stars",
+          "home_prob": 0.617,
+          "away_prob": 0.383,
+          "pick_team": "COL",
+          "pick_prob": 0.617,
+          "tier": "STRONG",
+          "tier_emoji": "\u2705",
+          "mc": {
+            "home_win_pct": 0.6252,
+            "home_reg_win_pct": 0.5355,
+            "away_win_pct": 0.3748,
+            "away_reg_win_pct": 0.305,
+            "avg_total_goals": 6.0,
+            "home_shutout_pct": 0.0754,
+            "away_shutout_pct": 0.0337,
+            "most_likely_score": [
+              3,
+              2
+            ],
+            "lambda_home": 3.331,
+            "lambda_away": 2.588
+          },
+          "lr_prob": 0.6126,
+          "vegas_implied_home": null,
+          "recommend_bet": false,
+          "edge": 0.0,
+          "odds": {},
+          "injuries": {
+            "home": {
+              "n_injured": 0,
+              "impact": 0,
+              "players": []
+            },
+            "away": {
+              "n_injured": 0,
+              "impact": 0,
+              "players": []
+            }
+          },
+          "goalies": {
+            "home": "Blackwood",
+            "away": "Oettinger",
+            "home_gsax": 8.3,
+            "away_gsax": 5.72
+          },
+          "features": {
+            "elo_diff": 19.8349,
+            "pts_pct_diff": 0.25,
+            "pythagorean_diff": 0.1169,
+            "gf_pg_diff": 2.6667,
+            "ga_pg_diff": 1.3333,
+            "gd_pg_diff": 1.3333,
+            "pp_pct_diff": 0.0952,
+            "pk_pct_diff": -0.05,
+            "l10_pts_diff": 0.25,
+            "l5_pts_diff": 0.25,
+            "reg_win_pct_diff": 0.3333,
+            "home_split_diff": 0.1667,
+            "streak_diff": 2.0,
+            "xgf_pct_diff": 0.05,
+            "cf_pct_diff": 0.08,
+            "pdo_diff": -0.0123,
+            "goalie_gsax_diff": 2.58,
+            "rest_days_diff": -26.0,
+            "b2b_home": 0.0,
+            "b2b_away": 0.0,
+            "is_home": 1.0,
+            "log5_prob": 0.7368
+          },
+          "b2b_home": false,
+          "b2b_away": false,
+          "model_used": "ensemble_lr+xgb"
+        },
+        {
+          "game_date": "2026-10-14",
+          "game_time_utc": "2026-10-14T23:30:00Z",
+          "home_team": "WSH",
+          "away_team": "MTL",
+          "home_name": "Washington Capitals",
+          "away_name": "Montr\u00e9al Canadiens",
+          "home_prob": 0.6,
+          "away_prob": 0.4,
+          "pick_team": "WSH",
+          "pick_prob": 0.6,
+          "tier": "STRONG",
+          "tier_emoji": "\u2705",
+          "mc": {
+            "home_win_pct": 0.5464,
+            "home_reg_win_pct": 0.4517,
+            "away_win_pct": 0.4536,
+            "away_reg_win_pct": 0.3735,
+            "avg_total_goals": 5.7,
+            "home_shutout_pct": 0.0623,
+            "away_shutout_pct": 0.0497,
+            "most_likely_score": [
+              2,
+              2
+            ],
+            "lambda_home": 2.955,
+            "lambda_away": 2.719
+          },
+          "lr_prob": 0.6289,
+          "vegas_implied_home": null,
+          "recommend_bet": false,
+          "edge": 0.0,
+          "odds": {},
+          "injuries": {
+            "home": {
+              "n_injured": 0,
+              "impact": 0,
+              "players": []
+            },
+            "away": {
+              "n_injured": 0,
+              "impact": 0,
+              "players": []
+            }
+          },
+          "goalies": {
+            "home": "Thompson",
+            "away": "Dobes",
+            "home_gsax": 29.32,
+            "away_gsax": 17.26
+          },
+          "features": {
+            "elo_diff": 43.0691,
+            "pts_pct_diff": -0.0833,
+            "pythagorean_diff": 0.0998,
+            "gf_pg_diff": 0.0,
+            "ga_pg_diff": -0.6667,
+            "gd_pg_diff": 0.6667,
+            "pp_pct_diff": 0.0333,
+            "pk_pct_diff": 0.0559,
+            "l10_pts_diff": -0.0833,
+            "l5_pts_diff": -0.0833,
+            "reg_win_pct_diff": 0.3333,
+            "home_split_diff": -0.0833,
+            "streak_diff": -4.0,
+            "xgf_pct_diff": 0.01,
+            "cf_pct_diff": 0.01,
+            "pdo_diff": -0.0091,
+            "goalie_gsax_diff": 12.06,
+            "rest_days_diff": 45.0,
+            "b2b_home": 0.0,
+            "b2b_away": 0.0,
+            "is_home": 1.0,
+            "log5_prob": 0.4167
+          },
+          "b2b_home": false,
+          "b2b_away": false,
+          "model_used": "ensemble_lr+xgb"
+        }
+      ],
+      "results_recorded": false
     }
   ],
   "season_record": {
