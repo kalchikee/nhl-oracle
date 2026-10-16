@@ -1,0 +1,45 @@
+{
+  "sport": "NHL",
+  "date": "2026-10-16",
+  "generatedAt": "2026-10-16T12:07:57Z",
+  "picks": [
+    {
+      "gameId": "nhl-2026-10-16-PIT-COL",
+      "home": "COL",
+      "away": "PIT",
+      "pickedTeam": "COL",
+      "pickedSide": "home",
+      "modelProb": 0.7803,
+      "confidenceTier": "extreme",
+      "extra": {
+        "homeName": "Colorado Avalanche",
+        "awayName": "Pittsburgh Penguins",
+        "tier": "EXTREME CONVICTION",
+        "modelUsed": "ensemble_lr+xgb",
+        "recommendBet": false,
+        "gameTimeUtc": "2026-10-17T01:00:00Z"
+      },
+      "startTime": "2026-10-17T01:00:00Z",
+      "edge": 0.0
+    },
+    {
+      "gameId": "nhl-2026-10-16-BOS-ANA",
+      "home": "ANA",
+      "away": "BOS",
+      "pickedTeam": "BOS",
+      "pickedSide": "away",
+      "modelProb": 0.6873,
+      "confidenceTier": "high",
+      "extra": {
+        "homeName": "Anaheim Ducks",
+        "awayName": "Boston Bruins",
+        "tier": "EXTREME CONVICTION",
+        "modelUsed": "ensemble_lr+xgb",
+        "recommendBet": false,
+        "gameTimeUtc": "2026-10-17T02:00:00Z"
+      },
+      "startTime": "2026-10-17T02:00:00Z",
+      "edge": 0.0
+    }
+  ]
+}
