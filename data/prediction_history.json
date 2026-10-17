@@ -28930,7 +28930,11 @@
           },
           "b2b_home": false,
           "b2b_away": false,
-          "model_used": "ensemble_lr+xgb"
+          "model_used": "ensemble_lr+xgb",
+          "actual_home_score": 5,
+          "actual_away_score": 2,
+          "actual_winner": "COL",
+          "correct": true
         },
         {
           "game_date": "2026-10-16",
@@ -29009,17 +29013,21 @@
           },
           "b2b_home": false,
           "b2b_away": false,
-          "model_used": "ensemble_lr+xgb"
+          "model_used": "ensemble_lr+xgb",
+          "actual_home_score": 2,
+          "actual_away_score": 4,
+          "actual_winner": "BOS",
+          "correct": true
         }
       ],
-      "results_recorded": false
+      "results_recorded": true
     }
   ],
   "season_record": {
-    "total": 345,
-    "correct": 196,
-    "high_conv_total": 146,
-    "high_conv_correct": 88,
+    "total": 347,
+    "correct": 198,
+    "high_conv_total": 148,
+    "high_conv_correct": 90,
     "rec_total": 0,
     "rec_correct": 0
   }
