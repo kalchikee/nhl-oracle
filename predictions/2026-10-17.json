@@ -1,0 +1,197 @@
+{
+  "sport": "NHL",
+  "date": "2026-10-17",
+  "generatedAt": "2026-10-17T12:07:28Z",
+  "picks": [
+    {
+      "gameId": "nhl-2026-10-17-VAN-TBL",
+      "home": "TBL",
+      "away": "VAN",
+      "pickedTeam": "TBL",
+      "pickedSide": "home",
+      "modelProb": 0.85,
+      "confidenceTier": "extreme",
+      "extra": {
+        "homeName": "Tampa Bay Lightning",
+        "awayName": "Vancouver Canucks",
+        "tier": "EXTREME CONVICTION",
+        "modelUsed": "ensemble_lr+xgb",
+        "recommendBet": false,
+        "gameTimeUtc": "2026-10-17T20:00:00Z"
+      },
+      "startTime": "2026-10-17T20:00:00Z",
+      "edge": 0.0
+    },
+    {
+      "gameId": "nhl-2026-10-17-SJS-DET",
+      "home": "DET",
+      "away": "SJS",
+      "pickedTeam": "DET",
+      "pickedSide": "home",
+      "modelProb": 0.7616,
+      "confidenceTier": "extreme",
+      "extra": {
+        "homeName": "Detroit Red Wings",
+        "awayName": "San Jose Sharks",
+        "tier": "EXTREME CONVICTION",
+        "modelUsed": "ensemble_lr+xgb",
+        "recommendBet": false,
+        "gameTimeUtc": "2026-10-17T23:00:00Z"
+      },
+      "startTime": "2026-10-17T23:00:00Z",
+      "edge": 0.0
+    },
+    {
+      "gameId": "nhl-2026-10-17-NJD-WSH",
+      "home": "WSH",
+      "away": "NJD",
+      "pickedTeam": "WSH",
+      "pickedSide": "home",
+      "modelProb": 0.7474,
+      "confidenceTier": "extreme",
+      "extra": {
+        "homeName": "Washington Capitals",
+        "awayName": "New Jersey Devils",
+        "tier": "EXTREME CONVICTION",
+        "modelUsed": "ensemble_lr+xgb",
+        "recommendBet": false,
+        "gameTimeUtc": "2026-10-17T17:00:00Z"
+      },
+      "startTime": "2026-10-17T17:00:00Z",
+      "edge": 0.0
+    },
+    {
+      "gameId": "nhl-2026-10-17-NYI-TOR",
+      "home": "TOR",
+      "away": "NYI",
+      "pickedTeam": "NYI",
+      "pickedSide": "away",
+      "modelProb": 0.6833,
+      "confidenceTier": "high",
+      "extra": {
+        "homeName": "Toronto Maple Leafs",
+        "awayName": "New York Islanders",
+        "tier": "EXTREME CONVICTION",
+        "modelUsed": "ensemble_lr+xgb",
+        "recommendBet": false,
+        "gameTimeUtc": "2026-10-17T23:00:00Z"
+      },
+      "startTime": "2026-10-17T23:00:00Z",
+      "edge": 0.0
+    },
+    {
+      "gameId": "nhl-2026-10-17-EDM-UTA",
+      "home": "UTA",
+      "away": "EDM",
+      "pickedTeam": "UTA",
+      "pickedSide": "home",
+      "modelProb": 0.6496,
+      "confidenceTier": "medium",
+      "extra": {
+        "homeName": "Utah Mammoth",
+        "awayName": "Edmonton Oilers",
+        "tier": "HIGH CONVICTION",
+        "modelUsed": "ensemble_lr+xgb",
+        "recommendBet": false,
+        "gameTimeUtc": "2026-10-18T02:00:00Z"
+      },
+      "startTime": "2026-10-18T02:00:00Z",
+      "edge": 0.0
+    },
+    {
+      "gameId": "nhl-2026-10-17-BOS-LAK",
+      "home": "LAK",
+      "away": "BOS",
+      "pickedTeam": "BOS",
+      "pickedSide": "away",
+      "modelProb": 0.6418,
+      "confidenceTier": "medium",
+      "extra": {
+        "homeName": "Los Angeles Kings",
+        "awayName": "Boston Bruins",
+        "tier": "HIGH CONVICTION",
+        "modelUsed": "ensemble_lr+xgb",
+        "recommendBet": false,
+        "gameTimeUtc": "2026-10-18T01:00:00Z"
+      },
+      "startTime": "2026-10-18T01:00:00Z",
+      "edge": 0.0
+    },
+    {
+      "gameId": "nhl-2026-10-17-DAL-CHI",
+      "home": "CHI",
+      "away": "DAL",
+      "pickedTeam": "DAL",
+      "pickedSide": "away",
+      "modelProb": 0.6354,
+      "confidenceTier": "medium",
+      "extra": {
+        "homeName": "Chicago Blackhawks",
+        "awayName": "Dallas Stars",
+        "tier": "HIGH CONVICTION",
+        "modelUsed": "ensemble_lr+xgb",
+        "recommendBet": false,
+        "gameTimeUtc": "2026-10-17T23:00:00Z"
+      },
+      "startTime": "2026-10-17T23:00:00Z",
+      "edge": 0.0
+    },
+    {
+      "gameId": "nhl-2026-10-17-OTT-PHI",
+      "home": "PHI",
+      "away": "OTT",
+      "pickedTeam": "PHI",
+      "pickedSide": "home",
+      "modelProb": 0.6085,
+      "confidenceTier": "low",
+      "extra": {
+        "homeName": "Philadelphia Flyers",
+        "awayName": "Ottawa Senators",
+        "tier": "STRONG",
+        "modelUsed": "ensemble_lr+xgb",
+        "recommendBet": false,
+        "gameTimeUtc": "2026-10-17T23:00:00Z"
+      },
+      "startTime": "2026-10-17T23:00:00Z",
+      "edge": 0.0
+    },
+    {
+      "gameId": "nhl-2026-10-17-STL-NSH",
+      "home": "NSH",
+      "away": "STL",
+      "pickedTeam": "STL",
+      "pickedSide": "away",
+      "modelProb": 0.6012,
+      "confidenceTier": "low",
+      "extra": {
+        "homeName": "Nashville Predators",
+        "awayName": "St. Louis Blues",
+        "tier": "STRONG",
+        "modelUsed": "ensemble_lr+xgb",
+        "recommendBet": false,
+        "gameTimeUtc": "2026-10-18T00:00:00Z"
+      },
+      "startTime": "2026-10-18T00:00:00Z",
+      "edge": 0.0
+    },
+    {
+      "gameId": "nhl-2026-10-17-BUF-MTL",
+      "home": "MTL",
+      "away": "BUF",
+      "pickedTeam": "MTL",
+      "pickedSide": "home",
+      "modelProb": 0.5842,
+      "confidenceTier": "low",
+      "extra": {
+        "homeName": "Montr\u00e9al Canadiens",
+        "awayName": "Buffalo Sabres",
+        "tier": "LEAN",
+        "modelUsed": "ensemble_lr+xgb",
+        "recommendBet": false,
+        "gameTimeUtc": "2026-10-17T23:00:00Z"
+      },
+      "startTime": "2026-10-17T23:00:00Z",
+      "edge": 0.0
+    }
+  ]
+}
