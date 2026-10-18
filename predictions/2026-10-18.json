@@ -1,0 +1,45 @@
+{
+  "sport": "NHL",
+  "date": "2026-10-18",
+  "generatedAt": "2026-10-18T12:06:56Z",
+  "picks": [
+    {
+      "gameId": "nhl-2026-10-18-CAR-CGY",
+      "home": "CGY",
+      "away": "CAR",
+      "pickedTeam": "CAR",
+      "pickedSide": "away",
+      "modelProb": 0.85,
+      "confidenceTier": "extreme",
+      "extra": {
+        "homeName": "Calgary Flames",
+        "awayName": "Carolina Hurricanes",
+        "tier": "EXTREME CONVICTION",
+        "modelUsed": "ensemble_lr+xgb",
+        "recommendBet": false,
+        "gameTimeUtc": "2026-10-19T00:00:00Z"
+      },
+      "startTime": "2026-10-19T00:00:00Z",
+      "edge": 0.0
+    },
+    {
+      "gameId": "nhl-2026-10-18-CBJ-MIN",
+      "home": "MIN",
+      "away": "CBJ",
+      "pickedTeam": "MIN",
+      "pickedSide": "home",
+      "modelProb": 0.731,
+      "confidenceTier": "extreme",
+      "extra": {
+        "homeName": "Minnesota Wild",
+        "awayName": "Columbus Blue Jackets",
+        "tier": "EXTREME CONVICTION",
+        "modelUsed": "ensemble_lr+xgb",
+        "recommendBet": false,
+        "gameTimeUtc": "2026-10-18T22:00:00Z"
+      },
+      "startTime": "2026-10-18T22:00:00Z",
+      "edge": 0.0
+    }
+  ]
+}

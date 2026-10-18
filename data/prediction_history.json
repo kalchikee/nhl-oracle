@@ -30189,6 +30189,170 @@
         }
       ],
       "results_recorded": true
+    },
+    {
+      "date": "2026-10-18",
+      "predictions": [
+        {
+          "game_date": "2026-10-18",
+          "game_time_utc": "2026-10-19T00:00:00Z",
+          "home_team": "CGY",
+          "away_team": "CAR",
+          "home_name": "Calgary Flames",
+          "away_name": "Carolina Hurricanes",
+          "home_prob": 0.15,
+          "away_prob": 0.85,
+          "pick_team": "CAR",
+          "pick_prob": 0.85,
+          "tier": "EXTREME CONVICTION",
+          "tier_emoji": "\ud83d\udd25",
+          "mc": {
+            "home_win_pct": 0.1585,
+            "home_reg_win_pct": 0.1276,
+            "away_win_pct": 0.8415,
+            "away_reg_win_pct": 0.7746,
+            "avg_total_goals": 7.2,
+            "home_shutout_pct": 0.007,
+            "away_shutout_pct": 0.0964,
+            "most_likely_score": [
+              2,
+              5
+            ],
+            "lambda_home": 2.379,
+            "lambda_away": 4.807
+          },
+          "lr_prob": 0.1228,
+          "vegas_implied_home": null,
+          "recommend_bet": false,
+          "edge": 0.0,
+          "odds": {},
+          "injuries": {
+            "home": {
+              "n_injured": 0,
+              "impact": 0,
+              "players": []
+            },
+            "away": {
+              "n_injured": 0,
+              "impact": 0,
+              "players": []
+            }
+          },
+          "goalies": {
+            "home": "Wolf",
+            "away": "Kochetkov",
+            "home_gsax": -7.96,
+            "away_gsax": 3.6
+          },
+          "features": {
+            "elo_diff": -115.5797,
+            "pts_pct_diff": -0.6905,
+            "pythagorean_diff": -0.5859,
+            "gf_pg_diff": -1.7778,
+            "ga_pg_diff": 2.6667,
+            "gd_pg_diff": -4.4444,
+            "pp_pct_diff": -0.0703,
+            "pk_pct_diff": -0.1355,
+            "l10_pts_diff": -0.6905,
+            "l5_pts_diff": -0.7205,
+            "reg_win_pct_diff": -0.5238,
+            "home_split_diff": -1.0,
+            "streak_diff": -5.0,
+            "xgf_pct_diff": -0.14,
+            "cf_pct_diff": -0.07,
+            "pdo_diff": -0.1137,
+            "goalie_gsax_diff": -11.56,
+            "rest_days_diff": 59.0,
+            "b2b_home": 0.0,
+            "b2b_away": 0.0,
+            "is_home": 1.0,
+            "log5_prob": 0.0323
+          },
+          "b2b_home": false,
+          "b2b_away": false,
+          "model_used": "ensemble_lr+xgb"
+        },
+        {
+          "game_date": "2026-10-18",
+          "game_time_utc": "2026-10-18T22:00:00Z",
+          "home_team": "MIN",
+          "away_team": "CBJ",
+          "home_name": "Minnesota Wild",
+          "away_name": "Columbus Blue Jackets",
+          "home_prob": 0.731,
+          "away_prob": 0.269,
+          "pick_team": "MIN",
+          "pick_prob": 0.731,
+          "tier": "EXTREME CONVICTION",
+          "tier_emoji": "\ud83d\udd25",
+          "mc": {
+            "home_win_pct": 0.675,
+            "home_reg_win_pct": 0.5859,
+            "away_win_pct": 0.325,
+            "away_reg_win_pct": 0.267,
+            "avg_total_goals": 6.7,
+            "home_shutout_pct": 0.0623,
+            "away_shutout_pct": 0.0206,
+            "most_likely_score": [
+              3,
+              3
+            ],
+            "lambda_home": 3.885,
+            "lambda_away": 2.838
+          },
+          "lr_prob": 0.7611,
+          "vegas_implied_home": null,
+          "recommend_bet": false,
+          "edge": 0.0,
+          "odds": {},
+          "injuries": {
+            "home": {
+              "n_injured": 0,
+              "impact": 0,
+              "players": []
+            },
+            "away": {
+              "n_injured": 0,
+              "impact": 0,
+              "players": []
+            }
+          },
+          "goalies": {
+            "home": "Wallstedt",
+            "away": "Greaves",
+            "home_gsax": 6.08,
+            "away_gsax": 2.1
+          },
+          "features": {
+            "elo_diff": 73.3147,
+            "pts_pct_diff": 0.1875,
+            "pythagorean_diff": 0.2324,
+            "gf_pg_diff": 0.4167,
+            "ga_pg_diff": -1.0,
+            "gd_pg_diff": 1.4167,
+            "pp_pct_diff": 0.2,
+            "pk_pct_diff": 0.2179,
+            "l10_pts_diff": 0.1875,
+            "l5_pts_diff": 0.1875,
+            "reg_win_pct_diff": 0.4583,
+            "home_split_diff": 1.0,
+            "streak_diff": 0.0,
+            "xgf_pct_diff": 0.05,
+            "cf_pct_diff": 0.03,
+            "pdo_diff": 0.0518,
+            "goalie_gsax_diff": 3.98,
+            "rest_days_diff": -29.0,
+            "b2b_home": 0.0,
+            "b2b_away": 0.0,
+            "is_home": 1.0,
+            "log5_prob": 0.6875
+          },
+          "b2b_home": false,
+          "b2b_away": false,
+          "model_used": "ensemble_lr+xgb"
+        }
+      ],
+      "results_recorded": false
     }
   ],
   "season_record": {
