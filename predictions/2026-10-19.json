@@ -1,0 +1,83 @@
+{
+  "sport": "NHL",
+  "date": "2026-10-19",
+  "generatedAt": "2026-10-19T12:09:09Z",
+  "picks": [
+    {
+      "gameId": "nhl-2026-10-19-COL-PHI",
+      "home": "PHI",
+      "away": "COL",
+      "pickedTeam": "COL",
+      "pickedSide": "away",
+      "modelProb": 0.8019,
+      "confidenceTier": "extreme",
+      "extra": {
+        "homeName": "Philadelphia Flyers",
+        "awayName": "Colorado Avalanche",
+        "tier": "EXTREME CONVICTION",
+        "modelUsed": "ensemble_lr+xgb",
+        "recommendBet": false,
+        "gameTimeUtc": "2026-10-19T23:00:00Z"
+      },
+      "startTime": "2026-10-19T23:00:00Z",
+      "edge": 0.0
+    },
+    {
+      "gameId": "nhl-2026-10-19-SJS-TOR",
+      "home": "TOR",
+      "away": "SJS",
+      "pickedTeam": "TOR",
+      "pickedSide": "home",
+      "modelProb": 0.662,
+      "confidenceTier": "medium",
+      "extra": {
+        "homeName": "Toronto Maple Leafs",
+        "awayName": "San Jose Sharks",
+        "tier": "HIGH CONVICTION",
+        "modelUsed": "ensemble_lr+xgb",
+        "recommendBet": false,
+        "gameTimeUtc": "2026-10-19T23:30:00Z"
+      },
+      "startTime": "2026-10-19T23:30:00Z",
+      "edge": 0.0
+    },
+    {
+      "gameId": "nhl-2026-10-19-PIT-UTA",
+      "home": "UTA",
+      "away": "PIT",
+      "pickedTeam": "UTA",
+      "pickedSide": "home",
+      "modelProb": 0.6311,
+      "confidenceTier": "medium",
+      "extra": {
+        "homeName": "Utah Mammoth",
+        "awayName": "Pittsburgh Penguins",
+        "tier": "HIGH CONVICTION",
+        "modelUsed": "ensemble_lr+xgb",
+        "recommendBet": false,
+        "gameTimeUtc": "2026-10-20T01:00:00Z"
+      },
+      "startTime": "2026-10-20T01:00:00Z",
+      "edge": 0.0
+    },
+    {
+      "gameId": "nhl-2026-10-19-ANA-NYR",
+      "home": "NYR",
+      "away": "ANA",
+      "pickedTeam": "NYR",
+      "pickedSide": "home",
+      "modelProb": 0.6206,
+      "confidenceTier": "medium",
+      "extra": {
+        "homeName": "New York Rangers",
+        "awayName": "Anaheim Ducks",
+        "tier": "STRONG",
+        "modelUsed": "ensemble_lr+xgb",
+        "recommendBet": false,
+        "gameTimeUtc": "2026-10-19T23:00:00Z"
+      },
+      "startTime": "2026-10-19T23:00:00Z",
+      "edge": 0.0
+    }
+  ]
+}
