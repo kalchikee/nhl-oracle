@@ -1,0 +1,102 @@
+{
+  "sport": "NHL",
+  "date": "2026-10-20",
+  "generatedAt": "2026-10-20T12:08:11Z",
+  "picks": [
+    {
+      "gameId": "nhl-2026-10-20-CAR-VAN",
+      "home": "VAN",
+      "away": "CAR",
+      "pickedTeam": "CAR",
+      "pickedSide": "away",
+      "modelProb": 0.8223,
+      "confidenceTier": "extreme",
+      "extra": {
+        "homeName": "Vancouver Canucks",
+        "awayName": "Carolina Hurricanes",
+        "tier": "EXTREME CONVICTION",
+        "modelUsed": "ensemble_lr+xgb",
+        "recommendBet": false,
+        "gameTimeUtc": "2026-10-21T02:00:00Z"
+      },
+      "startTime": "2026-10-21T02:00:00Z",
+      "edge": 0.0
+    },
+    {
+      "gameId": "nhl-2026-10-20-LAK-WSH",
+      "home": "WSH",
+      "away": "LAK",
+      "pickedTeam": "WSH",
+      "pickedSide": "home",
+      "modelProb": 0.7111,
+      "confidenceTier": "high",
+      "extra": {
+        "homeName": "Washington Capitals",
+        "awayName": "Los Angeles Kings",
+        "tier": "EXTREME CONVICTION",
+        "modelUsed": "ensemble_lr+xgb",
+        "recommendBet": false,
+        "gameTimeUtc": "2026-10-20T23:00:00Z"
+      },
+      "startTime": "2026-10-20T23:00:00Z",
+      "edge": 0.0
+    },
+    {
+      "gameId": "nhl-2026-10-20-TBL-VGK",
+      "home": "VGK",
+      "away": "TBL",
+      "pickedTeam": "VGK",
+      "pickedSide": "home",
+      "modelProb": 0.6474,
+      "confidenceTier": "medium",
+      "extra": {
+        "homeName": "Vegas Golden Knights",
+        "awayName": "Tampa Bay Lightning",
+        "tier": "HIGH CONVICTION",
+        "modelUsed": "ensemble_lr+xgb",
+        "recommendBet": false,
+        "gameTimeUtc": "2026-10-21T02:30:00Z"
+      },
+      "startTime": "2026-10-21T02:30:00Z",
+      "edge": 0.0
+    },
+    {
+      "gameId": "nhl-2026-10-20-ANA-NYI",
+      "home": "NYI",
+      "away": "ANA",
+      "pickedTeam": "NYI",
+      "pickedSide": "home",
+      "modelProb": 0.6457,
+      "confidenceTier": "medium",
+      "extra": {
+        "homeName": "New York Islanders",
+        "awayName": "Anaheim Ducks",
+        "tier": "HIGH CONVICTION",
+        "modelUsed": "ensemble_lr+xgb",
+        "recommendBet": false,
+        "gameTimeUtc": "2026-10-20T23:00:00Z"
+      },
+      "startTime": "2026-10-20T23:00:00Z",
+      "edge": 0.0
+    },
+    {
+      "gameId": "nhl-2026-10-20-TOR-CBJ",
+      "home": "CBJ",
+      "away": "TOR",
+      "pickedTeam": "TOR",
+      "pickedSide": "away",
+      "modelProb": 0.635,
+      "confidenceTier": "medium",
+      "extra": {
+        "homeName": "Columbus Blue Jackets",
+        "awayName": "Toronto Maple Leafs",
+        "tier": "HIGH CONVICTION",
+        "modelUsed": "ensemble_lr+xgb",
+        "recommendBet": false,
+        "gameTimeUtc": "2026-10-20T23:00:00Z"
+      },
+      "startTime": "2026-10-20T23:00:00Z",
+      "edge": 0.0
+    }
+  ]
+}
