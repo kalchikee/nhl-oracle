@@ -31618,6 +31618,170 @@
         }
       ],
       "results_recorded": true
+    },
+    {
+      "date": "2026-10-21",
+      "predictions": [
+        {
+          "game_date": "2026-10-21",
+          "game_time_utc": "2026-10-21T23:30:00Z",
+          "home_team": "BUF",
+          "away_team": "PHI",
+          "home_name": "Buffalo Sabres",
+          "away_name": "Philadelphia Flyers",
+          "home_prob": 0.5814,
+          "away_prob": 0.4186,
+          "pick_team": "BUF",
+          "pick_prob": 0.5814,
+          "tier": "LEAN",
+          "tier_emoji": "\ud83d\udcca",
+          "mc": {
+            "home_win_pct": 0.6856,
+            "home_reg_win_pct": 0.5973,
+            "away_win_pct": 0.3144,
+            "away_reg_win_pct": 0.2522,
+            "avg_total_goals": 6.0,
+            "home_shutout_pct": 0.0875,
+            "away_shutout_pct": 0.0311,
+            "most_likely_score": [
+              4,
+              2
+            ],
+            "lambda_home": 3.535,
+            "lambda_away": 2.453
+          },
+          "lr_prob": 0.5253,
+          "vegas_implied_home": null,
+          "recommend_bet": false,
+          "edge": 0.0,
+          "odds": {},
+          "injuries": {
+            "home": {
+              "n_injured": 0,
+              "impact": 0,
+              "players": []
+            },
+            "away": {
+              "n_injured": 0,
+              "impact": 0,
+              "players": []
+            }
+          },
+          "goalies": {
+            "home": "Luukkonen",
+            "away": "Woll",
+            "home_gsax": -4.29,
+            "away_gsax": 4.57
+          },
+          "features": {
+            "elo_diff": 15.0002,
+            "pts_pct_diff": 0.2374,
+            "pythagorean_diff": 0.2044,
+            "gf_pg_diff": 1.4545,
+            "ga_pg_diff": 0.5051,
+            "gd_pg_diff": 0.9495,
+            "pp_pct_diff": -0.0381,
+            "pk_pct_diff": -0.201,
+            "l10_pts_diff": 0.2231,
+            "l5_pts_diff": 0.2231,
+            "reg_win_pct_diff": 0.0404,
+            "home_split_diff": 0.5,
+            "streak_diff": -2.5,
+            "xgf_pct_diff": 0.11,
+            "cf_pct_diff": 0.1,
+            "pdo_diff": -0.0043,
+            "goalie_gsax_diff": -8.86,
+            "rest_days_diff": -9.0,
+            "b2b_home": 0.0,
+            "b2b_away": 0.0,
+            "is_home": 1.0,
+            "log5_prob": 0.7282
+          },
+          "b2b_home": false,
+          "b2b_away": false,
+          "model_used": "ensemble_lr+xgb"
+        },
+        {
+          "game_date": "2026-10-21",
+          "game_time_utc": "2026-10-21T23:30:00Z",
+          "home_team": "OTT",
+          "away_team": "FLA",
+          "home_name": "Ottawa Senators",
+          "away_name": "Florida Panthers",
+          "home_prob": 0.499,
+          "away_prob": 0.501,
+          "pick_team": "FLA",
+          "pick_prob": 0.501,
+          "tier": "COIN FLIP",
+          "tier_emoji": "\ud83e\ude99",
+          "mc": {
+            "home_win_pct": 0.506,
+            "home_reg_win_pct": 0.42,
+            "away_win_pct": 0.494,
+            "away_reg_win_pct": 0.4105,
+            "avg_total_goals": 5.8,
+            "home_shutout_pct": 0.0587,
+            "away_shutout_pct": 0.0543,
+            "most_likely_score": [
+              2,
+              2
+            ],
+            "lambda_home": 2.915,
+            "lambda_away": 2.891
+          },
+          "lr_prob": 0.4952,
+          "vegas_implied_home": null,
+          "recommend_bet": false,
+          "edge": 0.0,
+          "odds": {},
+          "injuries": {
+            "home": {
+              "n_injured": 0,
+              "impact": 0,
+              "players": []
+            },
+            "away": {
+              "n_injured": 0,
+              "impact": 0,
+              "players": []
+            }
+          },
+          "goalies": {
+            "home": "Ullmark",
+            "away": "Markstrom",
+            "home_gsax": 7.74,
+            "away_gsax": 1.4
+          },
+          "features": {
+            "elo_diff": -54.7918,
+            "pts_pct_diff": 0.0,
+            "pythagorean_diff": -0.0689,
+            "gf_pg_diff": -0.6667,
+            "ga_pg_diff": -0.2222,
+            "gd_pg_diff": -0.4444,
+            "pp_pct_diff": -0.0811,
+            "pk_pct_diff": -0.0114,
+            "l10_pts_diff": 0.0,
+            "l5_pts_diff": 0.0,
+            "reg_win_pct_diff": 0.1111,
+            "home_split_diff": 0.0833,
+            "streak_diff": -4.0,
+            "xgf_pct_diff": -0.03,
+            "cf_pct_diff": -0.12,
+            "pdo_diff": 0.0104,
+            "goalie_gsax_diff": 6.34,
+            "rest_days_diff": -10.0,
+            "b2b_home": 0.0,
+            "b2b_away": 0.0,
+            "is_home": 1.0,
+            "log5_prob": 0.5
+          },
+          "b2b_home": false,
+          "b2b_away": false,
+          "model_used": "ensemble_lr+xgb"
+        }
+      ],
+      "results_recorded": false
     }
   ],
   "season_record": {

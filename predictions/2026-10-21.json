@@ -1,0 +1,26 @@
+{
+  "sport": "NHL",
+  "date": "2026-10-21",
+  "generatedAt": "2026-10-21T12:08:03Z",
+  "picks": [
+    {
+      "gameId": "nhl-2026-10-21-PHI-BUF",
+      "home": "BUF",
+      "away": "PHI",
+      "pickedTeam": "BUF",
+      "pickedSide": "home",
+      "modelProb": 0.5814,
+      "confidenceTier": "low",
+      "extra": {
+        "homeName": "Buffalo Sabres",
+        "awayName": "Philadelphia Flyers",
+        "tier": "LEAN",
+        "modelUsed": "ensemble_lr+xgb",
+        "recommendBet": false,
+        "gameTimeUtc": "2026-10-21T23:30:00Z"
+      },
+      "startTime": "2026-10-21T23:30:00Z",
+      "edge": 0.0
+    }
+  ]
+}
