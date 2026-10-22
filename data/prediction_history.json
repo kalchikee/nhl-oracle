@@ -31699,7 +31699,11 @@
           },
           "b2b_home": false,
           "b2b_away": false,
-          "model_used": "ensemble_lr+xgb"
+          "model_used": "ensemble_lr+xgb",
+          "actual_home_score": 1,
+          "actual_away_score": 3,
+          "actual_winner": "PHI",
+          "correct": false
         },
         {
           "game_date": "2026-10-21",
@@ -31778,14 +31782,18 @@
           },
           "b2b_home": false,
           "b2b_away": false,
-          "model_used": "ensemble_lr+xgb"
+          "model_used": "ensemble_lr+xgb",
+          "actual_home_score": 5,
+          "actual_away_score": 1,
+          "actual_winner": "OTT",
+          "correct": false
         }
       ],
-      "results_recorded": false
+      "results_recorded": true
     }
   ],
   "season_record": {
-    "total": 378,
+    "total": 380,
     "correct": 221,
     "high_conv_total": 165,
     "high_conv_correct": 102,
