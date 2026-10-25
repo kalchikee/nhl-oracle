@@ -1,0 +1,102 @@
+{
+  "sport": "NHL",
+  "date": "2026-10-25",
+  "generatedAt": "2026-10-25T12:07:14Z",
+  "picks": [
+    {
+      "gameId": "nhl-2026-10-25-MIN-VAN",
+      "home": "VAN",
+      "away": "MIN",
+      "pickedTeam": "MIN",
+      "pickedSide": "away",
+      "modelProb": 0.8311,
+      "confidenceTier": "extreme",
+      "extra": {
+        "homeName": "Vancouver Canucks",
+        "awayName": "Minnesota Wild",
+        "tier": "EXTREME CONVICTION",
+        "modelUsed": "ensemble_lr+xgb",
+        "recommendBet": false,
+        "gameTimeUtc": "2026-10-26T02:00:00Z"
+      },
+      "startTime": "2026-10-26T02:00:00Z",
+      "edge": 0.0
+    },
+    {
+      "gameId": "nhl-2026-10-25-COL-NSH",
+      "home": "NSH",
+      "away": "COL",
+      "pickedTeam": "COL",
+      "pickedSide": "away",
+      "modelProb": 0.6692,
+      "confidenceTier": "medium",
+      "extra": {
+        "homeName": "Nashville Predators",
+        "awayName": "Colorado Avalanche",
+        "tier": "HIGH CONVICTION",
+        "modelUsed": "ensemble_lr+xgb",
+        "recommendBet": false,
+        "gameTimeUtc": "2026-10-26T00:00:00Z"
+      },
+      "startTime": "2026-10-26T00:00:00Z",
+      "edge": 0.0
+    },
+    {
+      "gameId": "nhl-2026-10-25-FLA-CHI",
+      "home": "CHI",
+      "away": "FLA",
+      "pickedTeam": "FLA",
+      "pickedSide": "away",
+      "modelProb": 0.6579,
+      "confidenceTier": "medium",
+      "extra": {
+        "homeName": "Chicago Blackhawks",
+        "awayName": "Florida Panthers",
+        "tier": "HIGH CONVICTION",
+        "modelUsed": "ensemble_lr+xgb",
+        "recommendBet": false,
+        "gameTimeUtc": "2026-10-25T19:00:00Z"
+      },
+      "startTime": "2026-10-25T19:00:00Z",
+      "edge": 0.0
+    },
+    {
+      "gameId": "nhl-2026-10-25-MTL-WPG",
+      "home": "WPG",
+      "away": "MTL",
+      "pickedTeam": "WPG",
+      "pickedSide": "home",
+      "modelProb": 0.6227,
+      "confidenceTier": "medium",
+      "extra": {
+        "homeName": "Winnipeg Jets",
+        "awayName": "Montr\u00e9al Canadiens",
+        "tier": "STRONG",
+        "modelUsed": "ensemble_lr+xgb",
+        "recommendBet": false,
+        "gameTimeUtc": "2026-10-25T23:00:00Z"
+      },
+      "startTime": "2026-10-25T23:00:00Z",
+      "edge": 0.0
+    },
+    {
+      "gameId": "nhl-2026-10-25-NYI-DAL",
+      "home": "DAL",
+      "away": "NYI",
+      "pickedTeam": "DAL",
+      "pickedSide": "home",
+      "modelProb": 0.5932,
+      "confidenceTier": "low",
+      "extra": {
+        "homeName": "Dallas Stars",
+        "awayName": "New York Islanders",
+        "tier": "LEAN",
+        "modelUsed": "ensemble_lr+xgb",
+        "recommendBet": false,
+        "gameTimeUtc": "2026-10-25T22:00:00Z"
+      },
+      "startTime": "2026-10-25T22:00:00Z",
+      "edge": 0.0
+    }
+  ]
+}
