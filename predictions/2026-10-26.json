@@ -1,0 +1,64 @@
+{
+  "sport": "NHL",
+  "date": "2026-10-26",
+  "generatedAt": "2026-10-26T13:31:27Z",
+  "picks": [
+    {
+      "gameId": "nhl-2026-10-26-TOR-CGY",
+      "home": "CGY",
+      "away": "TOR",
+      "pickedTeam": "TOR",
+      "pickedSide": "away",
+      "modelProb": 0.7436,
+      "confidenceTier": "extreme",
+      "extra": {
+        "homeName": "Calgary Flames",
+        "awayName": "Toronto Maple Leafs",
+        "tier": "EXTREME CONVICTION",
+        "modelUsed": "ensemble_lr+xgb",
+        "recommendBet": false,
+        "gameTimeUtc": "2026-10-27T00:30:00Z"
+      },
+      "startTime": "2026-10-27T00:30:00Z",
+      "edge": 0.0
+    },
+    {
+      "gameId": "nhl-2026-10-26-DET-EDM",
+      "home": "EDM",
+      "away": "DET",
+      "pickedTeam": "EDM",
+      "pickedSide": "home",
+      "modelProb": 0.7014,
+      "confidenceTier": "high",
+      "extra": {
+        "homeName": "Edmonton Oilers",
+        "awayName": "Detroit Red Wings",
+        "tier": "EXTREME CONVICTION",
+        "modelUsed": "ensemble_lr+xgb",
+        "recommendBet": false,
+        "gameTimeUtc": "2026-10-27T01:30:00Z"
+      },
+      "startTime": "2026-10-27T01:30:00Z",
+      "edge": 0.0
+    },
+    {
+      "gameId": "nhl-2026-10-26-LAK-NYR",
+      "home": "NYR",
+      "away": "LAK",
+      "pickedTeam": "NYR",
+      "pickedSide": "home",
+      "modelProb": 0.6858,
+      "confidenceTier": "high",
+      "extra": {
+        "homeName": "New York Rangers",
+        "awayName": "Los Angeles Kings",
+        "tier": "EXTREME CONVICTION",
+        "modelUsed": "ensemble_lr+xgb",
+        "recommendBet": false,
+        "gameTimeUtc": "2026-10-26T23:00:00Z"
+      },
+      "startTime": "2026-10-26T23:00:00Z",
+      "edge": 0.0
+    }
+  ]
+}
