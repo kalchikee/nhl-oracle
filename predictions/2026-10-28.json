@@ -1,0 +1,45 @@
+{
+  "sport": "NHL",
+  "date": "2026-10-28",
+  "generatedAt": "2026-10-28T12:05:57Z",
+  "picks": [
+    {
+      "gameId": "nhl-2026-10-28-PHI-WSH",
+      "home": "WSH",
+      "away": "PHI",
+      "pickedTeam": "WSH",
+      "pickedSide": "home",
+      "modelProb": 0.7584,
+      "confidenceTier": "extreme",
+      "extra": {
+        "homeName": "Washington Capitals",
+        "awayName": "Philadelphia Flyers",
+        "tier": "EXTREME CONVICTION",
+        "modelUsed": "ensemble_lr+xgb",
+        "recommendBet": false,
+        "gameTimeUtc": "2026-10-28T23:30:00Z"
+      },
+      "startTime": "2026-10-28T23:30:00Z",
+      "edge": 0.0
+    },
+    {
+      "gameId": "nhl-2026-10-28-CGY-EDM",
+      "home": "EDM",
+      "away": "CGY",
+      "pickedTeam": "EDM",
+      "pickedSide": "home",
+      "modelProb": 0.7036,
+      "confidenceTier": "high",
+      "extra": {
+        "homeName": "Edmonton Oilers",
+        "awayName": "Calgary Flames",
+        "tier": "EXTREME CONVICTION",
+        "modelUsed": "ensemble_lr+xgb",
+        "recommendBet": false,
+        "gameTimeUtc": "2026-10-29T00:30:00Z"
+      },
+      "startTime": "2026-10-29T00:30:00Z",
+      "edge": 0.0
+    }
+  ]
+}
