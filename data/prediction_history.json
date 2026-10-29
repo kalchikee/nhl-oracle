@@ -35899,6 +35899,881 @@
         }
       ],
       "results_recorded": true
+    },
+    {
+      "date": "2026-10-29",
+      "predictions": [
+        {
+          "game_date": "2026-10-29",
+          "game_time_utc": "2026-10-29T23:00:00Z",
+          "home_team": "CAR",
+          "away_team": "CBJ",
+          "home_name": "Carolina Hurricanes",
+          "away_name": "Columbus Blue Jackets",
+          "home_prob": 0.8049,
+          "away_prob": 0.1951,
+          "pick_team": "CAR",
+          "pick_prob": 0.8049,
+          "tier": "EXTREME CONVICTION",
+          "tier_emoji": "\ud83d\udd25",
+          "mc": {
+            "home_win_pct": 0.85,
+            "home_reg_win_pct": 0.779,
+            "away_win_pct": 0.15,
+            "away_reg_win_pct": 0.1172,
+            "avg_total_goals": 6.6,
+            "home_shutout_pct": 0.1219,
+            "away_shutout_pct": 0.011,
+            "most_likely_score": [
+              4,
+              2
+            ],
+            "lambda_home": 4.535,
+            "lambda_away": 2.091
+          },
+          "lr_prob": 0.7806,
+          "vegas_implied_home": null,
+          "recommend_bet": false,
+          "edge": 0.0,
+          "odds": {},
+          "injuries": {
+            "home": {
+              "n_injured": 0,
+              "impact": 0,
+              "players": []
+            },
+            "away": {
+              "n_injured": 0,
+              "impact": 0,
+              "players": []
+            }
+          },
+          "goalies": {
+            "home": "Kochetkov",
+            "away": "Talbot",
+            "home_gsax": 5.47,
+            "away_gsax": 2.47
+          },
+          "features": {
+            "elo_diff": 155.9009,
+            "pts_pct_diff": 0.2857,
+            "pythagorean_diff": 0.3254,
+            "gf_pg_diff": 1.1857,
+            "ga_pg_diff": -0.8714,
+            "gd_pg_diff": 2.0571,
+            "pp_pct_diff": 0.1242,
+            "pk_pct_diff": 0.1061,
+            "l10_pts_diff": 0.3146,
+            "l5_pts_diff": 0.3146,
+            "reg_win_pct_diff": 0.5429,
+            "home_split_diff": 0.3667,
+            "streak_diff": 0.0,
+            "xgf_pct_diff": 0.18,
+            "cf_pct_diff": 0.12,
+            "pdo_diff": 0.0249,
+            "goalie_gsax_diff": 3.0,
+            "rest_days_diff": -61.0,
+            "b2b_home": 0.0,
+            "b2b_away": 0.0,
+            "is_home": 1.0,
+            "log5_prob": 0.7857
+          },
+          "b2b_home": false,
+          "b2b_away": false,
+          "model_used": "ensemble_lr+xgb"
+        },
+        {
+          "game_date": "2026-10-29",
+          "game_time_utc": "2026-10-30T02:00:00Z",
+          "home_team": "LAK",
+          "away_team": "OTT",
+          "home_name": "Los Angeles Kings",
+          "away_name": "Ottawa Senators",
+          "home_prob": 0.2844,
+          "away_prob": 0.7156,
+          "pick_team": "OTT",
+          "pick_prob": 0.7156,
+          "tier": "EXTREME CONVICTION",
+          "tier_emoji": "\ud83d\udd25",
+          "mc": {
+            "home_win_pct": 0.3516,
+            "home_reg_win_pct": 0.2823,
+            "away_win_pct": 0.6484,
+            "away_reg_win_pct": 0.5573,
+            "avg_total_goals": 5.9,
+            "home_shutout_pct": 0.0331,
+            "away_shutout_pct": 0.0827,
+            "most_likely_score": [
+              2,
+              3
+            ],
+            "lambda_home": 2.507,
+            "lambda_away": 3.382
+          },
+          "lr_prob": 0.2482,
+          "vegas_implied_home": null,
+          "recommend_bet": false,
+          "edge": 0.0,
+          "odds": {},
+          "injuries": {
+            "home": {
+              "n_injured": 0,
+              "impact": 0,
+              "players": []
+            },
+            "away": {
+              "n_injured": 0,
+              "impact": 0,
+              "players": []
+            }
+          },
+          "goalies": {
+            "home": "Kuemper",
+            "away": "Ullmark",
+            "home_gsax": -1.38,
+            "away_gsax": 8.27
+          },
+          "features": {
+            "elo_diff": -2.8299,
+            "pts_pct_diff": -0.2517,
+            "pythagorean_diff": -0.1488,
+            "gf_pg_diff": -0.4545,
+            "ga_pg_diff": 0.4406,
+            "gd_pg_diff": -0.8951,
+            "pp_pct_diff": 0.0242,
+            "pk_pct_diff": -0.1414,
+            "l10_pts_diff": -0.2285,
+            "l5_pts_diff": -0.2285,
+            "reg_win_pct_diff": -0.2797,
+            "home_split_diff": -0.5,
+            "streak_diff": 0.0,
+            "xgf_pct_diff": -0.05,
+            "cf_pct_diff": 0.0,
+            "pdo_diff": -0.0235,
+            "goalie_gsax_diff": -9.65,
+            "rest_days_diff": -1.0,
+            "b2b_home": 0.0,
+            "b2b_away": 0.0,
+            "is_home": 1.0,
+            "log5_prob": 0.2632
+          },
+          "b2b_home": false,
+          "b2b_away": false,
+          "model_used": "ensemble_lr+xgb"
+        },
+        {
+          "game_date": "2026-10-29",
+          "game_time_utc": "2026-10-30T00:00:00Z",
+          "home_team": "MIN",
+          "away_team": "NYI",
+          "home_name": "Minnesota Wild",
+          "away_name": "New York Islanders",
+          "home_prob": 0.6967,
+          "away_prob": 0.3033,
+          "pick_team": "MIN",
+          "pick_prob": 0.6967,
+          "tier": "EXTREME CONVICTION",
+          "tier_emoji": "\ud83d\udd25",
+          "mc": {
+            "home_win_pct": 0.8042,
+            "home_reg_win_pct": 0.726,
+            "away_win_pct": 0.1958,
+            "away_reg_win_pct": 0.1543,
+            "avg_total_goals": 6.7,
+            "home_shutout_pct": 0.0976,
+            "away_shutout_pct": 0.0127,
+            "most_likely_score": [
+              4,
+              2
+            ],
+            "lambda_home": 4.394,
+            "lambda_away": 2.345
+          },
+          "lr_prob": 0.6387,
+          "vegas_implied_home": null,
+          "recommend_bet": false,
+          "edge": 0.0,
+          "odds": {},
+          "injuries": {
+            "home": {
+              "n_injured": 0,
+              "impact": 0,
+              "players": []
+            },
+            "away": {
+              "n_injured": 0,
+              "impact": 0,
+              "players": []
+            }
+          },
+          "goalies": {
+            "home": "Wallstedt",
+            "away": "Sorokin",
+            "home_gsax": 9.92,
+            "away_gsax": 5.71
+          },
+          "features": {
+            "elo_diff": 44.89,
+            "pts_pct_diff": 0.131,
+            "pythagorean_diff": 0.1097,
+            "gf_pg_diff": 0.1429,
+            "ga_pg_diff": -0.4524,
+            "gd_pg_diff": 0.5952,
+            "pp_pct_diff": 0.1074,
+            "pk_pct_diff": -0.0314,
+            "l10_pts_diff": 0.1395,
+            "l5_pts_diff": 0.1395,
+            "reg_win_pct_diff": 0.2262,
+            "home_split_diff": 0.5833,
+            "streak_diff": 2.0,
+            "xgf_pct_diff": 0.13,
+            "cf_pct_diff": 0.04,
+            "pdo_diff": -0.001,
+            "goalie_gsax_diff": 4.21,
+            "rest_days_diff": -29.0,
+            "b2b_home": 0.0,
+            "b2b_away": 0.0,
+            "is_home": 1.0,
+            "log5_prob": 0.641
+          },
+          "b2b_home": false,
+          "b2b_away": false,
+          "model_used": "ensemble_lr+xgb"
+        },
+        {
+          "game_date": "2026-10-29",
+          "game_time_utc": "2026-10-30T02:00:00Z",
+          "home_team": "SJS",
+          "away_team": "VAN",
+          "home_name": "San Jose Sharks",
+          "away_name": "Vancouver Canucks",
+          "home_prob": 0.6927,
+          "away_prob": 0.3073,
+          "pick_team": "SJS",
+          "pick_prob": 0.6927,
+          "tier": "EXTREME CONVICTION",
+          "tier_emoji": "\ud83d\udd25",
+          "mc": {
+            "home_win_pct": 0.7396,
+            "home_reg_win_pct": 0.6637,
+            "away_win_pct": 0.2604,
+            "away_reg_win_pct": 0.2126,
+            "avg_total_goals": 7.7,
+            "home_shutout_pct": 0.0438,
+            "away_shutout_pct": 0.0083,
+            "most_likely_score": [
+              5,
+              2
+            ],
+            "lambda_home": 4.748,
+            "lambda_away": 3.005
+          },
+          "lr_prob": 0.6674,
+          "vegas_implied_home": null,
+          "recommend_bet": false,
+          "edge": 0.0,
+          "odds": {},
+          "injuries": {
+            "home": {
+              "n_injured": 0,
+              "impact": 0,
+              "players": []
+            },
+            "away": {
+              "n_injured": 0,
+              "impact": 0,
+              "players": []
+            }
+          },
+          "goalies": {
+            "home": "Askarov",
+            "away": "Lankinen",
+            "home_gsax": 5.2,
+            "away_gsax": -12.06
+          },
+          "features": {
+            "elo_diff": -50.015,
+            "pts_pct_diff": 0.25,
+            "pythagorean_diff": 0.0989,
+            "gf_pg_diff": -0.2253,
+            "ga_pg_diff": -1.1813,
+            "gd_pg_diff": 0.956,
+            "pp_pct_diff": 0.0455,
+            "pk_pct_diff": 0.1799,
+            "l10_pts_diff": 0.2725,
+            "l5_pts_diff": 0.2725,
+            "reg_win_pct_diff": 0.0055,
+            "home_split_diff": 0.0875,
+            "streak_diff": -3.0,
+            "xgf_pct_diff": 0.05,
+            "cf_pct_diff": 0.03,
+            "pdo_diff": -0.0154,
+            "goalie_gsax_diff": 17.26,
+            "rest_days_diff": 0.0,
+            "b2b_home": 0.0,
+            "b2b_away": 0.0,
+            "is_home": 1.0,
+            "log5_prob": 0.75
+          },
+          "b2b_home": false,
+          "b2b_away": false,
+          "model_used": "ensemble_lr+xgb"
+        },
+        {
+          "game_date": "2026-10-29",
+          "game_time_utc": "2026-10-30T00:00:00Z",
+          "home_team": "STL",
+          "away_team": "BOS",
+          "home_name": "St. Louis Blues",
+          "away_name": "Boston Bruins",
+          "home_prob": 0.3688,
+          "away_prob": 0.6312,
+          "pick_team": "BOS",
+          "pick_prob": 0.6312,
+          "tier": "HIGH CONVICTION",
+          "tier_emoji": "\u2b50",
+          "mc": {
+            "home_win_pct": 0.4726,
+            "home_reg_win_pct": 0.393,
+            "away_win_pct": 0.5274,
+            "away_reg_win_pct": 0.4472,
+            "avg_total_goals": 6.1,
+            "home_shutout_pct": 0.0404,
+            "away_shutout_pct": 0.05,
+            "most_likely_score": [
+              2,
+              3
+            ],
+            "lambda_home": 2.976,
+            "lambda_away": 3.119
+          },
+          "lr_prob": 0.3129,
+          "vegas_implied_home": null,
+          "recommend_bet": false,
+          "edge": 0.0,
+          "odds": {},
+          "injuries": {
+            "home": {
+              "n_injured": 0,
+              "impact": 0,
+              "players": []
+            },
+            "away": {
+              "n_injured": 0,
+              "impact": 0,
+              "players": []
+            }
+          },
+          "goalies": {
+            "home": "Hofer",
+            "away": "Swayman",
+            "home_gsax": 3.22,
+            "away_gsax": 8.17
+          },
+          "features": {
+            "elo_diff": -70.0461,
+            "pts_pct_diff": -0.2724,
+            "pythagorean_diff": -0.2816,
+            "gf_pg_diff": -0.8526,
+            "ga_pg_diff": 0.9295,
+            "gd_pg_diff": -1.7821,
+            "pp_pct_diff": -0.0008,
+            "pk_pct_diff": 0.0394,
+            "l10_pts_diff": -0.2848,
+            "l5_pts_diff": -0.2848,
+            "reg_win_pct_diff": -0.1987,
+            "home_split_diff": -0.0595,
+            "streak_diff": -1.0,
+            "xgf_pct_diff": 0.0,
+            "cf_pct_diff": 0.04,
+            "pdo_diff": -0.079,
+            "goalie_gsax_diff": -4.95,
+            "rest_days_diff": 15.0,
+            "b2b_home": 0.0,
+            "b2b_away": 0.0,
+            "is_home": 1.0,
+            "log5_prob": 0.2377
+          },
+          "b2b_home": false,
+          "b2b_away": false,
+          "model_used": "ensemble_lr+xgb"
+        },
+        {
+          "game_date": "2026-10-29",
+          "game_time_utc": "2026-10-30T00:00:00Z",
+          "home_team": "DAL",
+          "away_team": "MTL",
+          "home_name": "Dallas Stars",
+          "away_name": "Montr\u00e9al Canadiens",
+          "home_prob": 0.6122,
+          "away_prob": 0.3878,
+          "pick_team": "DAL",
+          "pick_prob": 0.6122,
+          "tier": "STRONG",
+          "tier_emoji": "\u2705",
+          "mc": {
+            "home_win_pct": 0.6093,
+            "home_reg_win_pct": 0.5132,
+            "away_win_pct": 0.3907,
+            "away_reg_win_pct": 0.3131,
+            "avg_total_goals": 5.4,
+            "home_shutout_pct": 0.0915,
+            "away_shutout_pct": 0.0494,
+            "most_likely_score": [
+              2,
+              2
+            ],
+            "lambda_home": 3.005,
+            "lambda_away": 2.459
+          },
+          "lr_prob": 0.6138,
+          "vegas_implied_home": null,
+          "recommend_bet": false,
+          "edge": 0.0,
+          "odds": {},
+          "injuries": {
+            "home": {
+              "n_injured": 0,
+              "impact": 0,
+              "players": []
+            },
+            "away": {
+              "n_injured": 0,
+              "impact": 0,
+              "players": []
+            }
+          },
+          "goalies": {
+            "home": "Oettinger",
+            "away": "Fowler",
+            "home_gsax": 9.42,
+            "away_gsax": 10.07
+          },
+          "features": {
+            "elo_diff": 55.0569,
+            "pts_pct_diff": -0.0417,
+            "pythagorean_diff": 0.1083,
+            "gf_pg_diff": -0.4167,
+            "ga_pg_diff": -0.9167,
+            "gd_pg_diff": 0.5,
+            "pp_pct_diff": 0.0709,
+            "pk_pct_diff": 0.0918,
+            "l10_pts_diff": 0.0221,
+            "l5_pts_diff": 0.0221,
+            "reg_win_pct_diff": 0.0,
+            "home_split_diff": -0.1786,
+            "streak_diff": -4.0,
+            "xgf_pct_diff": 0.04,
+            "cf_pct_diff": -0.01,
+            "pdo_diff": 0.0082,
+            "goalie_gsax_diff": -0.65,
+            "rest_days_diff": 29.0,
+            "b2b_home": 0.0,
+            "b2b_away": 0.0,
+            "is_home": 1.0,
+            "log5_prob": 0.4545
+          },
+          "b2b_home": false,
+          "b2b_away": false,
+          "model_used": "ensemble_lr+xgb"
+        },
+        {
+          "game_date": "2026-10-29",
+          "game_time_utc": "2026-10-30T02:00:00Z",
+          "home_team": "ANA",
+          "away_team": "BUF",
+          "home_name": "Anaheim Ducks",
+          "away_name": "Buffalo Sabres",
+          "home_prob": 0.6095,
+          "away_prob": 0.3905,
+          "pick_team": "ANA",
+          "pick_prob": 0.6095,
+          "tier": "STRONG",
+          "tier_emoji": "\u2705",
+          "mc": {
+            "home_win_pct": 0.4442,
+            "home_reg_win_pct": 0.3729,
+            "away_win_pct": 0.5558,
+            "away_reg_win_pct": 0.4792,
+            "avg_total_goals": 7.2,
+            "home_shutout_pct": 0.0196,
+            "away_shutout_pct": 0.0329,
+            "most_likely_score": [
+              3,
+              3
+            ],
+            "lambda_home": 3.437,
+            "lambda_away": 3.816
+          },
+          "lr_prob": 0.6985,
+          "vegas_implied_home": null,
+          "recommend_bet": false,
+          "edge": 0.0,
+          "odds": {},
+          "injuries": {
+            "home": {
+              "n_injured": 0,
+              "impact": 0,
+              "players": []
+            },
+            "away": {
+              "n_injured": 0,
+              "impact": 0,
+              "players": []
+            }
+          },
+          "goalies": {
+            "home": "Dostal",
+            "away": "Luukkonen",
+            "home_gsax": 0.2,
+            "away_gsax": -3.63
+          },
+          "features": {
+            "elo_diff": -36.7952,
+            "pts_pct_diff": -0.0833,
+            "pythagorean_diff": 0.0323,
+            "gf_pg_diff": 0.3333,
+            "ga_pg_diff": 0.1667,
+            "gd_pg_diff": 0.1667,
+            "pp_pct_diff": 0.1393,
+            "pk_pct_diff": 0.0612,
+            "l10_pts_diff": -0.1358,
+            "l5_pts_diff": -0.1358,
+            "reg_win_pct_diff": 0.0833,
+            "home_split_diff": -0.2833,
+            "streak_diff": -1.5,
+            "xgf_pct_diff": -0.05,
+            "cf_pct_diff": -0.05,
+            "pdo_diff": 0.0287,
+            "goalie_gsax_diff": 3.83,
+            "rest_days_diff": 4.0,
+            "b2b_home": 0.0,
+            "b2b_away": 0.0,
+            "is_home": 1.0,
+            "log5_prob": 0.4172
+          },
+          "b2b_home": false,
+          "b2b_away": false,
+          "model_used": "ensemble_lr+xgb"
+        },
+        {
+          "game_date": "2026-10-29",
+          "game_time_utc": "2026-10-30T00:00:00Z",
+          "home_team": "NSH",
+          "away_team": "WSH",
+          "home_name": "Nashville Predators",
+          "away_name": "Washington Capitals",
+          "home_prob": 0.4318,
+          "away_prob": 0.5682,
+          "pick_team": "WSH",
+          "pick_prob": 0.5682,
+          "tier": "LEAN",
+          "tier_emoji": "\ud83d\udcca",
+          "mc": {
+            "home_win_pct": 0.4662,
+            "home_reg_win_pct": 0.391,
+            "away_win_pct": 0.5338,
+            "away_reg_win_pct": 0.4603,
+            "avg_total_goals": 7.2,
+            "home_shutout_pct": 0.025,
+            "away_shutout_pct": 0.0292,
+            "most_likely_score": [
+              3,
+              3
+            ],
+            "lambda_home": 3.52,
+            "lambda_away": 3.736
+          },
+          "lr_prob": 0.4133,
+          "vegas_implied_home": null,
+          "recommend_bet": false,
+          "edge": 0.0,
+          "odds": {},
+          "injuries": {
+            "home": {
+              "n_injured": 0,
+              "impact": 0,
+              "players": []
+            },
+            "away": {
+              "n_injured": 0,
+              "impact": 0,
+              "players": []
+            }
+          },
+          "goalies": {
+            "home": "Saros",
+            "away": "Thompson",
+            "home_gsax": 3.9,
+            "away_gsax": 4.61
+          },
+          "features": {
+            "elo_diff": -66.2067,
+            "pts_pct_diff": -0.0947,
+            "pythagorean_diff": -0.1363,
+            "gf_pg_diff": -0.7121,
+            "ga_pg_diff": 0.1591,
+            "gd_pg_diff": -0.8712,
+            "pp_pct_diff": 0.1235,
+            "pk_pct_diff": 0.0694,
+            "l10_pts_diff": -0.0746,
+            "l5_pts_diff": -0.0746,
+            "reg_win_pct_diff": -0.2121,
+            "home_split_diff": 0.2381,
+            "streak_diff": -2.5,
+            "xgf_pct_diff": -0.03,
+            "cf_pct_diff": 0.0,
+            "pdo_diff": -0.0099,
+            "goalie_gsax_diff": -0.71,
+            "rest_days_diff": -2.0,
+            "b2b_home": 0.0,
+            "b2b_away": 0.0,
+            "is_home": 1.0,
+            "log5_prob": 0.4031
+          },
+          "b2b_home": false,
+          "b2b_away": false,
+          "model_used": "ensemble_lr+xgb"
+        },
+        {
+          "game_date": "2026-10-29",
+          "game_time_utc": "2026-10-29T23:00:00Z",
+          "home_team": "PIT",
+          "away_team": "UTA",
+          "home_name": "Pittsburgh Penguins",
+          "away_name": "Utah Mammoth",
+          "home_prob": 0.55,
+          "away_prob": 0.45,
+          "pick_team": "PIT",
+          "pick_prob": 0.55,
+          "tier": "LEAN",
+          "tier_emoji": "\ud83d\udcca",
+          "mc": {
+            "home_win_pct": 0.4014,
+            "home_reg_win_pct": 0.3345,
+            "away_win_pct": 0.5986,
+            "away_reg_win_pct": 0.5214,
+            "avg_total_goals": 7.2,
+            "home_shutout_pct": 0.0185,
+            "away_shutout_pct": 0.0387,
+            "most_likely_score": [
+              3,
+              4
+            ],
+            "lambda_home": 3.256,
+            "lambda_away": 3.913
+          },
+          "lr_prob": 0.6301,
+          "vegas_implied_home": null,
+          "recommend_bet": false,
+          "edge": 0.0,
+          "odds": {},
+          "injuries": {
+            "home": {
+              "n_injured": 0,
+              "impact": 0,
+              "players": []
+            },
+            "away": {
+              "n_injured": 0,
+              "impact": 0,
+              "players": []
+            }
+          },
+          "goalies": {
+            "home": "Silovs",
+            "away": "Vejmelka",
+            "home_gsax": 1.69,
+            "away_gsax": -4.77
+          },
+          "features": {
+            "elo_diff": -18.9929,
+            "pts_pct_diff": -0.1571,
+            "pythagorean_diff": -0.0444,
+            "gf_pg_diff": -0.2821,
+            "ga_pg_diff": 0.0256,
+            "gd_pg_diff": -0.3077,
+            "pp_pct_diff": -0.1419,
+            "pk_pct_diff": 0.1648,
+            "l10_pts_diff": -0.1989,
+            "l5_pts_diff": -0.1989,
+            "reg_win_pct_diff": -0.3718,
+            "home_split_diff": 0.2286,
+            "streak_diff": 3.0,
+            "xgf_pct_diff": -0.08,
+            "cf_pct_diff": -0.05,
+            "pdo_diff": 0.0168,
+            "goalie_gsax_diff": 6.46,
+            "rest_days_diff": 2.0,
+            "b2b_home": 0.0,
+            "b2b_away": 0.0,
+            "is_home": 1.0,
+            "log5_prob": 0.3459
+          },
+          "b2b_home": false,
+          "b2b_away": false,
+          "model_used": "ensemble_lr+xgb"
+        },
+        {
+          "game_date": "2026-10-29",
+          "game_time_utc": "2026-10-29T23:30:00Z",
+          "home_team": "DET",
+          "away_team": "CHI",
+          "home_name": "Detroit Red Wings",
+          "away_name": "Chicago Blackhawks",
+          "home_prob": 0.5373,
+          "away_prob": 0.4627,
+          "pick_team": "DET",
+          "pick_prob": 0.5373,
+          "tier": "COIN FLIP",
+          "tier_emoji": "\ud83e\ude99",
+          "mc": {
+            "home_win_pct": 0.6433,
+            "home_reg_win_pct": 0.5546,
+            "away_win_pct": 0.3567,
+            "away_reg_win_pct": 0.295,
+            "avg_total_goals": 6.5,
+            "home_shutout_pct": 0.0559,
+            "away_shutout_pct": 0.0244,
+            "most_likely_score": [
+              3,
+              2
+            ],
+            "lambda_home": 3.727,
+            "lambda_away": 2.789
+          },
+          "lr_prob": 0.4802,
+          "vegas_implied_home": null,
+          "recommend_bet": false,
+          "edge": 0.0,
+          "odds": {},
+          "injuries": {
+            "home": {
+              "n_injured": 0,
+              "impact": 0,
+              "players": []
+            },
+            "away": {
+              "n_injured": 0,
+              "impact": 0,
+              "players": []
+            }
+          },
+          "goalies": {
+            "home": "Gibson",
+            "away": "Knight",
+            "home_gsax": -4.23,
+            "away_gsax": 0.97
+          },
+          "features": {
+            "elo_diff": 55.4517,
+            "pts_pct_diff": 0.2083,
+            "pythagorean_diff": 0.1842,
+            "gf_pg_diff": 0.5833,
+            "ga_pg_diff": -0.5833,
+            "gd_pg_diff": 1.1667,
+            "pp_pct_diff": 0.1117,
+            "pk_pct_diff": -0.1252,
+            "l10_pts_diff": 0.2271,
+            "l5_pts_diff": 0.2271,
+            "reg_win_pct_diff": 0.0,
+            "home_split_diff": 0.5,
+            "streak_diff": 0.0,
+            "xgf_pct_diff": 0.08,
+            "cf_pct_diff": 0.09,
+            "pdo_diff": -0.0048,
+            "goalie_gsax_diff": -5.2,
+            "rest_days_diff": 0.0,
+            "b2b_home": 0.0,
+            "b2b_away": 0.0,
+            "is_home": 1.0,
+            "log5_prob": 0.7027
+          },
+          "b2b_home": false,
+          "b2b_away": false,
+          "model_used": "ensemble_lr+xgb"
+        },
+        {
+          "game_date": "2026-10-29",
+          "game_time_utc": "2026-10-29T23:00:00Z",
+          "home_team": "TBL",
+          "away_team": "WPG",
+          "home_name": "Tampa Bay Lightning",
+          "away_name": "Winnipeg Jets",
+          "home_prob": 0.5365,
+          "away_prob": 0.4635,
+          "pick_team": "TBL",
+          "pick_prob": 0.5365,
+          "tier": "COIN FLIP",
+          "tier_emoji": "\ud83e\ude99",
+          "mc": {
+            "home_win_pct": 0.6642,
+            "home_reg_win_pct": 0.5803,
+            "away_win_pct": 0.3358,
+            "away_reg_win_pct": 0.2756,
+            "avg_total_goals": 6.8,
+            "home_shutout_pct": 0.0531,
+            "away_shutout_pct": 0.0196,
+            "most_likely_score": [
+              4,
+              2
+            ],
+            "lambda_home": 3.942,
+            "lambda_away": 2.914
+          },
+          "lr_prob": 0.4677,
+          "vegas_implied_home": null,
+          "recommend_bet": false,
+          "edge": 0.0,
+          "odds": {},
+          "injuries": {
+            "home": {
+              "n_injured": 0,
+              "impact": 0,
+              "players": []
+            },
+            "away": {
+              "n_injured": 0,
+              "impact": 0,
+              "players": []
+            }
+          },
+          "goalies": {
+            "home": "Vasilevskiy",
+            "away": "Skinner",
+            "home_gsax": -1.14,
+            "away_gsax": 5.85
+          },
+          "features": {
+            "elo_diff": 30.497,
+            "pts_pct_diff": 0.2235,
+            "pythagorean_diff": 0.1785,
+            "gf_pg_diff": 1.1212,
+            "ga_pg_diff": 0.0909,
+            "gd_pg_diff": 1.0303,
+            "pp_pct_diff": -0.0318,
+            "pk_pct_diff": 0.0247,
+            "l10_pts_diff": 0.2804,
+            "l5_pts_diff": 0.2804,
+            "reg_win_pct_diff": 0.2121,
+            "home_split_diff": 0.4,
+            "streak_diff": 1.5,
+            "xgf_pct_diff": 0.08,
+            "cf_pct_diff": 0.06,
+            "pdo_diff": 0.0054,
+            "goalie_gsax_diff": -6.99,
+            "rest_days_diff": -17.0,
+            "b2b_home": 0.0,
+            "b2b_away": 0.0,
+            "is_home": 1.0,
+            "log5_prob": 0.7169
+          },
+          "b2b_home": false,
+          "b2b_away": false,
+          "model_used": "ensemble_lr+xgb"
+        }
+      ],
+      "results_recorded": false
     }
   ],
   "season_record": {
