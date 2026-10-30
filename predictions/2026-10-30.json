@@ -1,0 +1,45 @@
+{
+  "sport": "NHL",
+  "date": "2026-10-30",
+  "generatedAt": "2026-10-30T12:06:17Z",
+  "picks": [
+    {
+      "gameId": "nhl-2026-10-30-WPG-FLA",
+      "home": "FLA",
+      "away": "WPG",
+      "pickedTeam": "FLA",
+      "pickedSide": "home",
+      "modelProb": 0.634,
+      "confidenceTier": "medium",
+      "extra": {
+        "homeName": "Florida Panthers",
+        "awayName": "Winnipeg Jets",
+        "tier": "HIGH CONVICTION",
+        "modelUsed": "ensemble_lr+xgb",
+        "recommendBet": false,
+        "gameTimeUtc": "2026-10-30T23:00:00Z"
+      },
+      "startTime": "2026-10-30T23:00:00Z",
+      "edge": 0.0
+    },
+    {
+      "gameId": "nhl-2026-10-30-NJD-VGK",
+      "home": "VGK",
+      "away": "NJD",
+      "pickedTeam": "VGK",
+      "pickedSide": "home",
+      "modelProb": 0.5952,
+      "confidenceTier": "low",
+      "extra": {
+        "homeName": "Vegas Golden Knights",
+        "awayName": "New Jersey Devils",
+        "tier": "LEAN",
+        "modelUsed": "ensemble_lr+xgb",
+        "recommendBet": false,
+        "gameTimeUtc": "2026-10-30T22:00:00Z"
+      },
+      "startTime": "2026-10-30T22:00:00Z",
+      "edge": 0.0
+    }
+  ]
+}
