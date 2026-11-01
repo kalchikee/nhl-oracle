@@ -1,0 +1,102 @@
+{
+  "sport": "NHL",
+  "date": "2026-11-01",
+  "generatedAt": "2026-11-01T12:04:33Z",
+  "picks": [
+    {
+      "gameId": "nhl-2026-11-01-WPG-CAR",
+      "home": "CAR",
+      "away": "WPG",
+      "pickedTeam": "CAR",
+      "pickedSide": "home",
+      "modelProb": 0.85,
+      "confidenceTier": "extreme",
+      "extra": {
+        "homeName": "Carolina Hurricanes",
+        "awayName": "Winnipeg Jets",
+        "tier": "EXTREME CONVICTION",
+        "modelUsed": "ensemble_lr+xgb",
+        "recommendBet": false,
+        "gameTimeUtc": "2026-11-01T18:00:00Z"
+      },
+      "startTime": "2026-11-01T18:00:00Z",
+      "edge": 0.0
+    },
+    {
+      "gameId": "nhl-2026-11-01-OTT-ANA",
+      "home": "ANA",
+      "away": "OTT",
+      "pickedTeam": "OTT",
+      "pickedSide": "away",
+      "modelProb": 0.6927,
+      "confidenceTier": "high",
+      "extra": {
+        "homeName": "Anaheim Ducks",
+        "awayName": "Ottawa Senators",
+        "tier": "EXTREME CONVICTION",
+        "modelUsed": "ensemble_lr+xgb",
+        "recommendBet": false,
+        "gameTimeUtc": "2026-11-02T01:00:00Z"
+      },
+      "startTime": "2026-11-02T01:00:00Z",
+      "edge": 0.0
+    },
+    {
+      "gameId": "nhl-2026-11-01-UTA-PHI",
+      "home": "PHI",
+      "away": "UTA",
+      "pickedTeam": "UTA",
+      "pickedSide": "away",
+      "modelProb": 0.6882,
+      "confidenceTier": "high",
+      "extra": {
+        "homeName": "Philadelphia Flyers",
+        "awayName": "Utah Mammoth",
+        "tier": "EXTREME CONVICTION",
+        "modelUsed": "ensemble_lr+xgb",
+        "recommendBet": false,
+        "gameTimeUtc": "2026-11-01T21:00:00Z"
+      },
+      "startTime": "2026-11-01T21:00:00Z",
+      "edge": 0.0
+    },
+    {
+      "gameId": "nhl-2026-11-01-MIN-WSH",
+      "home": "WSH",
+      "away": "MIN",
+      "pickedTeam": "MIN",
+      "pickedSide": "away",
+      "modelProb": 0.6487,
+      "confidenceTier": "medium",
+      "extra": {
+        "homeName": "Washington Capitals",
+        "awayName": "Minnesota Wild",
+        "tier": "HIGH CONVICTION",
+        "modelUsed": "ensemble_lr+xgb",
+        "recommendBet": false,
+        "gameTimeUtc": "2026-11-01T20:30:00Z"
+      },
+      "startTime": "2026-11-01T20:30:00Z",
+      "edge": 0.0
+    },
+    {
+      "gameId": "nhl-2026-11-01-EDM-NYR",
+      "home": "NYR",
+      "away": "EDM",
+      "pickedTeam": "EDM",
+      "pickedSide": "away",
+      "modelProb": 0.5966,
+      "confidenceTier": "low",
+      "extra": {
+        "homeName": "New York Rangers",
+        "awayName": "Edmonton Oilers",
+        "tier": "LEAN",
+        "modelUsed": "ensemble_lr+xgb",
+        "recommendBet": false,
+        "gameTimeUtc": "2026-11-01T23:00:00Z"
+      },
+      "startTime": "2026-11-01T23:00:00Z",
+      "edge": 0.0
+    }
+  ]
+}
