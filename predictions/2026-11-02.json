@@ -1,0 +1,83 @@
+{
+  "sport": "NHL",
+  "date": "2026-11-02",
+  "generatedAt": "2026-11-02T12:06:15Z",
+  "picks": [
+    {
+      "gameId": "nhl-2026-11-02-COL-CHI",
+      "home": "CHI",
+      "away": "COL",
+      "pickedTeam": "COL",
+      "pickedSide": "away",
+      "modelProb": 0.7132,
+      "confidenceTier": "high",
+      "extra": {
+        "homeName": "Chicago Blackhawks",
+        "awayName": "Colorado Avalanche",
+        "tier": "EXTREME CONVICTION",
+        "modelUsed": "ensemble_lr+xgb",
+        "recommendBet": false,
+        "gameTimeUtc": "2026-11-03T01:00:00Z"
+      },
+      "startTime": "2026-11-03T01:00:00Z",
+      "edge": 0.0
+    },
+    {
+      "gameId": "nhl-2026-11-02-DET-FLA",
+      "home": "FLA",
+      "away": "DET",
+      "pickedTeam": "FLA",
+      "pickedSide": "home",
+      "modelProb": 0.6446,
+      "confidenceTier": "medium",
+      "extra": {
+        "homeName": "Florida Panthers",
+        "awayName": "Detroit Red Wings",
+        "tier": "HIGH CONVICTION",
+        "modelUsed": "ensemble_lr+xgb",
+        "recommendBet": false,
+        "gameTimeUtc": "2026-11-03T00:00:00Z"
+      },
+      "startTime": "2026-11-03T00:00:00Z",
+      "edge": 0.0
+    },
+    {
+      "gameId": "nhl-2026-11-02-VGK-BOS",
+      "home": "BOS",
+      "away": "VGK",
+      "pickedTeam": "BOS",
+      "pickedSide": "home",
+      "modelProb": 0.6207,
+      "confidenceTier": "medium",
+      "extra": {
+        "homeName": "Boston Bruins",
+        "awayName": "Vegas Golden Knights",
+        "tier": "STRONG",
+        "modelUsed": "ensemble_lr+xgb",
+        "recommendBet": false,
+        "gameTimeUtc": "2026-11-03T00:00:00Z"
+      },
+      "startTime": "2026-11-03T00:00:00Z",
+      "edge": 0.0
+    },
+    {
+      "gameId": "nhl-2026-11-02-CGY-SJS",
+      "home": "SJS",
+      "away": "CGY",
+      "pickedTeam": "SJS",
+      "pickedSide": "home",
+      "modelProb": 0.6124,
+      "confidenceTier": "low",
+      "extra": {
+        "homeName": "San Jose Sharks",
+        "awayName": "Calgary Flames",
+        "tier": "STRONG",
+        "modelUsed": "ensemble_lr+xgb",
+        "recommendBet": false,
+        "gameTimeUtc": "2026-11-03T02:00:00Z"
+      },
+      "startTime": "2026-11-03T02:00:00Z",
+      "edge": 0.0
+    }
+  ]
+}
