@@ -1,0 +1,64 @@
+{
+  "sport": "NHL",
+  "date": "2026-11-04",
+  "generatedAt": "2026-11-04T12:05:40Z",
+  "picks": [
+    {
+      "gameId": "nhl-2026-11-04-CHI-FLA",
+      "home": "FLA",
+      "away": "CHI",
+      "pickedTeam": "FLA",
+      "pickedSide": "home",
+      "modelProb": 0.6977,
+      "confidenceTier": "high",
+      "extra": {
+        "homeName": "Florida Panthers",
+        "awayName": "Chicago Blackhawks",
+        "tier": "EXTREME CONVICTION",
+        "modelUsed": "ensemble_lr+xgb",
+        "recommendBet": false,
+        "gameTimeUtc": "2026-11-05T00:30:00Z"
+      },
+      "startTime": "2026-11-05T00:30:00Z",
+      "edge": 0.0
+    },
+    {
+      "gameId": "nhl-2026-11-04-OTT-BUF",
+      "home": "BUF",
+      "away": "OTT",
+      "pickedTeam": "OTT",
+      "pickedSide": "away",
+      "modelProb": 0.6851,
+      "confidenceTier": "high",
+      "extra": {
+        "homeName": "Buffalo Sabres",
+        "awayName": "Ottawa Senators",
+        "tier": "EXTREME CONVICTION",
+        "modelUsed": "ensemble_lr+xgb",
+        "recommendBet": false,
+        "gameTimeUtc": "2026-11-05T00:30:00Z"
+      },
+      "startTime": "2026-11-05T00:30:00Z",
+      "edge": 0.0
+    },
+    {
+      "gameId": "nhl-2026-11-04-CGY-SEA",
+      "home": "SEA",
+      "away": "CGY",
+      "pickedTeam": "SEA",
+      "pickedSide": "home",
+      "modelProb": 0.6804,
+      "confidenceTier": "high",
+      "extra": {
+        "homeName": "Seattle Kraken",
+        "awayName": "Calgary Flames",
+        "tier": "EXTREME CONVICTION",
+        "modelUsed": "ensemble_lr+xgb",
+        "recommendBet": false,
+        "gameTimeUtc": "2026-11-05T03:00:00Z"
+      },
+      "startTime": "2026-11-05T03:00:00Z",
+      "edge": 0.0
+    }
+  ]
+}
