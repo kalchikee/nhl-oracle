@@ -1,0 +1,64 @@
+{
+  "sport": "NHL",
+  "date": "2026-11-06",
+  "generatedAt": "2026-11-06T12:05:27Z",
+  "picks": [
+    {
+      "gameId": "nhl-2026-11-06-SJS-MIN",
+      "home": "MIN",
+      "away": "SJS",
+      "pickedTeam": "MIN",
+      "pickedSide": "home",
+      "modelProb": 0.8264,
+      "confidenceTier": "extreme",
+      "extra": {
+        "homeName": "Minnesota Wild",
+        "awayName": "San Jose Sharks",
+        "tier": "EXTREME CONVICTION",
+        "modelUsed": "ensemble_lr+xgb",
+        "recommendBet": false,
+        "gameTimeUtc": "2026-11-07T01:00:00Z"
+      },
+      "startTime": "2026-11-07T01:00:00Z",
+      "edge": 0.0
+    },
+    {
+      "gameId": "nhl-2026-11-06-ANA-CGY",
+      "home": "CGY",
+      "away": "ANA",
+      "pickedTeam": "ANA",
+      "pickedSide": "away",
+      "modelProb": 0.6621,
+      "confidenceTier": "medium",
+      "extra": {
+        "homeName": "Calgary Flames",
+        "awayName": "Anaheim Ducks",
+        "tier": "HIGH CONVICTION",
+        "modelUsed": "ensemble_lr+xgb",
+        "recommendBet": false,
+        "gameTimeUtc": "2026-11-07T01:00:00Z"
+      },
+      "startTime": "2026-11-07T01:00:00Z",
+      "edge": 0.0
+    },
+    {
+      "gameId": "nhl-2026-11-06-CBJ-BUF",
+      "home": "BUF",
+      "away": "CBJ",
+      "pickedTeam": "CBJ",
+      "pickedSide": "away",
+      "modelProb": 0.5806,
+      "confidenceTier": "low",
+      "extra": {
+        "homeName": "Buffalo Sabres",
+        "awayName": "Columbus Blue Jackets",
+        "tier": "LEAN",
+        "modelUsed": "ensemble_lr+xgb",
+        "recommendBet": false,
+        "gameTimeUtc": "2026-11-07T00:00:00Z"
+      },
+      "startTime": "2026-11-07T00:00:00Z",
+      "edge": 0.0
+    }
+  ]
+}
