@@ -1,0 +1,64 @@
+{
+  "sport": "NHL",
+  "date": "2026-11-08",
+  "generatedAt": "2026-11-08T12:04:34Z",
+  "picks": [
+    {
+      "gameId": "nhl-2026-11-08-FLA-BOS",
+      "home": "BOS",
+      "away": "FLA",
+      "pickedTeam": "BOS",
+      "pickedSide": "home",
+      "modelProb": 0.6894,
+      "confidenceTier": "high",
+      "extra": {
+        "homeName": "Boston Bruins",
+        "awayName": "Florida Panthers",
+        "tier": "EXTREME CONVICTION",
+        "modelUsed": "ensemble_lr+xgb",
+        "recommendBet": false,
+        "gameTimeUtc": "2026-11-08T18:00:00Z"
+      },
+      "startTime": "2026-11-08T18:00:00Z",
+      "edge": 0.0
+    },
+    {
+      "gameId": "nhl-2026-11-08-TBL-WPG",
+      "home": "WPG",
+      "away": "TBL",
+      "pickedTeam": "TBL",
+      "pickedSide": "away",
+      "modelProb": 0.6744,
+      "confidenceTier": "high",
+      "extra": {
+        "homeName": "Winnipeg Jets",
+        "awayName": "Tampa Bay Lightning",
+        "tier": "HIGH CONVICTION",
+        "modelUsed": "ensemble_lr+xgb",
+        "recommendBet": false,
+        "gameTimeUtc": "2026-11-08T23:00:00Z"
+      },
+      "startTime": "2026-11-08T23:00:00Z",
+      "edge": 0.0
+    },
+    {
+      "gameId": "nhl-2026-11-08-VGK-BUF",
+      "home": "BUF",
+      "away": "VGK",
+      "pickedTeam": "VGK",
+      "pickedSide": "away",
+      "modelProb": 0.6416,
+      "confidenceTier": "medium",
+      "extra": {
+        "homeName": "Buffalo Sabres",
+        "awayName": "Vegas Golden Knights",
+        "tier": "HIGH CONVICTION",
+        "modelUsed": "ensemble_lr+xgb",
+        "recommendBet": false,
+        "gameTimeUtc": "2026-11-08T20:30:00Z"
+      },
+      "startTime": "2026-11-08T20:30:00Z",
+      "edge": 0.0
+    }
+  ]
+}
