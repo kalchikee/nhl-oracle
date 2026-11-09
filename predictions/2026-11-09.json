@@ -1,0 +1,45 @@
+{
+  "sport": "NHL",
+  "date": "2026-11-09",
+  "generatedAt": "2026-11-09T12:06:16Z",
+  "picks": [
+    {
+      "gameId": "nhl-2026-11-09-NYI-SJS",
+      "home": "SJS",
+      "away": "NYI",
+      "pickedTeam": "NYI",
+      "pickedSide": "away",
+      "modelProb": 0.6682,
+      "confidenceTier": "medium",
+      "extra": {
+        "homeName": "San Jose Sharks",
+        "awayName": "New York Islanders",
+        "tier": "HIGH CONVICTION",
+        "modelUsed": "ensemble_lr+xgb",
+        "recommendBet": false,
+        "gameTimeUtc": "2026-11-10T03:00:00Z"
+      },
+      "startTime": "2026-11-10T03:00:00Z",
+      "edge": 0.0
+    },
+    {
+      "gameId": "nhl-2026-11-09-NYR-EDM",
+      "home": "EDM",
+      "away": "NYR",
+      "pickedTeam": "EDM",
+      "pickedSide": "home",
+      "modelProb": 0.5875,
+      "confidenceTier": "low",
+      "extra": {
+        "homeName": "Edmonton Oilers",
+        "awayName": "New York Rangers",
+        "tier": "LEAN",
+        "modelUsed": "ensemble_lr+xgb",
+        "recommendBet": false,
+        "gameTimeUtc": "2026-11-10T01:00:00Z"
+      },
+      "startTime": "2026-11-10T01:00:00Z",
+      "edge": 0.0
+    }
+  ]
+}
