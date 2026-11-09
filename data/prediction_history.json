@@ -42178,7 +42178,11 @@
           },
           "b2b_home": false,
           "b2b_away": false,
-          "model_used": "ensemble_lr+xgb"
+          "model_used": "ensemble_lr+xgb",
+          "actual_home_score": 4,
+          "actual_away_score": 1,
+          "actual_winner": "BOS",
+          "correct": true
         },
         {
           "game_date": "2026-11-08",
@@ -42257,7 +42261,11 @@
           },
           "b2b_home": false,
           "b2b_away": false,
-          "model_used": "ensemble_lr+xgb"
+          "model_used": "ensemble_lr+xgb",
+          "actual_home_score": 4,
+          "actual_away_score": 3,
+          "actual_winner": "WPG",
+          "correct": false
         },
         {
           "game_date": "2026-11-08",
@@ -42336,7 +42344,11 @@
           },
           "b2b_home": false,
           "b2b_away": false,
-          "model_used": "ensemble_lr+xgb"
+          "model_used": "ensemble_lr+xgb",
+          "actual_home_score": 1,
+          "actual_away_score": 4,
+          "actual_winner": "VGK",
+          "correct": true
         },
         {
           "game_date": "2026-11-08",
@@ -42415,7 +42427,11 @@
           },
           "b2b_home": false,
           "b2b_away": false,
-          "model_used": "ensemble_lr+xgb"
+          "model_used": "ensemble_lr+xgb",
+          "actual_home_score": 4,
+          "actual_away_score": 3,
+          "actual_winner": "CGY",
+          "correct": false
         },
         {
           "game_date": "2026-11-08",
@@ -42494,7 +42510,11 @@
           },
           "b2b_home": false,
           "b2b_away": false,
-          "model_used": "ensemble_lr+xgb"
+          "model_used": "ensemble_lr+xgb",
+          "actual_home_score": 5,
+          "actual_away_score": 2,
+          "actual_winner": "ANA",
+          "correct": true
         },
         {
           "game_date": "2026-11-08",
@@ -42573,17 +42593,21 @@
           },
           "b2b_home": false,
           "b2b_away": false,
-          "model_used": "ensemble_lr+xgb"
+          "model_used": "ensemble_lr+xgb",
+          "actual_home_score": 0,
+          "actual_away_score": 4,
+          "actual_winner": "NJD",
+          "correct": true
         }
       ],
-      "results_recorded": false
+      "results_recorded": true
     }
   ],
   "season_record": {
-    "total": 502,
-    "correct": 288,
-    "high_conv_total": 228,
-    "high_conv_correct": 139,
+    "total": 508,
+    "correct": 292,
+    "high_conv_total": 231,
+    "high_conv_correct": 141,
     "rec_total": 0,
     "rec_correct": 0
   }
