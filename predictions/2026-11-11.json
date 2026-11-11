@@ -1,0 +1,102 @@
+{
+  "sport": "NHL",
+  "date": "2026-11-11",
+  "generatedAt": "2026-11-11T12:06:18Z",
+  "picks": [
+    {
+      "gameId": "nhl-2026-11-11-PHI-EDM",
+      "home": "EDM",
+      "away": "PHI",
+      "pickedTeam": "EDM",
+      "pickedSide": "home",
+      "modelProb": 0.8456,
+      "confidenceTier": "extreme",
+      "extra": {
+        "homeName": "Edmonton Oilers",
+        "awayName": "Philadelphia Flyers",
+        "tier": "EXTREME CONVICTION",
+        "modelUsed": "ensemble_lr+xgb",
+        "recommendBet": false,
+        "gameTimeUtc": "2026-11-12T02:00:00Z"
+      },
+      "startTime": "2026-11-12T02:00:00Z",
+      "edge": 0.0
+    },
+    {
+      "gameId": "nhl-2026-11-11-NYR-CGY",
+      "home": "CGY",
+      "away": "NYR",
+      "pickedTeam": "NYR",
+      "pickedSide": "away",
+      "modelProb": 0.7564,
+      "confidenceTier": "extreme",
+      "extra": {
+        "homeName": "Calgary Flames",
+        "awayName": "New York Rangers",
+        "tier": "EXTREME CONVICTION",
+        "modelUsed": "ensemble_lr+xgb",
+        "recommendBet": false,
+        "gameTimeUtc": "2026-11-12T00:30:00Z"
+      },
+      "startTime": "2026-11-12T00:30:00Z",
+      "edge": 0.0
+    },
+    {
+      "gameId": "nhl-2026-11-11-UTA-VGK",
+      "home": "VGK",
+      "away": "UTA",
+      "pickedTeam": "VGK",
+      "pickedSide": "home",
+      "modelProb": 0.667,
+      "confidenceTier": "medium",
+      "extra": {
+        "homeName": "Vegas Golden Knights",
+        "awayName": "Utah Mammoth",
+        "tier": "HIGH CONVICTION",
+        "modelUsed": "ensemble_lr+xgb",
+        "recommendBet": false,
+        "gameTimeUtc": "2026-11-12T02:30:00Z"
+      },
+      "startTime": "2026-11-12T02:30:00Z",
+      "edge": 0.0
+    },
+    {
+      "gameId": "nhl-2026-11-11-NSH-ANA",
+      "home": "ANA",
+      "away": "NSH",
+      "pickedTeam": "NSH",
+      "pickedSide": "away",
+      "modelProb": 0.6407,
+      "confidenceTier": "medium",
+      "extra": {
+        "homeName": "Anaheim Ducks",
+        "awayName": "Nashville Predators",
+        "tier": "HIGH CONVICTION",
+        "modelUsed": "ensemble_lr+xgb",
+        "recommendBet": false,
+        "gameTimeUtc": "2026-11-12T03:00:00Z"
+      },
+      "startTime": "2026-11-12T03:00:00Z",
+      "edge": 0.0
+    },
+    {
+      "gameId": "nhl-2026-11-11-TBL-BUF",
+      "home": "BUF",
+      "away": "TBL",
+      "pickedTeam": "TBL",
+      "pickedSide": "away",
+      "modelProb": 0.6398,
+      "confidenceTier": "medium",
+      "extra": {
+        "homeName": "Buffalo Sabres",
+        "awayName": "Tampa Bay Lightning",
+        "tier": "HIGH CONVICTION",
+        "modelUsed": "ensemble_lr+xgb",
+        "recommendBet": false,
+        "gameTimeUtc": "2026-11-12T00:00:00Z"
+      },
+      "startTime": "2026-11-12T00:00:00Z",
+      "edge": 0.0
+    }
+  ]
+}
