@@ -43524,7 +43524,11 @@
           },
           "b2b_home": false,
           "b2b_away": false,
-          "model_used": "ensemble_lr+xgb"
+          "model_used": "ensemble_lr+xgb",
+          "actual_home_score": 3,
+          "actual_away_score": 2,
+          "actual_winner": "EDM",
+          "correct": true
         },
         {
           "game_date": "2026-11-11",
@@ -43603,7 +43607,11 @@
           },
           "b2b_home": false,
           "b2b_away": false,
-          "model_used": "ensemble_lr+xgb"
+          "model_used": "ensemble_lr+xgb",
+          "actual_home_score": 1,
+          "actual_away_score": 3,
+          "actual_winner": "NYR",
+          "correct": true
         },
         {
           "game_date": "2026-11-11",
@@ -43682,7 +43690,11 @@
           },
           "b2b_home": false,
           "b2b_away": false,
-          "model_used": "ensemble_lr+xgb"
+          "model_used": "ensemble_lr+xgb",
+          "actual_home_score": 5,
+          "actual_away_score": 3,
+          "actual_winner": "VGK",
+          "correct": true
         },
         {
           "game_date": "2026-11-11",
@@ -43761,7 +43773,11 @@
           },
           "b2b_home": false,
           "b2b_away": false,
-          "model_used": "ensemble_lr+xgb"
+          "model_used": "ensemble_lr+xgb",
+          "actual_home_score": 2,
+          "actual_away_score": 4,
+          "actual_winner": "NSH",
+          "correct": true
         },
         {
           "game_date": "2026-11-11",
@@ -43840,7 +43856,11 @@
           },
           "b2b_home": false,
           "b2b_away": false,
-          "model_used": "ensemble_lr+xgb"
+          "model_used": "ensemble_lr+xgb",
+          "actual_home_score": 3,
+          "actual_away_score": 8,
+          "actual_winner": "TBL",
+          "correct": true
         },
         {
           "game_date": "2026-11-11",
@@ -43922,14 +43942,14 @@
           "model_used": "ensemble_lr+xgb"
         }
       ],
-      "results_recorded": false
+      "results_recorded": true
     }
   ],
   "season_record": {
-    "total": 518,
-    "correct": 299,
-    "high_conv_total": 238,
-    "high_conv_correct": 146,
+    "total": 523,
+    "correct": 304,
+    "high_conv_total": 243,
+    "high_conv_correct": 151,
     "rec_total": 0,
     "rec_correct": 0
   }
