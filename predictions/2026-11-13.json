@@ -1,0 +1,26 @@
+{
+  "sport": "NHL",
+  "date": "2026-11-13",
+  "generatedAt": "2026-11-13T12:05:22Z",
+  "picks": [
+    {
+      "gameId": "nhl-2026-11-13-NYR-VAN",
+      "home": "VAN",
+      "away": "NYR",
+      "pickedTeam": "NYR",
+      "pickedSide": "away",
+      "modelProb": 0.7518,
+      "confidenceTier": "extreme",
+      "extra": {
+        "homeName": "Vancouver Canucks",
+        "awayName": "New York Rangers",
+        "tier": "EXTREME CONVICTION",
+        "modelUsed": "ensemble_lr+xgb",
+        "recommendBet": false,
+        "gameTimeUtc": "2026-11-14T02:00:00Z"
+      },
+      "startTime": "2026-11-14T02:00:00Z",
+      "edge": 0.0
+    }
+  ]
+}
