@@ -44024,7 +44024,11 @@
           },
           "b2b_home": false,
           "b2b_away": false,
-          "model_used": "ensemble_lr+xgb"
+          "model_used": "ensemble_lr+xgb",
+          "actual_home_score": 2,
+          "actual_away_score": 5,
+          "actual_winner": "MIN",
+          "correct": true
         },
         {
           "game_date": "2026-11-12",
@@ -44103,7 +44107,11 @@
           },
           "b2b_home": false,
           "b2b_away": false,
-          "model_used": "ensemble_lr+xgb"
+          "model_used": "ensemble_lr+xgb",
+          "actual_home_score": 1,
+          "actual_away_score": 4,
+          "actual_winner": "CAR",
+          "correct": true
         },
         {
           "game_date": "2026-11-12",
@@ -44182,7 +44190,11 @@
           },
           "b2b_home": false,
           "b2b_away": false,
-          "model_used": "ensemble_lr+xgb"
+          "model_used": "ensemble_lr+xgb",
+          "actual_home_score": 3,
+          "actual_away_score": 8,
+          "actual_winner": "WPG",
+          "correct": false
         },
         {
           "game_date": "2026-11-12",
@@ -44261,7 +44273,11 @@
           },
           "b2b_home": false,
           "b2b_away": false,
-          "model_used": "ensemble_lr+xgb"
+          "model_used": "ensemble_lr+xgb",
+          "actual_home_score": 5,
+          "actual_away_score": 4,
+          "actual_winner": "FLA",
+          "correct": true
         },
         {
           "game_date": "2026-11-12",
@@ -44340,7 +44356,11 @@
           },
           "b2b_home": false,
           "b2b_away": false,
-          "model_used": "ensemble_lr+xgb"
+          "model_used": "ensemble_lr+xgb",
+          "actual_home_score": 3,
+          "actual_away_score": 2,
+          "actual_winner": "CHI",
+          "correct": false
         },
         {
           "game_date": "2026-11-12",
@@ -44419,7 +44439,11 @@
           },
           "b2b_home": false,
           "b2b_away": false,
-          "model_used": "ensemble_lr+xgb"
+          "model_used": "ensemble_lr+xgb",
+          "actual_home_score": 2,
+          "actual_away_score": 5,
+          "actual_winner": "MTL",
+          "correct": false
         },
         {
           "game_date": "2026-11-12",
@@ -44498,7 +44522,11 @@
           },
           "b2b_home": false,
           "b2b_away": false,
-          "model_used": "ensemble_lr+xgb"
+          "model_used": "ensemble_lr+xgb",
+          "actual_home_score": 1,
+          "actual_away_score": 3,
+          "actual_winner": "TBL",
+          "correct": true
         },
         {
           "game_date": "2026-11-12",
@@ -44656,7 +44684,11 @@
           },
           "b2b_home": false,
           "b2b_away": false,
-          "model_used": "ensemble_lr+xgb"
+          "model_used": "ensemble_lr+xgb",
+          "actual_home_score": 0,
+          "actual_away_score": 1,
+          "actual_winner": "STL",
+          "correct": true
         },
         {
           "game_date": "2026-11-12",
@@ -44735,7 +44767,11 @@
           },
           "b2b_home": false,
           "b2b_away": false,
-          "model_used": "ensemble_lr+xgb"
+          "model_used": "ensemble_lr+xgb",
+          "actual_home_score": 5,
+          "actual_away_score": 2,
+          "actual_winner": "NJD",
+          "correct": true
         },
         {
           "game_date": "2026-11-12",
@@ -44814,17 +44850,21 @@
           },
           "b2b_home": false,
           "b2b_away": false,
-          "model_used": "ensemble_lr+xgb"
+          "model_used": "ensemble_lr+xgb",
+          "actual_home_score": 4,
+          "actual_away_score": 3,
+          "actual_winner": "OTT",
+          "correct": false
         }
       ],
-      "results_recorded": false
+      "results_recorded": true
     }
   ],
   "season_record": {
-    "total": 523,
-    "correct": 304,
-    "high_conv_total": 243,
-    "high_conv_correct": 151,
+    "total": 533,
+    "correct": 310,
+    "high_conv_total": 248,
+    "high_conv_correct": 154,
     "rec_total": 0,
     "rec_correct": 0
   }
