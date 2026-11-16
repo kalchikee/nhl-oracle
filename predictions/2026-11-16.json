@@ -1,0 +1,26 @@
+{
+  "sport": "NHL",
+  "date": "2026-11-16",
+  "generatedAt": "2026-11-16T12:08:11Z",
+  "picks": [
+    {
+      "gameId": "nhl-2026-11-16-VAN-UTA",
+      "home": "UTA",
+      "away": "VAN",
+      "pickedTeam": "UTA",
+      "pickedSide": "home",
+      "modelProb": 0.6418,
+      "confidenceTier": "medium",
+      "extra": {
+        "homeName": "Utah Mammoth",
+        "awayName": "Vancouver Canucks",
+        "tier": "HIGH CONVICTION",
+        "modelUsed": "ensemble_lr+xgb",
+        "recommendBet": false,
+        "gameTimeUtc": "2026-11-17T02:30:00Z"
+      },
+      "startTime": "2026-11-17T02:30:00Z",
+      "edge": 0.0
+    }
+  ]
+}
