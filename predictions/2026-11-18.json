@@ -1,0 +1,45 @@
+{
+  "sport": "NHL",
+  "date": "2026-11-18",
+  "generatedAt": "2026-11-18T12:05:20Z",
+  "picks": [
+    {
+      "gameId": "nhl-2026-11-18-COL-UTA",
+      "home": "UTA",
+      "away": "COL",
+      "pickedTeam": "COL",
+      "pickedSide": "away",
+      "modelProb": 0.6621,
+      "confidenceTier": "medium",
+      "extra": {
+        "homeName": "Utah Mammoth",
+        "awayName": "Colorado Avalanche",
+        "tier": "HIGH CONVICTION",
+        "modelUsed": "ensemble_lr+xgb",
+        "recommendBet": false,
+        "gameTimeUtc": "2026-11-19T03:00:00Z"
+      },
+      "startTime": "2026-11-19T03:00:00Z",
+      "edge": 0.0
+    },
+    {
+      "gameId": "nhl-2026-11-18-BOS-DET",
+      "home": "DET",
+      "away": "BOS",
+      "pickedTeam": "BOS",
+      "pickedSide": "away",
+      "modelProb": 0.6382,
+      "confidenceTier": "medium",
+      "extra": {
+        "homeName": "Detroit Red Wings",
+        "awayName": "Boston Bruins",
+        "tier": "HIGH CONVICTION",
+        "modelUsed": "ensemble_lr+xgb",
+        "recommendBet": false,
+        "gameTimeUtc": "2026-11-19T00:30:00Z"
+      },
+      "startTime": "2026-11-19T00:30:00Z",
+      "edge": 0.0
+    }
+  ]
+}
