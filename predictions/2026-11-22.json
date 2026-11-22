@@ -1,0 +1,64 @@
+{
+  "sport": "NHL",
+  "date": "2026-11-22",
+  "generatedAt": "2026-11-22T12:04:53Z",
+  "picks": [
+    {
+      "gameId": "nhl-2026-11-22-BUF-TBL",
+      "home": "TBL",
+      "away": "BUF",
+      "pickedTeam": "TBL",
+      "pickedSide": "home",
+      "modelProb": 0.7248,
+      "confidenceTier": "extreme",
+      "extra": {
+        "homeName": "Tampa Bay Lightning",
+        "awayName": "Buffalo Sabres",
+        "tier": "EXTREME CONVICTION",
+        "modelUsed": "ensemble_lr+xgb",
+        "recommendBet": false,
+        "gameTimeUtc": "2026-11-22T22:00:00Z"
+      },
+      "startTime": "2026-11-22T22:00:00Z",
+      "edge": 0.0
+    },
+    {
+      "gameId": "nhl-2026-11-22-PIT-DAL",
+      "home": "DAL",
+      "away": "PIT",
+      "pickedTeam": "DAL",
+      "pickedSide": "home",
+      "modelProb": 0.7234,
+      "confidenceTier": "extreme",
+      "extra": {
+        "homeName": "Dallas Stars",
+        "awayName": "Pittsburgh Penguins",
+        "tier": "EXTREME CONVICTION",
+        "modelUsed": "ensemble_lr+xgb",
+        "recommendBet": false,
+        "gameTimeUtc": "2026-11-23T00:00:00Z"
+      },
+      "startTime": "2026-11-23T00:00:00Z",
+      "edge": 0.0
+    },
+    {
+      "gameId": "nhl-2026-11-22-CAR-NYR",
+      "home": "NYR",
+      "away": "CAR",
+      "pickedTeam": "CAR",
+      "pickedSide": "away",
+      "modelProb": 0.7117,
+      "confidenceTier": "high",
+      "extra": {
+        "homeName": "New York Rangers",
+        "awayName": "Carolina Hurricanes",
+        "tier": "EXTREME CONVICTION",
+        "modelUsed": "ensemble_lr+xgb",
+        "recommendBet": false,
+        "gameTimeUtc": "2026-11-22T17:30:00Z"
+      },
+      "startTime": "2026-11-22T17:30:00Z",
+      "edge": 0.0
+    }
+  ]
+}
