@@ -1,0 +1,102 @@
+{
+  "sport": "NHL",
+  "date": "2026-11-23",
+  "generatedAt": "2026-11-23T12:06:00Z",
+  "picks": [
+    {
+      "gameId": "nhl-2026-11-23-CGY-OTT",
+      "home": "OTT",
+      "away": "CGY",
+      "pickedTeam": "OTT",
+      "pickedSide": "home",
+      "modelProb": 0.8413,
+      "confidenceTier": "extreme",
+      "extra": {
+        "homeName": "Ottawa Senators",
+        "awayName": "Calgary Flames",
+        "tier": "EXTREME CONVICTION",
+        "modelUsed": "ensemble_lr+xgb",
+        "recommendBet": false,
+        "gameTimeUtc": "2026-11-24T00:30:00Z"
+      },
+      "startTime": "2026-11-24T00:30:00Z",
+      "edge": 0.0
+    },
+    {
+      "gameId": "nhl-2026-11-23-MIN-SJS",
+      "home": "SJS",
+      "away": "MIN",
+      "pickedTeam": "MIN",
+      "pickedSide": "away",
+      "modelProb": 0.8187,
+      "confidenceTier": "extreme",
+      "extra": {
+        "homeName": "San Jose Sharks",
+        "awayName": "Minnesota Wild",
+        "tier": "EXTREME CONVICTION",
+        "modelUsed": "ensemble_lr+xgb",
+        "recommendBet": false,
+        "gameTimeUtc": "2026-11-24T03:00:00Z"
+      },
+      "startTime": "2026-11-24T03:00:00Z",
+      "edge": 0.0
+    },
+    {
+      "gameId": "nhl-2026-11-23-TOR-NYI",
+      "home": "NYI",
+      "away": "TOR",
+      "pickedTeam": "NYI",
+      "pickedSide": "home",
+      "modelProb": 0.7742,
+      "confidenceTier": "extreme",
+      "extra": {
+        "homeName": "New York Islanders",
+        "awayName": "Toronto Maple Leafs",
+        "tier": "EXTREME CONVICTION",
+        "modelUsed": "ensemble_lr+xgb",
+        "recommendBet": false,
+        "gameTimeUtc": "2026-11-24T00:30:00Z"
+      },
+      "startTime": "2026-11-24T00:30:00Z",
+      "edge": 0.0
+    },
+    {
+      "gameId": "nhl-2026-11-23-LAK-MTL",
+      "home": "MTL",
+      "away": "LAK",
+      "pickedTeam": "MTL",
+      "pickedSide": "home",
+      "modelProb": 0.697,
+      "confidenceTier": "high",
+      "extra": {
+        "homeName": "Montr\u00e9al Canadiens",
+        "awayName": "Los Angeles Kings",
+        "tier": "EXTREME CONVICTION",
+        "modelUsed": "ensemble_lr+xgb",
+        "recommendBet": false,
+        "gameTimeUtc": "2026-11-24T00:30:00Z"
+      },
+      "startTime": "2026-11-24T00:30:00Z",
+      "edge": 0.0
+    },
+    {
+      "gameId": "nhl-2026-11-23-CBJ-NJD",
+      "home": "NJD",
+      "away": "CBJ",
+      "pickedTeam": "NJD",
+      "pickedSide": "home",
+      "modelProb": 0.6316,
+      "confidenceTier": "medium",
+      "extra": {
+        "homeName": "New Jersey Devils",
+        "awayName": "Columbus Blue Jackets",
+        "tier": "HIGH CONVICTION",
+        "modelUsed": "ensemble_lr+xgb",
+        "recommendBet": false,
+        "gameTimeUtc": "2026-11-24T00:00:00Z"
+      },
+      "startTime": "2026-11-24T00:00:00Z",
+      "edge": 0.0
+    }
+  ]
+}
