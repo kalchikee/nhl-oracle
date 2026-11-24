@@ -51135,6 +51135,91 @@
         }
       ],
       "results_recorded": true
+    },
+    {
+      "date": "2026-11-24",
+      "predictions": [
+        {
+          "game_date": "2026-11-24",
+          "game_time_utc": "2026-11-25T01:00:00Z",
+          "home_team": "EDM",
+          "away_team": "VGK",
+          "home_name": "Edmonton Oilers",
+          "away_name": "Vegas Golden Knights",
+          "home_prob": 0.5775,
+          "away_prob": 0.4225,
+          "pick_team": "EDM",
+          "pick_prob": 0.5775,
+          "tier": "LEAN",
+          "tier_emoji": "\ud83d\udcca",
+          "mc": {
+            "home_win_pct": 0.4076,
+            "home_reg_win_pct": 0.336,
+            "away_win_pct": 0.5924,
+            "away_reg_win_pct": 0.5026,
+            "avg_total_goals": 6.0,
+            "home_shutout_pct": 0.0396,
+            "away_shutout_pct": 0.0641,
+            "most_likely_score": [
+              2,
+              3
+            ],
+            "lambda_home": 2.753,
+            "lambda_away": 3.266
+          },
+          "lr_prob": 0.6689,
+          "vegas_implied_home": null,
+          "recommend_bet": false,
+          "edge": 0.0,
+          "odds": {},
+          "injuries": {
+            "home": {
+              "n_injured": 0,
+              "impact": 0,
+              "players": []
+            },
+            "away": {
+              "n_injured": 0,
+              "impact": 0,
+              "players": []
+            }
+          },
+          "goalies": {
+            "home": "Levi",
+            "away": "Hart",
+            "home_gsax": -0.04,
+            "away_gsax": -1.49
+          },
+          "features": {
+            "elo_diff": 0.3338,
+            "pts_pct_diff": 0.0708,
+            "pythagorean_diff": 0.0702,
+            "gf_pg_diff": 0.4846,
+            "ga_pg_diff": -0.0385,
+            "gd_pg_diff": 0.5231,
+            "pp_pct_diff": 0.0531,
+            "pk_pct_diff": -0.0139,
+            "l10_pts_diff": 0.0164,
+            "l5_pts_diff": 0.0164,
+            "reg_win_pct_diff": 0.0985,
+            "home_split_diff": -0.0606,
+            "streak_diff": -1.5,
+            "xgf_pct_diff": -0.05,
+            "cf_pct_diff": -0.03,
+            "pdo_diff": 0.0499,
+            "goalie_gsax_diff": 1.45,
+            "rest_days_diff": 45.0,
+            "b2b_home": 0.0,
+            "b2b_away": 0.0,
+            "is_home": 1.0,
+            "log5_prob": 0.583
+          },
+          "b2b_home": false,
+          "b2b_away": false,
+          "model_used": "ensemble_lr+xgb"
+        }
+      ],
+      "results_recorded": false
     }
   ],
   "season_record": {
