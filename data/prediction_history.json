@@ -51216,14 +51216,18 @@
           },
           "b2b_home": false,
           "b2b_away": false,
-          "model_used": "ensemble_lr+xgb"
+          "model_used": "ensemble_lr+xgb",
+          "actual_home_score": 3,
+          "actual_away_score": 5,
+          "actual_winner": "VGK",
+          "correct": false
         }
       ],
-      "results_recorded": false
+      "results_recorded": true
     }
   ],
   "season_record": {
-    "total": 606,
+    "total": 607,
     "correct": 359,
     "high_conv_total": 289,
     "high_conv_correct": 183,
